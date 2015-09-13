@@ -17,7 +17,7 @@ You need a web server to see the examples in your browser. Luckily, this repo ha
 bash server.sh
 ```
 
-Now, go to http://localhost:1234/empty-project in your browser to see the empty project.
+Now, go to [localhost:1234](http://localhost:1234) and navigate to any example folder.
 
 ## Adding your own projects
 
