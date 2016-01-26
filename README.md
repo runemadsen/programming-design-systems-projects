@@ -21,4 +21,4 @@ Now, go to [localhost:1234](http://localhost:1234) and navigate to any project f
 
 ## Adding your own projects
 
-Simply make a copy of the `empty-project` folder and rename it. Now start coding!
+Simply make a copy of the `first-assignment` folder and rename it. Now start coding!
