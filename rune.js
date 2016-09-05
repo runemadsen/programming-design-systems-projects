@@ -1,6 +1,6 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Rune = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Rune = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
-},{}],2:[function(_dereq_,module,exports){
+},{}],2:[function(require,module,exports){
 /* MIT license */
 
 module.exports = {
@@ -700,8 +700,8 @@ for (var key in cssKeywords) {
   reverseKeywords[JSON.stringify(cssKeywords[key])] = key;
 }
 
-},{}],3:[function(_dereq_,module,exports){
-var conversions = _dereq_("./conversions");
+},{}],3:[function(require,module,exports){
+var conversions = require("./conversions");
 
 var convert = function() {
    return new Converter();
@@ -793,9 +793,9 @@ Converter.prototype.getValues = function(space) {
 });
 
 module.exports = convert;
-},{"./conversions":2}],4:[function(_dereq_,module,exports){
-var baseFlatten = _dereq_('../internal/baseFlatten'),
-    isIterateeCall = _dereq_('../internal/isIterateeCall');
+},{"./conversions":2}],4:[function(require,module,exports){
+var baseFlatten = require('../internal/baseFlatten'),
+    isIterateeCall = require('../internal/isIterateeCall');
 
 /**
  * Flattens a nested array. If `isDeep` is `true` the array is recursively
@@ -827,7 +827,7 @@ function flatten(array, isDeep, guard) {
 
 module.exports = flatten;
 
-},{"../internal/baseFlatten":23,"../internal/isIterateeCall":56}],5:[function(_dereq_,module,exports){
+},{"../internal/baseFlatten":23,"../internal/isIterateeCall":56}],5:[function(require,module,exports){
 /**
  * Gets the last element of `array`.
  *
@@ -848,10 +848,10 @@ function last(array) {
 
 module.exports = last;
 
-},{}],6:[function(_dereq_,module,exports){
-var baseDifference = _dereq_('../internal/baseDifference'),
-    isArrayLike = _dereq_('../internal/isArrayLike'),
-    restParam = _dereq_('../function/restParam');
+},{}],6:[function(require,module,exports){
+var baseDifference = require('../internal/baseDifference'),
+    isArrayLike = require('../internal/isArrayLike'),
+    restParam = require('../function/restParam');
 
 /**
  * Creates an array excluding all provided values using
@@ -877,13 +877,13 @@ var without = restParam(function(array, values) {
 
 module.exports = without;
 
-},{"../function/restParam":10,"../internal/baseDifference":21,"../internal/isArrayLike":54}],7:[function(_dereq_,module,exports){
-module.exports = _dereq_('./forEach');
+},{"../function/restParam":10,"../internal/baseDifference":21,"../internal/isArrayLike":54}],7:[function(require,module,exports){
+module.exports = require('./forEach');
 
-},{"./forEach":8}],8:[function(_dereq_,module,exports){
-var arrayEach = _dereq_('../internal/arrayEach'),
-    baseEach = _dereq_('../internal/baseEach'),
-    createForEach = _dereq_('../internal/createForEach');
+},{"./forEach":8}],8:[function(require,module,exports){
+var arrayEach = require('../internal/arrayEach'),
+    baseEach = require('../internal/baseEach'),
+    createForEach = require('../internal/createForEach');
 
 /**
  * Iterates over elements of `collection` invoking `iteratee` for each element.
@@ -919,11 +919,11 @@ var forEach = createForEach(arrayEach, baseEach);
 
 module.exports = forEach;
 
-},{"../internal/arrayEach":12,"../internal/baseEach":22,"../internal/createForEach":46}],9:[function(_dereq_,module,exports){
-var arrayMap = _dereq_('../internal/arrayMap'),
-    baseCallback = _dereq_('../internal/baseCallback'),
-    baseMap = _dereq_('../internal/baseMap'),
-    isArray = _dereq_('../lang/isArray');
+},{"../internal/arrayEach":12,"../internal/baseEach":22,"../internal/createForEach":46}],9:[function(require,module,exports){
+var arrayMap = require('../internal/arrayMap'),
+    baseCallback = require('../internal/baseCallback'),
+    baseMap = require('../internal/baseMap'),
+    isArray = require('../lang/isArray');
 
 /**
  * Creates an array of values by running each element in `collection` through
@@ -989,7 +989,7 @@ function map(collection, iteratee, thisArg) {
 
 module.exports = map;
 
-},{"../internal/arrayMap":13,"../internal/baseCallback":19,"../internal/baseMap":31,"../lang/isArray":65}],10:[function(_dereq_,module,exports){
+},{"../internal/arrayMap":13,"../internal/baseCallback":19,"../internal/baseMap":31,"../lang/isArray":65}],10:[function(require,module,exports){
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
@@ -1049,10 +1049,10 @@ function restParam(func, start) {
 
 module.exports = restParam;
 
-},{}],11:[function(_dereq_,module,exports){
+},{}],11:[function(require,module,exports){
 (function (global){
-var cachePush = _dereq_('./cachePush'),
-    getNative = _dereq_('./getNative');
+var cachePush = require('./cachePush'),
+    getNative = require('./getNative');
 
 /** Native method references. */
 var Set = getNative(global, 'Set');
@@ -1082,8 +1082,7 @@ SetCache.prototype.push = cachePush;
 module.exports = SetCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{"./cachePush":40,"./getNative":52}],12:[function(_dereq_,module,exports){
+},{"./cachePush":40,"./getNative":52}],12:[function(require,module,exports){
 /**
  * A specialized version of `_.forEach` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1107,7 +1106,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-},{}],13:[function(_dereq_,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1130,7 +1129,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],14:[function(_dereq_,module,exports){
+},{}],14:[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -1152,7 +1151,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-},{}],15:[function(_dereq_,module,exports){
+},{}],15:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1177,7 +1176,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],16:[function(_dereq_,module,exports){
+},{}],16:[function(require,module,exports){
 /**
  * Used by `_.defaults` to customize its `_.assign` use.
  *
@@ -1192,8 +1191,8 @@ function assignDefaults(objectValue, sourceValue) {
 
 module.exports = assignDefaults;
 
-},{}],17:[function(_dereq_,module,exports){
-var keys = _dereq_('../object/keys');
+},{}],17:[function(require,module,exports){
+var keys = require('../object/keys');
 
 /**
  * A specialized version of `_.assign` for customizing assigned values without
@@ -1226,9 +1225,9 @@ function assignWith(object, source, customizer) {
 
 module.exports = assignWith;
 
-},{"../object/keys":72}],18:[function(_dereq_,module,exports){
-var baseCopy = _dereq_('./baseCopy'),
-    keys = _dereq_('../object/keys');
+},{"../object/keys":72}],18:[function(require,module,exports){
+var baseCopy = require('./baseCopy'),
+    keys = require('../object/keys');
 
 /**
  * The base implementation of `_.assign` without support for argument juggling,
@@ -1247,12 +1246,12 @@ function baseAssign(object, source) {
 
 module.exports = baseAssign;
 
-},{"../object/keys":72,"./baseCopy":20}],19:[function(_dereq_,module,exports){
-var baseMatches = _dereq_('./baseMatches'),
-    baseMatchesProperty = _dereq_('./baseMatchesProperty'),
-    bindCallback = _dereq_('./bindCallback'),
-    identity = _dereq_('../utility/identity'),
-    property = _dereq_('../utility/property');
+},{"../object/keys":72,"./baseCopy":20}],19:[function(require,module,exports){
+var baseMatches = require('./baseMatches'),
+    baseMatchesProperty = require('./baseMatchesProperty'),
+    bindCallback = require('./bindCallback'),
+    identity = require('../utility/identity'),
+    property = require('../utility/property');
 
 /**
  * The base implementation of `_.callback` which supports specifying the
@@ -1284,7 +1283,7 @@ function baseCallback(func, thisArg, argCount) {
 
 module.exports = baseCallback;
 
-},{"../utility/identity":75,"../utility/property":76,"./baseMatches":32,"./baseMatchesProperty":33,"./bindCallback":38}],20:[function(_dereq_,module,exports){
+},{"../utility/identity":75,"../utility/property":76,"./baseMatches":32,"./baseMatchesProperty":33,"./bindCallback":38}],20:[function(require,module,exports){
 /**
  * Copies properties of `source` to `object`.
  *
@@ -1309,10 +1308,10 @@ function baseCopy(source, props, object) {
 
 module.exports = baseCopy;
 
-},{}],21:[function(_dereq_,module,exports){
-var baseIndexOf = _dereq_('./baseIndexOf'),
-    cacheIndexOf = _dereq_('./cacheIndexOf'),
-    createCache = _dereq_('./createCache');
+},{}],21:[function(require,module,exports){
+var baseIndexOf = require('./baseIndexOf'),
+    cacheIndexOf = require('./cacheIndexOf'),
+    createCache = require('./createCache');
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -1366,9 +1365,9 @@ function baseDifference(array, values) {
 
 module.exports = baseDifference;
 
-},{"./baseIndexOf":27,"./cacheIndexOf":39,"./createCache":44}],22:[function(_dereq_,module,exports){
-var baseForOwn = _dereq_('./baseForOwn'),
-    createBaseEach = _dereq_('./createBaseEach');
+},{"./baseIndexOf":27,"./cacheIndexOf":39,"./createCache":44}],22:[function(require,module,exports){
+var baseForOwn = require('./baseForOwn'),
+    createBaseEach = require('./createBaseEach');
 
 /**
  * The base implementation of `_.forEach` without support for callback
@@ -1383,12 +1382,12 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./baseForOwn":25,"./createBaseEach":42}],23:[function(_dereq_,module,exports){
-var arrayPush = _dereq_('./arrayPush'),
-    isArguments = _dereq_('../lang/isArguments'),
-    isArray = _dereq_('../lang/isArray'),
-    isArrayLike = _dereq_('./isArrayLike'),
-    isObjectLike = _dereq_('./isObjectLike');
+},{"./baseForOwn":25,"./createBaseEach":42}],23:[function(require,module,exports){
+var arrayPush = require('./arrayPush'),
+    isArguments = require('../lang/isArguments'),
+    isArray = require('../lang/isArray'),
+    isArrayLike = require('./isArrayLike'),
+    isObjectLike = require('./isObjectLike');
 
 /**
  * The base implementation of `_.flatten` with added support for restricting
@@ -1426,8 +1425,8 @@ function baseFlatten(array, isDeep, isStrict, result) {
 
 module.exports = baseFlatten;
 
-},{"../lang/isArguments":64,"../lang/isArray":65,"./arrayPush":14,"./isArrayLike":54,"./isObjectLike":59}],24:[function(_dereq_,module,exports){
-var createBaseFor = _dereq_('./createBaseFor');
+},{"../lang/isArguments":64,"../lang/isArray":65,"./arrayPush":14,"./isArrayLike":54,"./isObjectLike":59}],24:[function(require,module,exports){
+var createBaseFor = require('./createBaseFor');
 
 /**
  * The base implementation of `baseForIn` and `baseForOwn` which iterates
@@ -1445,9 +1444,9 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./createBaseFor":43}],25:[function(_dereq_,module,exports){
-var baseFor = _dereq_('./baseFor'),
-    keys = _dereq_('../object/keys');
+},{"./createBaseFor":43}],25:[function(require,module,exports){
+var baseFor = require('./baseFor'),
+    keys = require('../object/keys');
 
 /**
  * The base implementation of `_.forOwn` without support for callback
@@ -1464,8 +1463,8 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"../object/keys":72,"./baseFor":24}],26:[function(_dereq_,module,exports){
-var toObject = _dereq_('./toObject');
+},{"../object/keys":72,"./baseFor":24}],26:[function(require,module,exports){
+var toObject = require('./toObject');
 
 /**
  * The base implementation of `get` without support for string paths
@@ -1495,8 +1494,8 @@ function baseGet(object, path, pathKey) {
 
 module.exports = baseGet;
 
-},{"./toObject":62}],27:[function(_dereq_,module,exports){
-var indexOfNaN = _dereq_('./indexOfNaN');
+},{"./toObject":62}],27:[function(require,module,exports){
+var indexOfNaN = require('./indexOfNaN');
 
 /**
  * The base implementation of `_.indexOf` without support for binary searches.
@@ -1524,10 +1523,10 @@ function baseIndexOf(array, value, fromIndex) {
 
 module.exports = baseIndexOf;
 
-},{"./indexOfNaN":53}],28:[function(_dereq_,module,exports){
-var baseIsEqualDeep = _dereq_('./baseIsEqualDeep'),
-    isObject = _dereq_('../lang/isObject'),
-    isObjectLike = _dereq_('./isObjectLike');
+},{"./indexOfNaN":53}],28:[function(require,module,exports){
+var baseIsEqualDeep = require('./baseIsEqualDeep'),
+    isObject = require('../lang/isObject'),
+    isObjectLike = require('./isObjectLike');
 
 /**
  * The base implementation of `_.isEqual` without support for `this` binding
@@ -1554,12 +1553,12 @@ function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
 
 module.exports = baseIsEqual;
 
-},{"../lang/isObject":68,"./baseIsEqualDeep":29,"./isObjectLike":59}],29:[function(_dereq_,module,exports){
-var equalArrays = _dereq_('./equalArrays'),
-    equalByTag = _dereq_('./equalByTag'),
-    equalObjects = _dereq_('./equalObjects'),
-    isArray = _dereq_('../lang/isArray'),
-    isTypedArray = _dereq_('../lang/isTypedArray');
+},{"../lang/isObject":68,"./baseIsEqualDeep":29,"./isObjectLike":59}],29:[function(require,module,exports){
+var equalArrays = require('./equalArrays'),
+    equalByTag = require('./equalByTag'),
+    equalObjects = require('./equalObjects'),
+    isArray = require('../lang/isArray'),
+    isTypedArray = require('../lang/isTypedArray');
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -1658,9 +1657,9 @@ function baseIsEqualDeep(object, other, equalFunc, customizer, isLoose, stackA, 
 
 module.exports = baseIsEqualDeep;
 
-},{"../lang/isArray":65,"../lang/isTypedArray":69,"./equalArrays":47,"./equalByTag":48,"./equalObjects":49}],30:[function(_dereq_,module,exports){
-var baseIsEqual = _dereq_('./baseIsEqual'),
-    toObject = _dereq_('./toObject');
+},{"../lang/isArray":65,"../lang/isTypedArray":69,"./equalArrays":47,"./equalByTag":48,"./equalObjects":49}],30:[function(require,module,exports){
+var baseIsEqual = require('./baseIsEqual'),
+    toObject = require('./toObject');
 
 /**
  * The base implementation of `_.isMatch` without support for callback
@@ -1712,9 +1711,9 @@ function baseIsMatch(object, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./baseIsEqual":28,"./toObject":62}],31:[function(_dereq_,module,exports){
-var baseEach = _dereq_('./baseEach'),
-    isArrayLike = _dereq_('./isArrayLike');
+},{"./baseIsEqual":28,"./toObject":62}],31:[function(require,module,exports){
+var baseEach = require('./baseEach'),
+    isArrayLike = require('./isArrayLike');
 
 /**
  * The base implementation of `_.map` without support for callback shorthands
@@ -1737,10 +1736,10 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-},{"./baseEach":22,"./isArrayLike":54}],32:[function(_dereq_,module,exports){
-var baseIsMatch = _dereq_('./baseIsMatch'),
-    getMatchData = _dereq_('./getMatchData'),
-    toObject = _dereq_('./toObject');
+},{"./baseEach":22,"./isArrayLike":54}],32:[function(require,module,exports){
+var baseIsMatch = require('./baseIsMatch'),
+    getMatchData = require('./getMatchData'),
+    toObject = require('./toObject');
 
 /**
  * The base implementation of `_.matches` which does not clone `source`.
@@ -1769,16 +1768,16 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./baseIsMatch":30,"./getMatchData":51,"./toObject":62}],33:[function(_dereq_,module,exports){
-var baseGet = _dereq_('./baseGet'),
-    baseIsEqual = _dereq_('./baseIsEqual'),
-    baseSlice = _dereq_('./baseSlice'),
-    isArray = _dereq_('../lang/isArray'),
-    isKey = _dereq_('./isKey'),
-    isStrictComparable = _dereq_('./isStrictComparable'),
-    last = _dereq_('../array/last'),
-    toObject = _dereq_('./toObject'),
-    toPath = _dereq_('./toPath');
+},{"./baseIsMatch":30,"./getMatchData":51,"./toObject":62}],33:[function(require,module,exports){
+var baseGet = require('./baseGet'),
+    baseIsEqual = require('./baseIsEqual'),
+    baseSlice = require('./baseSlice'),
+    isArray = require('../lang/isArray'),
+    isKey = require('./isKey'),
+    isStrictComparable = require('./isStrictComparable'),
+    last = require('../array/last'),
+    toObject = require('./toObject'),
+    toPath = require('./toPath');
 
 /**
  * The base implementation of `_.matchesProperty` which does not clone `srcValue`.
@@ -1816,7 +1815,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"../array/last":5,"../lang/isArray":65,"./baseGet":26,"./baseIsEqual":28,"./baseSlice":36,"./isKey":57,"./isStrictComparable":60,"./toObject":62,"./toPath":63}],34:[function(_dereq_,module,exports){
+},{"../array/last":5,"../lang/isArray":65,"./baseGet":26,"./baseIsEqual":28,"./baseSlice":36,"./isKey":57,"./isStrictComparable":60,"./toObject":62,"./toPath":63}],34:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -1832,9 +1831,9 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],35:[function(_dereq_,module,exports){
-var baseGet = _dereq_('./baseGet'),
-    toPath = _dereq_('./toPath');
+},{}],35:[function(require,module,exports){
+var baseGet = require('./baseGet'),
+    toPath = require('./toPath');
 
 /**
  * A specialized version of `baseProperty` which supports deep paths.
@@ -1853,7 +1852,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./baseGet":26,"./toPath":63}],36:[function(_dereq_,module,exports){
+},{"./baseGet":26,"./toPath":63}],36:[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -1887,7 +1886,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-},{}],37:[function(_dereq_,module,exports){
+},{}],37:[function(require,module,exports){
 /**
  * Converts `value` to a string if it's not one. An empty string is returned
  * for `null` or `undefined` values.
@@ -1902,8 +1901,8 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{}],38:[function(_dereq_,module,exports){
-var identity = _dereq_('../utility/identity');
+},{}],38:[function(require,module,exports){
+var identity = require('../utility/identity');
 
 /**
  * A specialized version of `baseCallback` which only supports `this` binding
@@ -1943,8 +1942,8 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-},{"../utility/identity":75}],39:[function(_dereq_,module,exports){
-var isObject = _dereq_('../lang/isObject');
+},{"../utility/identity":75}],39:[function(require,module,exports){
+var isObject = require('../lang/isObject');
 
 /**
  * Checks if `value` is in `cache` mimicking the return signature of
@@ -1964,8 +1963,8 @@ function cacheIndexOf(cache, value) {
 
 module.exports = cacheIndexOf;
 
-},{"../lang/isObject":68}],40:[function(_dereq_,module,exports){
-var isObject = _dereq_('../lang/isObject');
+},{"../lang/isObject":68}],40:[function(require,module,exports){
+var isObject = require('../lang/isObject');
 
 /**
  * Adds `value` to the cache.
@@ -1986,10 +1985,10 @@ function cachePush(value) {
 
 module.exports = cachePush;
 
-},{"../lang/isObject":68}],41:[function(_dereq_,module,exports){
-var bindCallback = _dereq_('./bindCallback'),
-    isIterateeCall = _dereq_('./isIterateeCall'),
-    restParam = _dereq_('../function/restParam');
+},{"../lang/isObject":68}],41:[function(require,module,exports){
+var bindCallback = require('./bindCallback'),
+    isIterateeCall = require('./isIterateeCall'),
+    restParam = require('../function/restParam');
 
 /**
  * Creates a `_.assign`, `_.defaults`, or `_.merge` function.
@@ -2029,10 +2028,10 @@ function createAssigner(assigner) {
 
 module.exports = createAssigner;
 
-},{"../function/restParam":10,"./bindCallback":38,"./isIterateeCall":56}],42:[function(_dereq_,module,exports){
-var getLength = _dereq_('./getLength'),
-    isLength = _dereq_('./isLength'),
-    toObject = _dereq_('./toObject');
+},{"../function/restParam":10,"./bindCallback":38,"./isIterateeCall":56}],42:[function(require,module,exports){
+var getLength = require('./getLength'),
+    isLength = require('./isLength'),
+    toObject = require('./toObject');
 
 /**
  * Creates a `baseEach` or `baseEachRight` function.
@@ -2062,8 +2061,8 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./getLength":50,"./isLength":58,"./toObject":62}],43:[function(_dereq_,module,exports){
-var toObject = _dereq_('./toObject');
+},{"./getLength":50,"./isLength":58,"./toObject":62}],43:[function(require,module,exports){
+var toObject = require('./toObject');
 
 /**
  * Creates a base function for `_.forIn` or `_.forInRight`.
@@ -2091,10 +2090,10 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{"./toObject":62}],44:[function(_dereq_,module,exports){
+},{"./toObject":62}],44:[function(require,module,exports){
 (function (global){
-var SetCache = _dereq_('./SetCache'),
-    getNative = _dereq_('./getNative');
+var SetCache = require('./SetCache'),
+    getNative = require('./getNative');
 
 /** Native method references. */
 var Set = getNative(global, 'Set');
@@ -2116,9 +2115,8 @@ function createCache(values) {
 module.exports = createCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{"./SetCache":11,"./getNative":52}],45:[function(_dereq_,module,exports){
-var restParam = _dereq_('../function/restParam');
+},{"./SetCache":11,"./getNative":52}],45:[function(require,module,exports){
+var restParam = require('../function/restParam');
 
 /**
  * Creates a `_.defaults` or `_.defaultsDeep` function.
@@ -2141,9 +2139,9 @@ function createDefaults(assigner, customizer) {
 
 module.exports = createDefaults;
 
-},{"../function/restParam":10}],46:[function(_dereq_,module,exports){
-var bindCallback = _dereq_('./bindCallback'),
-    isArray = _dereq_('../lang/isArray');
+},{"../function/restParam":10}],46:[function(require,module,exports){
+var bindCallback = require('./bindCallback'),
+    isArray = require('../lang/isArray');
 
 /**
  * Creates a function for `_.forEach` or `_.forEachRight`.
@@ -2163,8 +2161,8 @@ function createForEach(arrayFunc, eachFunc) {
 
 module.exports = createForEach;
 
-},{"../lang/isArray":65,"./bindCallback":38}],47:[function(_dereq_,module,exports){
-var arraySome = _dereq_('./arraySome');
+},{"../lang/isArray":65,"./bindCallback":38}],47:[function(require,module,exports){
+var arraySome = require('./arraySome');
 
 /**
  * A specialized version of `baseIsEqualDeep` for arrays with support for
@@ -2216,7 +2214,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
 
 module.exports = equalArrays;
 
-},{"./arraySome":15}],48:[function(_dereq_,module,exports){
+},{"./arraySome":15}],48:[function(require,module,exports){
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
     dateTag = '[object Date]',
@@ -2266,8 +2264,8 @@ function equalByTag(object, other, tag) {
 
 module.exports = equalByTag;
 
-},{}],49:[function(_dereq_,module,exports){
-var keys = _dereq_('../object/keys');
+},{}],49:[function(require,module,exports){
+var keys = require('../object/keys');
 
 /** Used for native method references. */
 var objectProto = Object.prototype;
@@ -2335,8 +2333,8 @@ function equalObjects(object, other, equalFunc, customizer, isLoose, stackA, sta
 
 module.exports = equalObjects;
 
-},{"../object/keys":72}],50:[function(_dereq_,module,exports){
-var baseProperty = _dereq_('./baseProperty');
+},{"../object/keys":72}],50:[function(require,module,exports){
+var baseProperty = require('./baseProperty');
 
 /**
  * Gets the "length" property value of `object`.
@@ -2352,9 +2350,9 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-},{"./baseProperty":34}],51:[function(_dereq_,module,exports){
-var isStrictComparable = _dereq_('./isStrictComparable'),
-    pairs = _dereq_('../object/pairs');
+},{"./baseProperty":34}],51:[function(require,module,exports){
+var isStrictComparable = require('./isStrictComparable'),
+    pairs = require('../object/pairs');
 
 /**
  * Gets the propery names, values, and compare flags of `object`.
@@ -2375,8 +2373,8 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"../object/pairs":74,"./isStrictComparable":60}],52:[function(_dereq_,module,exports){
-var isNative = _dereq_('../lang/isNative');
+},{"../object/pairs":74,"./isStrictComparable":60}],52:[function(require,module,exports){
+var isNative = require('../lang/isNative');
 
 /**
  * Gets the native function at `key` of `object`.
@@ -2393,7 +2391,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"../lang/isNative":67}],53:[function(_dereq_,module,exports){
+},{"../lang/isNative":67}],53:[function(require,module,exports){
 /**
  * Gets the index at which the first occurrence of `NaN` is found in `array`.
  *
@@ -2418,9 +2416,9 @@ function indexOfNaN(array, fromIndex, fromRight) {
 
 module.exports = indexOfNaN;
 
-},{}],54:[function(_dereq_,module,exports){
-var getLength = _dereq_('./getLength'),
-    isLength = _dereq_('./isLength');
+},{}],54:[function(require,module,exports){
+var getLength = require('./getLength'),
+    isLength = require('./isLength');
 
 /**
  * Checks if `value` is array-like.
@@ -2435,7 +2433,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./getLength":50,"./isLength":58}],55:[function(_dereq_,module,exports){
+},{"./getLength":50,"./isLength":58}],55:[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -2461,10 +2459,10 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],56:[function(_dereq_,module,exports){
-var isArrayLike = _dereq_('./isArrayLike'),
-    isIndex = _dereq_('./isIndex'),
-    isObject = _dereq_('../lang/isObject');
+},{}],56:[function(require,module,exports){
+var isArrayLike = require('./isArrayLike'),
+    isIndex = require('./isIndex'),
+    isObject = require('../lang/isObject');
 
 /**
  * Checks if the provided arguments are from an iteratee call.
@@ -2491,9 +2489,9 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
-},{"../lang/isObject":68,"./isArrayLike":54,"./isIndex":55}],57:[function(_dereq_,module,exports){
-var isArray = _dereq_('../lang/isArray'),
-    toObject = _dereq_('./toObject');
+},{"../lang/isObject":68,"./isArrayLike":54,"./isIndex":55}],57:[function(require,module,exports){
+var isArray = require('../lang/isArray'),
+    toObject = require('./toObject');
 
 /** Used to match property names within property paths. */
 var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\n\\]|\\.)*?\1)\]/,
@@ -2521,7 +2519,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"../lang/isArray":65,"./toObject":62}],58:[function(_dereq_,module,exports){
+},{"../lang/isArray":65,"./toObject":62}],58:[function(require,module,exports){
 /**
  * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
@@ -2543,7 +2541,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],59:[function(_dereq_,module,exports){
+},{}],59:[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -2557,8 +2555,8 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],60:[function(_dereq_,module,exports){
-var isObject = _dereq_('../lang/isObject');
+},{}],60:[function(require,module,exports){
+var isObject = require('../lang/isObject');
 
 /**
  * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
@@ -2574,12 +2572,12 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"../lang/isObject":68}],61:[function(_dereq_,module,exports){
-var isArguments = _dereq_('../lang/isArguments'),
-    isArray = _dereq_('../lang/isArray'),
-    isIndex = _dereq_('./isIndex'),
-    isLength = _dereq_('./isLength'),
-    keysIn = _dereq_('../object/keysIn');
+},{"../lang/isObject":68}],61:[function(require,module,exports){
+var isArguments = require('../lang/isArguments'),
+    isArray = require('../lang/isArray'),
+    isIndex = require('./isIndex'),
+    isLength = require('./isLength'),
+    keysIn = require('../object/keysIn');
 
 /** Used for native method references. */
 var objectProto = Object.prototype;
@@ -2617,8 +2615,8 @@ function shimKeys(object) {
 
 module.exports = shimKeys;
 
-},{"../lang/isArguments":64,"../lang/isArray":65,"../object/keysIn":73,"./isIndex":55,"./isLength":58}],62:[function(_dereq_,module,exports){
-var isObject = _dereq_('../lang/isObject');
+},{"../lang/isArguments":64,"../lang/isArray":65,"../object/keysIn":73,"./isIndex":55,"./isLength":58}],62:[function(require,module,exports){
+var isObject = require('../lang/isObject');
 
 /**
  * Converts `value` to an object if it's not one.
@@ -2633,9 +2631,9 @@ function toObject(value) {
 
 module.exports = toObject;
 
-},{"../lang/isObject":68}],63:[function(_dereq_,module,exports){
-var baseToString = _dereq_('./baseToString'),
-    isArray = _dereq_('../lang/isArray');
+},{"../lang/isObject":68}],63:[function(require,module,exports){
+var baseToString = require('./baseToString'),
+    isArray = require('../lang/isArray');
 
 /** Used to match property names within property paths. */
 var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\n\\]|\\.)*?)\2)\]/g;
@@ -2663,9 +2661,9 @@ function toPath(value) {
 
 module.exports = toPath;
 
-},{"../lang/isArray":65,"./baseToString":37}],64:[function(_dereq_,module,exports){
-var isArrayLike = _dereq_('../internal/isArrayLike'),
-    isObjectLike = _dereq_('../internal/isObjectLike');
+},{"../lang/isArray":65,"./baseToString":37}],64:[function(require,module,exports){
+var isArrayLike = require('../internal/isArrayLike'),
+    isObjectLike = require('../internal/isObjectLike');
 
 /** Used for native method references. */
 var objectProto = Object.prototype;
@@ -2699,10 +2697,10 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{"../internal/isArrayLike":54,"../internal/isObjectLike":59}],65:[function(_dereq_,module,exports){
-var getNative = _dereq_('../internal/getNative'),
-    isLength = _dereq_('../internal/isLength'),
-    isObjectLike = _dereq_('../internal/isObjectLike');
+},{"../internal/isArrayLike":54,"../internal/isObjectLike":59}],65:[function(require,module,exports){
+var getNative = require('../internal/getNative'),
+    isLength = require('../internal/isLength'),
+    isObjectLike = require('../internal/isObjectLike');
 
 /** `Object#toString` result references. */
 var arrayTag = '[object Array]';
@@ -2741,8 +2739,8 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-},{"../internal/getNative":52,"../internal/isLength":58,"../internal/isObjectLike":59}],66:[function(_dereq_,module,exports){
-var isObject = _dereq_('./isObject');
+},{"../internal/getNative":52,"../internal/isLength":58,"../internal/isObjectLike":59}],66:[function(require,module,exports){
+var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
 var funcTag = '[object Function]';
@@ -2781,9 +2779,9 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./isObject":68}],67:[function(_dereq_,module,exports){
-var isFunction = _dereq_('./isFunction'),
-    isObjectLike = _dereq_('../internal/isObjectLike');
+},{"./isObject":68}],67:[function(require,module,exports){
+var isFunction = require('./isFunction'),
+    isObjectLike = require('../internal/isObjectLike');
 
 /** Used to detect host constructors (Safari > 5). */
 var reIsHostCtor = /^\[object .+?Constructor\]$/;
@@ -2831,7 +2829,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{"../internal/isObjectLike":59,"./isFunction":66}],68:[function(_dereq_,module,exports){
+},{"../internal/isObjectLike":59,"./isFunction":66}],68:[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -2861,9 +2859,9 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],69:[function(_dereq_,module,exports){
-var isLength = _dereq_('../internal/isLength'),
-    isObjectLike = _dereq_('../internal/isObjectLike');
+},{}],69:[function(require,module,exports){
+var isLength = require('../internal/isLength'),
+    isObjectLike = require('../internal/isObjectLike');
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -2937,10 +2935,10 @@ function isTypedArray(value) {
 
 module.exports = isTypedArray;
 
-},{"../internal/isLength":58,"../internal/isObjectLike":59}],70:[function(_dereq_,module,exports){
-var assignWith = _dereq_('../internal/assignWith'),
-    baseAssign = _dereq_('../internal/baseAssign'),
-    createAssigner = _dereq_('../internal/createAssigner');
+},{"../internal/isLength":58,"../internal/isObjectLike":59}],70:[function(require,module,exports){
+var assignWith = require('../internal/assignWith'),
+    baseAssign = require('../internal/baseAssign'),
+    createAssigner = require('../internal/createAssigner');
 
 /**
  * Assigns own enumerable properties of source object(s) to the destination
@@ -2982,10 +2980,10 @@ var assign = createAssigner(function(object, source, customizer) {
 
 module.exports = assign;
 
-},{"../internal/assignWith":17,"../internal/baseAssign":18,"../internal/createAssigner":41}],71:[function(_dereq_,module,exports){
-var assign = _dereq_('./assign'),
-    assignDefaults = _dereq_('../internal/assignDefaults'),
-    createDefaults = _dereq_('../internal/createDefaults');
+},{"../internal/assignWith":17,"../internal/baseAssign":18,"../internal/createAssigner":41}],71:[function(require,module,exports){
+var assign = require('./assign'),
+    assignDefaults = require('../internal/assignDefaults'),
+    createDefaults = require('../internal/createDefaults');
 
 /**
  * Assigns own enumerable properties of source object(s) to the destination
@@ -3009,11 +3007,11 @@ var defaults = createDefaults(assign, assignDefaults);
 
 module.exports = defaults;
 
-},{"../internal/assignDefaults":16,"../internal/createDefaults":45,"./assign":70}],72:[function(_dereq_,module,exports){
-var getNative = _dereq_('../internal/getNative'),
-    isArrayLike = _dereq_('../internal/isArrayLike'),
-    isObject = _dereq_('../lang/isObject'),
-    shimKeys = _dereq_('../internal/shimKeys');
+},{"../internal/assignDefaults":16,"../internal/createDefaults":45,"./assign":70}],72:[function(require,module,exports){
+var getNative = require('../internal/getNative'),
+    isArrayLike = require('../internal/isArrayLike'),
+    isObject = require('../lang/isObject'),
+    shimKeys = require('../internal/shimKeys');
 
 /* Native method references for those with the same name as other `lodash` methods. */
 var nativeKeys = getNative(Object, 'keys');
@@ -3056,12 +3054,12 @@ var keys = !nativeKeys ? shimKeys : function(object) {
 
 module.exports = keys;
 
-},{"../internal/getNative":52,"../internal/isArrayLike":54,"../internal/shimKeys":61,"../lang/isObject":68}],73:[function(_dereq_,module,exports){
-var isArguments = _dereq_('../lang/isArguments'),
-    isArray = _dereq_('../lang/isArray'),
-    isIndex = _dereq_('../internal/isIndex'),
-    isLength = _dereq_('../internal/isLength'),
-    isObject = _dereq_('../lang/isObject');
+},{"../internal/getNative":52,"../internal/isArrayLike":54,"../internal/shimKeys":61,"../lang/isObject":68}],73:[function(require,module,exports){
+var isArguments = require('../lang/isArguments'),
+    isArray = require('../lang/isArray'),
+    isIndex = require('../internal/isIndex'),
+    isLength = require('../internal/isLength'),
+    isObject = require('../lang/isObject');
 
 /** Used for native method references. */
 var objectProto = Object.prototype;
@@ -3122,9 +3120,9 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"../internal/isIndex":55,"../internal/isLength":58,"../lang/isArguments":64,"../lang/isArray":65,"../lang/isObject":68}],74:[function(_dereq_,module,exports){
-var keys = _dereq_('./keys'),
-    toObject = _dereq_('../internal/toObject');
+},{"../internal/isIndex":55,"../internal/isLength":58,"../lang/isArguments":64,"../lang/isArray":65,"../lang/isObject":68}],74:[function(require,module,exports){
+var keys = require('./keys'),
+    toObject = require('../internal/toObject');
 
 /**
  * Creates a two dimensional array of the key-value pairs for `object`,
@@ -3157,7 +3155,7 @@ function pairs(object) {
 
 module.exports = pairs;
 
-},{"../internal/toObject":62,"./keys":72}],75:[function(_dereq_,module,exports){
+},{"../internal/toObject":62,"./keys":72}],75:[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -3179,10 +3177,10 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],76:[function(_dereq_,module,exports){
-var baseProperty = _dereq_('../internal/baseProperty'),
-    basePropertyDeep = _dereq_('../internal/basePropertyDeep'),
-    isKey = _dereq_('../internal/isKey');
+},{}],76:[function(require,module,exports){
+var baseProperty = require('../internal/baseProperty'),
+    basePropertyDeep = require('../internal/basePropertyDeep'),
+    isKey = require('../internal/isKey');
 
 /**
  * Creates a function that returns the property value at `path` on a
@@ -3212,22 +3210,22 @@ function property(path) {
 
 module.exports = property;
 
-},{"../internal/baseProperty":34,"../internal/basePropertyDeep":35,"../internal/isKey":57}],77:[function(_dereq_,module,exports){
-var createElement = _dereq_("./vdom/create-element.js")
+},{"../internal/baseProperty":34,"../internal/basePropertyDeep":35,"../internal/isKey":57}],77:[function(require,module,exports){
+var createElement = require("./vdom/create-element.js")
 
 module.exports = createElement
 
-},{"./vdom/create-element.js":89}],78:[function(_dereq_,module,exports){
-var diff = _dereq_("./vtree/diff.js")
+},{"./vdom/create-element.js":89}],78:[function(require,module,exports){
+var diff = require("./vtree/diff.js")
 
 module.exports = diff
 
-},{"./vtree/diff.js":112}],79:[function(_dereq_,module,exports){
-var h = _dereq_("./virtual-hyperscript/index.js")
+},{"./vtree/diff.js":112}],79:[function(require,module,exports){
+var h = require("./virtual-hyperscript/index.js")
 
 module.exports = h
 
-},{"./virtual-hyperscript/index.js":97}],80:[function(_dereq_,module,exports){
+},{"./virtual-hyperscript/index.js":97}],80:[function(require,module,exports){
 /*!
  * Cross-Browser Split 1.1.1
  * Copyright 2007-2012 Steven Levithan <stevenlevithan.com>
@@ -3335,10 +3333,10 @@ module.exports = (function split(undef) {
   return self;
 })();
 
-},{}],81:[function(_dereq_,module,exports){
+},{}],81:[function(require,module,exports){
 'use strict';
 
-var OneVersionConstraint = _dereq_('individual/one-version');
+var OneVersionConstraint = require('individual/one-version');
 
 var MY_VERSION = '7';
 OneVersionConstraint('ev-store', MY_VERSION);
@@ -3357,7 +3355,7 @@ function EvStore(elem) {
     return hash;
 }
 
-},{"individual/one-version":83}],82:[function(_dereq_,module,exports){
+},{"individual/one-version":83}],82:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -3380,11 +3378,10 @@ function Individual(key, value) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{}],83:[function(_dereq_,module,exports){
+},{}],83:[function(require,module,exports){
 'use strict';
 
-var Individual = _dereq_('./index.js');
+var Individual = require('./index.js');
 
 module.exports = OneVersion;
 
@@ -3405,11 +3402,11 @@ function OneVersion(moduleName, version, defaultValue) {
     return Individual(key, defaultValue);
 }
 
-},{"./index.js":82}],84:[function(_dereq_,module,exports){
+},{"./index.js":82}],84:[function(require,module,exports){
 (function (global){
 var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
-var minDoc = _dereq_('min-document');
+var minDoc = require('min-document');
 
 if (typeof document !== 'undefined') {
     module.exports = document;
@@ -3424,15 +3421,14 @@ if (typeof document !== 'undefined') {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{"min-document":1}],85:[function(_dereq_,module,exports){
+},{"min-document":1}],85:[function(require,module,exports){
 "use strict";
 
 module.exports = function isObject(x) {
 	return typeof x === "object" && x !== null;
 };
 
-},{}],86:[function(_dereq_,module,exports){
+},{}],86:[function(require,module,exports){
 var nativeIsArray = Array.isArray
 var toString = Object.prototype.toString
 
@@ -3442,14 +3438,14 @@ function isArray(obj) {
     return toString.call(obj) === "[object Array]"
 }
 
-},{}],87:[function(_dereq_,module,exports){
-var patch = _dereq_("./vdom/patch.js")
+},{}],87:[function(require,module,exports){
+var patch = require("./vdom/patch.js")
 
 module.exports = patch
 
-},{"./vdom/patch.js":92}],88:[function(_dereq_,module,exports){
-var isObject = _dereq_("is-object")
-var isHook = _dereq_("../vnode/is-vhook.js")
+},{"./vdom/patch.js":92}],88:[function(require,module,exports){
+var isObject = require("is-object")
+var isHook = require("../vnode/is-vhook.js")
 
 module.exports = applyProperties
 
@@ -3546,15 +3542,15 @@ function getPrototype(value) {
     }
 }
 
-},{"../vnode/is-vhook.js":103,"is-object":85}],89:[function(_dereq_,module,exports){
-var document = _dereq_("global/document")
+},{"../vnode/is-vhook.js":103,"is-object":85}],89:[function(require,module,exports){
+var document = require("global/document")
 
-var applyProperties = _dereq_("./apply-properties")
+var applyProperties = require("./apply-properties")
 
-var isVNode = _dereq_("../vnode/is-vnode.js")
-var isVText = _dereq_("../vnode/is-vtext.js")
-var isWidget = _dereq_("../vnode/is-widget.js")
-var handleThunk = _dereq_("../vnode/handle-thunk.js")
+var isVNode = require("../vnode/is-vnode.js")
+var isVText = require("../vnode/is-vtext.js")
+var isWidget = require("../vnode/is-widget.js")
+var handleThunk = require("../vnode/handle-thunk.js")
 
 module.exports = createElement
 
@@ -3594,7 +3590,7 @@ function createElement(vnode, opts) {
     return node
 }
 
-},{"../vnode/handle-thunk.js":101,"../vnode/is-vnode.js":104,"../vnode/is-vtext.js":105,"../vnode/is-widget.js":106,"./apply-properties":88,"global/document":84}],90:[function(_dereq_,module,exports){
+},{"../vnode/handle-thunk.js":101,"../vnode/is-vnode.js":104,"../vnode/is-vtext.js":105,"../vnode/is-widget.js":106,"./apply-properties":88,"global/document":84}],90:[function(require,module,exports){
 // Maps a virtual DOM tree onto a real DOM tree in an efficient manner.
 // We don't want to read all of the DOM nodes in the tree so we use
 // the in-order tree indexing to eliminate recursion down certain branches.
@@ -3681,13 +3677,13 @@ function ascending(a, b) {
     return a > b ? 1 : -1
 }
 
-},{}],91:[function(_dereq_,module,exports){
-var applyProperties = _dereq_("./apply-properties")
+},{}],91:[function(require,module,exports){
+var applyProperties = require("./apply-properties")
 
-var isWidget = _dereq_("../vnode/is-widget.js")
-var VPatch = _dereq_("../vnode/vpatch.js")
+var isWidget = require("../vnode/is-widget.js")
+var VPatch = require("../vnode/vpatch.js")
 
-var updateWidget = _dereq_("./update-widget")
+var updateWidget = require("./update-widget")
 
 module.exports = applyPatch
 
@@ -3834,13 +3830,13 @@ function replaceRoot(oldRoot, newRoot) {
     return newRoot;
 }
 
-},{"../vnode/is-widget.js":106,"../vnode/vpatch.js":109,"./apply-properties":88,"./update-widget":93}],92:[function(_dereq_,module,exports){
-var document = _dereq_("global/document")
-var isArray = _dereq_("x-is-array")
+},{"../vnode/is-widget.js":106,"../vnode/vpatch.js":109,"./apply-properties":88,"./update-widget":93}],92:[function(require,module,exports){
+var document = require("global/document")
+var isArray = require("x-is-array")
 
-var render = _dereq_("./create-element")
-var domIndex = _dereq_("./dom-index")
-var patchOp = _dereq_("./patch-op")
+var render = require("./create-element")
+var domIndex = require("./dom-index")
+var patchOp = require("./patch-op")
 module.exports = patch
 
 function patch(rootNode, patches, renderOptions) {
@@ -3916,8 +3912,8 @@ function patchIndices(patches) {
     return indices
 }
 
-},{"./create-element":89,"./dom-index":90,"./patch-op":91,"global/document":84,"x-is-array":86}],93:[function(_dereq_,module,exports){
-var isWidget = _dereq_("../vnode/is-widget.js")
+},{"./create-element":89,"./dom-index":90,"./patch-op":91,"global/document":84,"x-is-array":86}],93:[function(require,module,exports){
+var isWidget = require("../vnode/is-widget.js")
 
 module.exports = updateWidget
 
@@ -3933,7 +3929,7 @@ function updateWidget(a, b) {
     return false
 }
 
-},{"../vnode/is-widget.js":106}],94:[function(_dereq_,module,exports){
+},{"../vnode/is-widget.js":106}],94:[function(require,module,exports){
 'use strict';
 
 module.exports = AttributeHook;
@@ -3970,10 +3966,10 @@ AttributeHook.prototype.unhook = function (node, prop, next) {
 
 AttributeHook.prototype.type = 'AttributeHook';
 
-},{}],95:[function(_dereq_,module,exports){
+},{}],95:[function(require,module,exports){
 'use strict';
 
-var EvStore = _dereq_('ev-store');
+var EvStore = require('ev-store');
 
 module.exports = EvHook;
 
@@ -3999,7 +3995,7 @@ EvHook.prototype.unhook = function(node, propertyName) {
     es[propName] = undefined;
 };
 
-},{"ev-store":81}],96:[function(_dereq_,module,exports){
+},{"ev-store":81}],96:[function(require,module,exports){
 'use strict';
 
 module.exports = SoftSetHook;
@@ -4018,22 +4014,22 @@ SoftSetHook.prototype.hook = function (node, propertyName) {
     }
 };
 
-},{}],97:[function(_dereq_,module,exports){
+},{}],97:[function(require,module,exports){
 'use strict';
 
-var isArray = _dereq_('x-is-array');
+var isArray = require('x-is-array');
 
-var VNode = _dereq_('../vnode/vnode.js');
-var VText = _dereq_('../vnode/vtext.js');
-var isVNode = _dereq_('../vnode/is-vnode');
-var isVText = _dereq_('../vnode/is-vtext');
-var isWidget = _dereq_('../vnode/is-widget');
-var isHook = _dereq_('../vnode/is-vhook');
-var isVThunk = _dereq_('../vnode/is-thunk');
+var VNode = require('../vnode/vnode.js');
+var VText = require('../vnode/vtext.js');
+var isVNode = require('../vnode/is-vnode');
+var isVText = require('../vnode/is-vtext');
+var isWidget = require('../vnode/is-widget');
+var isHook = require('../vnode/is-vhook');
+var isVThunk = require('../vnode/is-thunk');
 
-var parseTag = _dereq_('./parse-tag.js');
-var softSetHook = _dereq_('./hooks/soft-set-hook.js');
-var evHook = _dereq_('./hooks/ev-hook.js');
+var parseTag = require('./parse-tag.js');
+var softSetHook = require('./hooks/soft-set-hook.js');
+var evHook = require('./hooks/ev-hook.js');
 
 module.exports = h;
 
@@ -4157,10 +4153,10 @@ function errorString(obj) {
     }
 }
 
-},{"../vnode/is-thunk":102,"../vnode/is-vhook":103,"../vnode/is-vnode":104,"../vnode/is-vtext":105,"../vnode/is-widget":106,"../vnode/vnode.js":108,"../vnode/vtext.js":110,"./hooks/ev-hook.js":95,"./hooks/soft-set-hook.js":96,"./parse-tag.js":98,"x-is-array":86}],98:[function(_dereq_,module,exports){
+},{"../vnode/is-thunk":102,"../vnode/is-vhook":103,"../vnode/is-vnode":104,"../vnode/is-vtext":105,"../vnode/is-widget":106,"../vnode/vnode.js":108,"../vnode/vtext.js":110,"./hooks/ev-hook.js":95,"./hooks/soft-set-hook.js":96,"./parse-tag.js":98,"x-is-array":86}],98:[function(require,module,exports){
 'use strict';
 
-var split = _dereq_('browser-split');
+var split = require('browser-split');
 
 var classIdSplit = /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/;
 var notClassId = /^\.|#/;
@@ -4213,7 +4209,7 @@ function parseTag(tag, props) {
     return props.namespace ? tagName : tagName.toUpperCase();
 }
 
-},{"browser-split":80}],99:[function(_dereq_,module,exports){
+},{"browser-split":80}],99:[function(require,module,exports){
 'use strict';
 
 var DEFAULT_NAMESPACE = null;
@@ -4528,16 +4524,16 @@ function SVGAttributeNamespace(value) {
   }
 }
 
-},{}],100:[function(_dereq_,module,exports){
+},{}],100:[function(require,module,exports){
 'use strict';
 
-var isArray = _dereq_('x-is-array');
+var isArray = require('x-is-array');
 
-var h = _dereq_('./index.js');
+var h = require('./index.js');
 
 
-var SVGAttributeNamespace = _dereq_('./svg-attribute-namespace');
-var attributeHook = _dereq_('./hooks/attribute-hook');
+var SVGAttributeNamespace = require('./svg-attribute-namespace');
+var attributeHook = require('./hooks/attribute-hook');
 
 var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
@@ -4592,11 +4588,11 @@ function isChildren(x) {
     return typeof x === 'string' || isArray(x);
 }
 
-},{"./hooks/attribute-hook":94,"./index.js":97,"./svg-attribute-namespace":99,"x-is-array":86}],101:[function(_dereq_,module,exports){
-var isVNode = _dereq_("./is-vnode")
-var isVText = _dereq_("./is-vtext")
-var isWidget = _dereq_("./is-widget")
-var isThunk = _dereq_("./is-thunk")
+},{"./hooks/attribute-hook":94,"./index.js":97,"./svg-attribute-namespace":99,"x-is-array":86}],101:[function(require,module,exports){
+var isVNode = require("./is-vnode")
+var isVText = require("./is-vtext")
+var isWidget = require("./is-widget")
+var isThunk = require("./is-thunk")
 
 module.exports = handleThunk
 
@@ -4634,14 +4630,14 @@ function renderThunk(thunk, previous) {
     return renderedThunk
 }
 
-},{"./is-thunk":102,"./is-vnode":104,"./is-vtext":105,"./is-widget":106}],102:[function(_dereq_,module,exports){
+},{"./is-thunk":102,"./is-vnode":104,"./is-vtext":105,"./is-widget":106}],102:[function(require,module,exports){
 module.exports = isThunk
 
 function isThunk(t) {
     return t && t.type === "Thunk"
 }
 
-},{}],103:[function(_dereq_,module,exports){
+},{}],103:[function(require,module,exports){
 module.exports = isHook
 
 function isHook(hook) {
@@ -4650,8 +4646,8 @@ function isHook(hook) {
        typeof hook.unhook === "function" && !hook.hasOwnProperty("unhook"))
 }
 
-},{}],104:[function(_dereq_,module,exports){
-var version = _dereq_("./version")
+},{}],104:[function(require,module,exports){
+var version = require("./version")
 
 module.exports = isVirtualNode
 
@@ -4659,8 +4655,8 @@ function isVirtualNode(x) {
     return x && x.type === "VirtualNode" && x.version === version
 }
 
-},{"./version":107}],105:[function(_dereq_,module,exports){
-var version = _dereq_("./version")
+},{"./version":107}],105:[function(require,module,exports){
+var version = require("./version")
 
 module.exports = isVirtualText
 
@@ -4668,22 +4664,22 @@ function isVirtualText(x) {
     return x && x.type === "VirtualText" && x.version === version
 }
 
-},{"./version":107}],106:[function(_dereq_,module,exports){
+},{"./version":107}],106:[function(require,module,exports){
 module.exports = isWidget
 
 function isWidget(w) {
     return w && w.type === "Widget"
 }
 
-},{}],107:[function(_dereq_,module,exports){
+},{}],107:[function(require,module,exports){
 module.exports = "2"
 
-},{}],108:[function(_dereq_,module,exports){
-var version = _dereq_("./version")
-var isVNode = _dereq_("./is-vnode")
-var isWidget = _dereq_("./is-widget")
-var isThunk = _dereq_("./is-thunk")
-var isVHook = _dereq_("./is-vhook")
+},{}],108:[function(require,module,exports){
+var version = require("./version")
+var isVNode = require("./is-vnode")
+var isWidget = require("./is-widget")
+var isThunk = require("./is-thunk")
+var isVHook = require("./is-vhook")
 
 module.exports = VirtualNode
 
@@ -4752,8 +4748,8 @@ function VirtualNode(tagName, properties, children, key, namespace) {
 VirtualNode.prototype.version = version
 VirtualNode.prototype.type = "VirtualNode"
 
-},{"./is-thunk":102,"./is-vhook":103,"./is-vnode":104,"./is-widget":106,"./version":107}],109:[function(_dereq_,module,exports){
-var version = _dereq_("./version")
+},{"./is-thunk":102,"./is-vhook":103,"./is-vnode":104,"./is-widget":106,"./version":107}],109:[function(require,module,exports){
+var version = require("./version")
 
 VirtualPatch.NONE = 0
 VirtualPatch.VTEXT = 1
@@ -4776,8 +4772,8 @@ function VirtualPatch(type, vNode, patch) {
 VirtualPatch.prototype.version = version
 VirtualPatch.prototype.type = "VirtualPatch"
 
-},{"./version":107}],110:[function(_dereq_,module,exports){
-var version = _dereq_("./version")
+},{"./version":107}],110:[function(require,module,exports){
+var version = require("./version")
 
 module.exports = VirtualText
 
@@ -4788,9 +4784,9 @@ function VirtualText(text) {
 VirtualText.prototype.version = version
 VirtualText.prototype.type = "VirtualText"
 
-},{"./version":107}],111:[function(_dereq_,module,exports){
-var isObject = _dereq_("is-object")
-var isHook = _dereq_("../vnode/is-vhook")
+},{"./version":107}],111:[function(require,module,exports){
+var isObject = require("is-object")
+var isHook = require("../vnode/is-vhook")
 
 module.exports = diffProps
 
@@ -4848,17 +4844,17 @@ function getPrototype(value) {
   }
 }
 
-},{"../vnode/is-vhook":103,"is-object":85}],112:[function(_dereq_,module,exports){
-var isArray = _dereq_("x-is-array")
+},{"../vnode/is-vhook":103,"is-object":85}],112:[function(require,module,exports){
+var isArray = require("x-is-array")
 
-var VPatch = _dereq_("../vnode/vpatch")
-var isVNode = _dereq_("../vnode/is-vnode")
-var isVText = _dereq_("../vnode/is-vtext")
-var isWidget = _dereq_("../vnode/is-widget")
-var isThunk = _dereq_("../vnode/is-thunk")
-var handleThunk = _dereq_("../vnode/handle-thunk")
+var VPatch = require("../vnode/vpatch")
+var isVNode = require("../vnode/is-vnode")
+var isVText = require("../vnode/is-vtext")
+var isWidget = require("../vnode/is-widget")
+var isThunk = require("../vnode/is-thunk")
+var handleThunk = require("../vnode/handle-thunk")
 
-var diffProps = _dereq_("./diff-props")
+var diffProps = require("./diff-props")
 
 module.exports = diff
 
@@ -5277,169 +5273,149 @@ function appendPatch(apply, patch) {
     }
 }
 
-},{"../vnode/handle-thunk":101,"../vnode/is-thunk":102,"../vnode/is-vnode":104,"../vnode/is-vtext":105,"../vnode/is-widget":106,"../vnode/vpatch":109,"./diff-props":111,"x-is-array":86}],113:[function(_dereq_,module,exports){
-"use strict";
+},{"../vnode/handle-thunk":101,"../vnode/is-thunk":102,"../vnode/is-vnode":104,"../vnode/is-vtext":105,"../vnode/is-widget":106,"../vnode/vpatch":109,"./diff-props":111,"x-is-array":86}],113:[function(require,module,exports){
+var Bezier = require('./bezier');
+var Vector = require('./vector');
+var Utils = require('./utils');
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var Anchor = function() {};
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Anchor.prototype = {
 
-var _bezier = _dereq_("./bezier");
+  type: "anchor",
 
-var _bezier2 = _interopRequireDefault(_bezier);
+  add: function(vec) {
+    var a = this.copy();
+    if(a.vec1) a.vec1 = a.vec1.add(vec);
+    if(a.vec2) a.vec2 = a.vec2.add(vec);
+    if(a.vec3) a.vec3 = a.vec3.add(vec);
+    return a;
+  },
 
-var _vector = _dereq_("./vector");
+  sub: function(vec) {
+    var a = this.copy();
+    if(a.vec1) a.vec1 = a.vec1.sub(vec);
+    if(a.vec2) a.vec2 = a.vec2.sub(vec);
+    if(a.vec3) a.vec3 = a.vec3.sub(vec);
+    return a;
+  },
 
-var _vector2 = _interopRequireDefault(_vector);
+  multiply: function(scalar) {
+    var a = this.copy();
+    if(a.vec1) a.vec1 = a.vec1.multiply(scalar);
+    if(a.vec2) a.vec2 = a.vec2.multiply(scalar);
+    if(a.vec3) a.vec3 = a.vec3.multiply(scalar);
+    return a;
+  },
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  copy: function() {
+    var a = new Anchor();
+    a.command = this.command;
+    if(this.vec1) a.vec1 = this.vec1.copy();
+    if(this.vec2) a.vec2 = this.vec2.copy();
+    if(this.vec3) a.vec3 = this.vec3.copy();
+    return a;
+  },
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  setMove: function(x, y) {
+    this.command = 'move';
+    if (x instanceof Vector) {
+      this.vec1 = x;
+    } else {
+      this.vec1 = new Vector(x, y);
+    }
+    return this;
+  },
 
-var Anchor = (function () {
-  function Anchor() {
-    _classCallCheck(this, Anchor);
+  setLine: function(x, y) {
+    this.command = 'line';
+    if (x instanceof Vector) {
+      this.vec1 = x;
+    } else {
+      this.vec1 = new Vector(x, y);
+    }
+    return this;
+  },
+
+  setCurve: function(a, b, c, d, e, f) {
+    // cubic bezier with two control points
+    if(typeof f !== 'undefined') {
+      this.command = 'cubic';
+      this.vec1 = new Vector(a, b);
+      this.vec2 = new Vector(c, d);
+      this.vec3 = new Vector(e, f);
+    }
+
+    // quad bezier with one control point
+    else {
+      this.command = 'quad';
+      this.vec1 = new Vector(a, b);
+      this.vec2 = new Vector(c, d);
+    }
+    return this;
+  },
+
+  setClose: function() {
+    this.command = 'close';
+    return this;
+  },
+
+  length: function() {
+    if(this.command == 'move') {
+      return 0;
+    }
+    else if(this.command == 'line') {
+      return this.vec1.length();
+    }
+    else if(this.command == 'quad') {
+      return new Bezier(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y).length();
+    }
+    else if(this.command == 'cubic') {
+      return new Bezier(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y, this.vec3.x, this.vec3.y).length();
+    }
+    else {
+      throw new Error("Cannot compute length for this type of anchor")
+    }
+  },
+
+  vectorAt: function(scalar) {
+
+    if(scalar > 1) scalar = 1;
+    if(scalar < 0) scalar = 0;
+
+    var ax, bx, cx;
+    var ay, by, cy;
+    var tSquared, tDoubled, tCubed;
+    var dx, dy;
+
+    if(this.command == 'line') {
+      return new Vector(this.vec1.x, this.vec1.y).multiply(scalar)
+    }
+    else if(this.command == 'quad') {
+      return new Bezier(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y).get(scalar);
+    }
+    else if(this.command == 'cubic') {
+      return new Bezier(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y, this.vec3.x, this.vec3.y).get(scalar);
+    }
+    else {
+      throw new Error("Cannot compute vectorAt for this type of anchor")
+    }
   }
 
-  _createClass(Anchor, [{
-    key: "add",
-    value: function add(vec) {
-      var a = this.copy();
-      if (a.vec1) a.vec1 = a.vec1.add(vec);
-      if (a.vec2) a.vec2 = a.vec2.add(vec);
-      if (a.vec3) a.vec3 = a.vec3.add(vec);
-      return a;
-    }
-  }, {
-    key: "sub",
-    value: function sub(vec) {
-      var a = this.copy();
-      if (a.vec1) a.vec1 = a.vec1.sub(vec);
-      if (a.vec2) a.vec2 = a.vec2.sub(vec);
-      if (a.vec3) a.vec3 = a.vec3.sub(vec);
-      return a;
-    }
-  }, {
-    key: "multiply",
-    value: function multiply(scalar) {
-      var a = this.copy();
-      if (a.vec1) a.vec1 = a.vec1.multiply(scalar);
-      if (a.vec2) a.vec2 = a.vec2.multiply(scalar);
-      if (a.vec3) a.vec3 = a.vec3.multiply(scalar);
-      return a;
-    }
-  }, {
-    key: "copy",
-    value: function copy() {
-      var a = new Anchor();
-      a.command = this.command;
-      if (this.vec1) a.vec1 = this.vec1.copy();
-      if (this.vec2) a.vec2 = this.vec2.copy();
-      if (this.vec3) a.vec3 = this.vec3.copy();
-      return a;
-    }
-  }, {
-    key: "setMove",
-    value: function setMove(x, y) {
-      this.command = 'move';
-      this.vec1 = new _vector2.default(x, y);
-      return this;
-    }
-  }, {
-    key: "setLine",
-    value: function setLine(x, y) {
-      this.command = 'line';
-      this.vec1 = new _vector2.default(x, y);
-      return this;
-    }
-  }, {
-    key: "setCurve",
-    value: function setCurve(a, b, c, d, e, f) {
+}
 
-      // cubic bezier with two control points
-      if (typeof f !== 'undefined') {
-        this.command = 'cubic';
-        this.vec1 = new _vector2.default(a, b);
-        this.vec2 = new _vector2.default(c, d);
-        this.vec3 = new _vector2.default(e, f);
-      }
+module.exports = Anchor;
 
-      // quad bezier with one control point
-      else {
-          this.command = 'quad';
-          this.vec1 = new _vector2.default(a, b);
-          this.vec2 = new _vector2.default(c, d);
-        }
-
-      return this;
-    }
-  }, {
-    key: "setClose",
-    value: function setClose() {
-      this.command = 'close';
-      return this;
-    }
-  }, {
-    key: "length",
-    value: function length() {
-      if (this.command == 'move') {
-        return 0;
-      } else if (this.command == 'line') {
-        return this.vec1.length();
-      } else if (this.command == 'quad') {
-        return new _bezier2.default(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y).length();
-      } else if (this.command == 'cubic') {
-        return new _bezier2.default(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y, this.vec3.x, this.vec3.y).length();
-      } else {
-        throw new Error("Cannot compute length for this type of anchor");
-      }
-    }
-  }, {
-    key: "vectorAt",
-    value: function vectorAt(scalar) {
-
-      if (scalar > 1) scalar = 1;
-      if (scalar < 0) scalar = 0;
-
-      var ax, bx, cx;
-      var ay, by, cy;
-      var tSquared, tDoubled, tCubed;
-      var dx, dy;
-
-      if (this.command == 'line') {
-        return new _vector2.default(this.vec1.x, this.vec1.y).multiply(scalar);
-      } else if (this.command == 'quad') {
-        return new _bezier2.default(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y).get(scalar);
-      } else if (this.command == 'cubic') {
-        return new _bezier2.default(0, 0, this.vec1.x, this.vec1.y, this.vec2.x, this.vec2.y, this.vec3.x, this.vec3.y).get(scalar);
-      } else {
-        throw new Error("Cannot compute vectorAt for this type of anchor");
-      }
-    }
-  }]);
-
-  return Anchor;
-})();
-
-exports.default = Anchor;
-
-},{"./bezier":114,"./vector":131}],114:[function(_dereq_,module,exports){
-"use strict";
-
-function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
-
+},{"./bezier":114,"./utils":132,"./vector":133}],114:[function(require,module,exports){
 // This code was extracted from Bezier.js
 // A javascript Bezier curve library by Pomax.
 // Based on http://pomax.github.io/bezierinfo
 // http://pomax.github.io/bezierjs/
 
-(function () {
-  "use strict"
+(function() {
+  "use strict";
 
   // Math functions. I hate the Math namespace with a passion.
-  ;
   var abs = Math.abs,
       min = Math.min,
       max = Math.max,
@@ -5449,73 +5425,116 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
       asin = Math.asin,
       atan2 = Math.atan2,
       sqrt = Math.sqrt,
-
-  // cube root function yielding real roots
-  crt = function crt(v) {
-    if (v < 0) return -Math.pow(-v, 1 / 3);return Math.pow(v, 1 / 3);
-  },
+      // cube root function yielding real roots
+      crt = function(v) { if(v<0) return -Math.pow(-v,1/3); return Math.pow(v,1/3); },
       pi = Math.PI,
-      tau = 2 * pi,
-      quart = pi / 2;
+      tau = 2*pi,
+      quart = pi/2;
 
   // a zero coordinate, which is surprisingly useful
-  var ZERO = { x: 0, y: 0, z: 0 };
+  var ZERO = {x:0,y:0,z:0};
 
   // Bezier utility functions
   var utils = {
     // Legendre-Gauss abscissae with n=24 (x_i values, defined at i=n as the roots of the nth order Legendre polynomial Pn(x))
-    Tvalues: [-0.0640568928626056260850430826247450385909, 0.0640568928626056260850430826247450385909, -0.1911188674736163091586398207570696318404, 0.1911188674736163091586398207570696318404, -0.3150426796961633743867932913198102407864, 0.3150426796961633743867932913198102407864, -0.4337935076260451384870842319133497124524, 0.4337935076260451384870842319133497124524, -0.5454214713888395356583756172183723700107, 0.5454214713888395356583756172183723700107, -0.6480936519369755692524957869107476266696, 0.6480936519369755692524957869107476266696, -0.7401241915785543642438281030999784255232, 0.7401241915785543642438281030999784255232, -0.8200019859739029219539498726697452080761, 0.8200019859739029219539498726697452080761, -0.8864155270044010342131543419821967550873, 0.8864155270044010342131543419821967550873, -0.9382745520027327585236490017087214496548, 0.9382745520027327585236490017087214496548, -0.9747285559713094981983919930081690617411, 0.9747285559713094981983919930081690617411, -0.9951872199970213601799974097007368118745, 0.9951872199970213601799974097007368118745],
+    Tvalues: [
+      -0.0640568928626056260850430826247450385909,
+       0.0640568928626056260850430826247450385909,
+      -0.1911188674736163091586398207570696318404,
+       0.1911188674736163091586398207570696318404,
+      -0.3150426796961633743867932913198102407864,
+       0.3150426796961633743867932913198102407864,
+      -0.4337935076260451384870842319133497124524,
+       0.4337935076260451384870842319133497124524,
+      -0.5454214713888395356583756172183723700107,
+       0.5454214713888395356583756172183723700107,
+      -0.6480936519369755692524957869107476266696,
+       0.6480936519369755692524957869107476266696,
+      -0.7401241915785543642438281030999784255232,
+       0.7401241915785543642438281030999784255232,
+      -0.8200019859739029219539498726697452080761,
+       0.8200019859739029219539498726697452080761,
+      -0.8864155270044010342131543419821967550873,
+       0.8864155270044010342131543419821967550873,
+      -0.9382745520027327585236490017087214496548,
+       0.9382745520027327585236490017087214496548,
+      -0.9747285559713094981983919930081690617411,
+       0.9747285559713094981983919930081690617411,
+      -0.9951872199970213601799974097007368118745,
+       0.9951872199970213601799974097007368118745
+    ],
 
     // Legendre-Gauss weights with n=24 (w_i values, defined by a function linked to in the Bezier primer article)
-    Cvalues: [0.1279381953467521569740561652246953718517, 0.1279381953467521569740561652246953718517, 0.1258374563468282961213753825111836887264, 0.1258374563468282961213753825111836887264, 0.1216704729278033912044631534762624256070, 0.1216704729278033912044631534762624256070, 0.1155056680537256013533444839067835598622, 0.1155056680537256013533444839067835598622, 0.1074442701159656347825773424466062227946, 0.1074442701159656347825773424466062227946, 0.0976186521041138882698806644642471544279, 0.0976186521041138882698806644642471544279, 0.0861901615319532759171852029837426671850, 0.0861901615319532759171852029837426671850, 0.0733464814110803057340336152531165181193, 0.0733464814110803057340336152531165181193, 0.0592985849154367807463677585001085845412, 0.0592985849154367807463677585001085845412, 0.0442774388174198061686027482113382288593, 0.0442774388174198061686027482113382288593, 0.0285313886289336631813078159518782864491, 0.0285313886289336631813078159518782864491, 0.0123412297999871995468056670700372915759, 0.0123412297999871995468056670700372915759],
-    arcfn: function arcfn(t, derivativeFn) {
+    Cvalues: [
+      0.1279381953467521569740561652246953718517,
+      0.1279381953467521569740561652246953718517,
+      0.1258374563468282961213753825111836887264,
+      0.1258374563468282961213753825111836887264,
+      0.1216704729278033912044631534762624256070,
+      0.1216704729278033912044631534762624256070,
+      0.1155056680537256013533444839067835598622,
+      0.1155056680537256013533444839067835598622,
+      0.1074442701159656347825773424466062227946,
+      0.1074442701159656347825773424466062227946,
+      0.0976186521041138882698806644642471544279,
+      0.0976186521041138882698806644642471544279,
+      0.0861901615319532759171852029837426671850,
+      0.0861901615319532759171852029837426671850,
+      0.0733464814110803057340336152531165181193,
+      0.0733464814110803057340336152531165181193,
+      0.0592985849154367807463677585001085845412,
+      0.0592985849154367807463677585001085845412,
+      0.0442774388174198061686027482113382288593,
+      0.0442774388174198061686027482113382288593,
+      0.0285313886289336631813078159518782864491,
+      0.0285313886289336631813078159518782864491,
+      0.0123412297999871995468056670700372915759,
+      0.0123412297999871995468056670700372915759
+    ],
+    arcfn: function(t, derivativeFn) {
       var d = derivativeFn(t);
-      var l = d.x * d.x + d.y * d.y;
-      if (typeof d.z !== "undefined") {
-        l += d.z * d.z;
+      var l = d.x*d.x + d.y*d.y;
+      if(typeof d.z !== "undefined") {
+        l += d.z*d.z;
       }
       return sqrt(l);
     },
-    length: function length(derivativeFn) {
-      var z = 0.5,
-          sum = 0,
-          len = this.Tvalues.length,
-          i,
-          t;
-      for (i = 0; i < len; i++) {
+    length: function(derivativeFn) {
+      var z=0.5,sum=0,len=this.Tvalues.length,i,t;
+      for(i=0; i<len; i++) {
         t = z * this.Tvalues[i] + z;
-        sum += this.Cvalues[i] * this.arcfn(t, derivativeFn);
+        sum += this.Cvalues[i] * this.arcfn(t,derivativeFn);
       }
       return z * sum;
     },
-    angle: function angle(o, v1, v2) {
+    angle: function(o,v1,v2) {
       var dx1 = v1.x - o.x,
           dy1 = v1.y - o.y,
           dx2 = v2.x - o.x,
           dy2 = v2.y - o.y,
-          cross = dx1 * dy2 - dy1 * dx2,
-          m1 = sqrt(dx1 * dx1 + dy1 * dy1),
-          m2 = sqrt(dx2 * dx2 + dy2 * dy2),
+          cross = dx1*dy2 - dy1*dx2,
+          m1 = sqrt(dx1*dx1+dy1*dy1),
+          m2 = sqrt(dx2*dx2+dy2*dy2),
           dot;
-      dx1 /= m1;dy1 /= m1;dx2 /= m2;dy2 /= m2;
-      dot = dx1 * dx2 + dy1 * dy2;
+      dx1/=m1; dy1/=m1; dx2/=m2; dy2/=m2;
+      dot = dx1*dx2 + dy1*dy2;
       return atan2(cross, dot);
     },
-    dist: function dist(p1, p2) {
+    dist: function(p1, p2) {
       var dx = p1.x - p2.x,
           dy = p1.y - p2.y;
-      return sqrt(dx * dx + dy * dy);
+      return sqrt(dx*dx+dy*dy);
     },
-    align: function align(points, line) {
+    align: function(points, line) {
       var tx = line.p1.x,
           ty = line.p1.y,
-          a = -atan2(line.p2.y - ty, line.p2.x - tx),
-          d = function d(v) {
-        return {
-          x: (v.x - tx) * cos(a) - (v.y - ty) * sin(a),
-          y: (v.x - tx) * sin(a) + (v.y - ty) * cos(a)
-        };
-      };
+          a = -atan2(line.p2.y-ty, line.p2.x-tx),
+          d = function(v) {
+            return {
+              x: (v.x-tx)*cos(a) - (v.y-ty)*sin(a),
+              y: (v.x-tx)*sin(a) + (v.y-ty)*cos(a)
+            };
+          };
       return points.map(d);
     }
   };
@@ -5528,52 +5547,49 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
    * 3. numerical array/12 ordered x1,y1,z1,x2,y2,z2,x3,y3,z3,x4,y4,z4
    *
    */
-  var Bezier = function Bezier(coords) {
-    var args = coords && coords.forEach ? coords : arguments;
-    if (_typeof(args[0]) === "object") {
+  var Bezier = function(coords) {
+    var args = (coords && coords.forEach ? coords : arguments);
+    if(typeof args[0] === "object") {
       args = [];
-      for (var i = 0; i < coords.length; i++) {
-        ['x', 'y', 'z'].forEach(function (d) {
-          if (typeof coords[i][d] !== "undefined") {
+      for(var i=0; i<coords.length; i++) {
+        ['x','y','z'].forEach(function(d) {
+          if(typeof coords[i][d] !== "undefined") {
             args.push(coords[i][d]);
           }
         });
       }
     }
     var len = args.length;
-    if (len !== 6 && len !== 8 && len !== 9 && len !== 12) {
-      console.log(coords);
+    if(len!==6 && len!==8 && len!==9 && len!==12) {
       throw new Error("This Bezier curve library only supports quadratic and cubic curves (in 2d and 3d)");
     }
-    var _3d = len === 9 || len === 12;
+    var _3d = (len === 9 || len === 12);
     this._3d = _3d;
     var points = [];
-    for (var idx = 0, step = _3d ? 3 : 2; idx < len; idx += step) {
+    for(var idx=0, step=(_3d ? 3 : 2); idx<len; idx+=step) {
       var point = {
         x: args[idx],
-        y: args[idx + 1]
+        y: args[idx+1]
       };
-      if (_3d) {
-        point.z = args[idx + 2];
-      };
+      if(_3d) { point.z = args[idx+2] };
       points.push(point);
     }
     this.order = points.length - 1;
     this.points = points;
-    var dims = ['x', 'y'];
-    if (_3d) dims.push('z');
+    var dims = ['x','y'];
+    if(_3d) dims.push('z');
     this.dims = dims;
     this.dimlen = dims.length;
-    (function (curve) {
-      var a = utils.align(points, { p1: points[0], p2: points[curve.order] });
-      for (var i = 0; i < a.length; i++) {
-        if (abs(a[i].y) > 0.0001) {
+    (function(curve) {
+      var a = utils.align(points, {p1:points[0], p2:points[curve.order]});
+      for(var i=0; i<a.length; i++) {
+        if(abs(a[i].y) > 0.0001) {
           curve._linear = false;
           return;
         }
       }
       curve._linear = true;
-    })(this);
+    }(this));
     this._t1 = 0;
     this._t2 = 1;
     this.update();
@@ -5582,18 +5598,18 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
   Bezier.utils = utils;
 
   Bezier.prototype = {
-    update: function update() {
+    update: function() {
       // one-time compute derivative coordinates
       this.dpoints = [];
-      for (var p = this.points, d = p.length, c = d - 1; d > 1; d--, c--) {
+      for(var p=this.points, d=p.length, c=d-1; d>1; d--, c--) {
         var list = [];
-        for (var j = 0, dpt; j < c; j++) {
+        for(var j=0, dpt; j<c; j++) {
           dpt = {
-            x: c * (p[j + 1].x - p[j].x),
-            y: c * (p[j + 1].y - p[j].y)
+            x: c * (p[j+1].x - p[j].x),
+            y: c * (p[j+1].y - p[j].y)
           };
-          if (this._3d) {
-            dpt.z = c * (p[j + 1].z - p[j].z);
+          if(this._3d) {
+            dpt.z = c * (p[j+1].z - p[j].z);
           }
           list.push(dpt);
         }
@@ -5602,582 +5618,513 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
       };
       this.computedirection();
     },
-    computedirection: function computedirection() {
+    computedirection: function() {
       var points = this.points;
       var angle = utils.angle(points[0], points[this.order], points[1]);
       this.clockwise = angle > 0;
     },
-    length: function length() {
+    length: function() {
       return utils.length(this.derivative.bind(this));
     },
-    get: function get(t) {
+    get: function(t) {
       return this.compute(t);
     },
-    compute: function compute(t) {
+    compute: function(t) {
       // shortcuts
-      if (t === 0) {
-        return this.points[0];
-      }
-      if (t === 1) {
-        return this.points[this.order];
-      }
+      if(t===0) { return this.points[0]; }
+      if(t===1) { return this.points[this.order]; }
       // plain computation
-      var mt = 1 - t,
-          mt2 = mt * mt,
-          t2 = t * t,
-          a,
-          b,
-          c,
-          d = 0,
+      var mt = 1-t,
+          mt2 = mt*mt,
+          t2 = t*t,
+          a,b,c,d = 0,
           p = this.points;
-      if (this.order === 2) {
+      if(this.order===2) {
         p = [p[0], p[1], p[2], ZERO];
         a = mt2;
-        b = mt * t * 2;
+        b = mt*t*2;
         c = t2;
       }
-      if (this.order === 3) {
-        a = mt2 * mt;
-        b = mt2 * t * 3;
-        c = mt * t2 * 3;
-        d = t * t2;
+      if(this.order===3) {
+        a = mt2*mt;
+        b = mt2*t*3;
+        c = mt*t2*3;
+        d = t*t2;
       }
       var ret = {
-        x: a * p[0].x + b * p[1].x + c * p[2].x + d * p[3].x,
-        y: a * p[0].y + b * p[1].y + c * p[2].y + d * p[3].y
+        x: a*p[0].x + b*p[1].x + c*p[2].x + d*p[3].x,
+        y: a*p[0].y + b*p[1].y + c*p[2].y + d*p[3].y
       };
-      if (this._3d) {
-        ret.z = a * p[0].z + b * p[1].z + c * p[2].z + d * p[3].z;
+      if(this._3d) {
+        ret.z = a*p[0].z + b*p[1].z + c*p[2].z + d*p[3].z;
       }
       return ret;
     },
-    derivative: function derivative(t) {
-      var mt = 1 - t,
-          a,
-          b,
-          c = 0,
+    derivative: function(t) {
+      var mt = 1-t,
+          a,b,c=0,
           p = this.dpoints[0];
-      if (this.order === 2) {
-        p = [p[0], p[1], ZERO];a = mt;b = t;
-      }
-      if (this.order === 3) {
-        a = mt * mt;b = mt * t * 2;c = t * t;
-      }
+      if(this.order===2) { p = [p[0], p[1], ZERO]; a = mt; b = t; }
+      if(this.order===3) { a = mt*mt; b = mt*t*2; c = t*t; }
       var ret = {
-        x: a * p[0].x + b * p[1].x + c * p[2].x,
-        y: a * p[0].y + b * p[1].y + c * p[2].y
+        x: a*p[0].x + b*p[1].x + c*p[2].x,
+        y: a*p[0].y + b*p[1].y + c*p[2].y
       };
-      if (this._3d) {
-        ret.z = a * p[0].z + b * p[1].z + c * p[2].z;
+      if(this._3d) {
+        ret.z = a*p[0].z + b*p[1].z + c*p[2].z;
       }
       return ret;
     }
   };
 
   module.exports = Bezier;
-})();
 
-},{}],115:[function(_dereq_,module,exports){
-'use strict';
+}());
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })(); // This code was adapted from the brilliant color lib by MoOx
+},{}],115:[function(require,module,exports){
+// This code was adapted from the brilliant color lib by MoOx
 // See more here: https://github.com/MoOx/color
+var colorConvert = require('color-convert');
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var Color = function(a, b, c, d, e) {
 
-var _colorConvert = _dereq_('color-convert');
-
-var _colorConvert2 = _interopRequireDefault(_colorConvert);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Color = (function () {
-  function Color(a, b, c, d, e) {
-    _classCallCheck(this, Color);
-
-    this.values = {
-      rgb: [0, 0, 0],
-      hsl: [0, 0, 0],
-      hsv: [0, 0, 0],
-      hwb: [0, 0, 0],
-      cmyk: [0, 0, 0, 0],
-      alpha: 1
-    };
-
-    // COLOR
-    if (a instanceof Color) {
-      return a;
-    }
-
-    // HSB
-    else if (a == 'hsv') {
-        this.setValues('hsv', { h: b % 360, s: c, v: d });
-        if (e) this.setValues('alpha', e);
-      }
-
-      // HEX
-      else if (typeof a === 'string') {
-
-          // convert HEX to RGB
-          var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(a);
-          if (result) {
-            this.setValues('rgb', [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)]);
-          } else {
-            throw new Error("Unable to parse color from string \"" + a + "\"");
-          }
-          if (b) this.setValues('alpha', b);
-        }
-
-        // GRAYSCALE
-        else if (typeof c === 'undefined') {
-            this.setValues('rgb', { r: a, g: a, b: a });
-            if (b) this.setValues('alpha', b);
-          }
-
-          // RGB
-          else if (typeof a !== 'undefined') {
-              this.setValues('rgb', { r: a, g: b, b: c });
-              if (d) this.setValues('alpha', d);
-            }
+  this.values = {
+    rgb: [0, 0, 0],
+    hsl: [0, 0, 0],
+    hsv: [0, 0, 0],
+    hwb: [0, 0, 0],
+    cmyk: [0, 0, 0, 0],
+    alpha: 1
   }
 
-  _createClass(Color, [{
-    key: 'rgb',
-    value: function rgb(vals) {
-      return this.setSpace("rgb", arguments);
-    }
-  }, {
-    key: 'hsl',
-    value: function hsl(vals) {
-      return this.setSpace("hsl", arguments);
-    }
-  }, {
-    key: 'hsv',
-    value: function hsv(vals) {
-      return this.setSpace("hsv", arguments);
-    }
-  }, {
-    key: 'hwb',
-    value: function hwb(vals) {
-      return this.setSpace("hwb", arguments);
-    }
-  }, {
-    key: 'cmyk',
-    value: function cmyk(vals) {
-      return this.setSpace("cmyk", arguments);
-    }
-  }, {
-    key: 'rgbArray',
-    value: function rgbArray() {
-      return this.values.rgb;
-    }
-  }, {
-    key: 'hslArray',
-    value: function hslArray() {
-      return this.values.hsl;
-    }
-  }, {
-    key: 'hsvArray',
-    value: function hsvArray() {
-      return this.values.hsv;
-    }
-  }, {
-    key: 'hwbArray',
-    value: function hwbArray() {
-      if (this.values.alpha !== 1) {
-        return this.values.hwb.concat([this.values.alpha]);
-      }
-      return this.values.hwb;
-    }
-  }, {
-    key: 'cmykArray',
-    value: function cmykArray() {
-      return this.values.cmyk;
-    }
-  }, {
-    key: 'rgbaArray',
-    value: function rgbaArray() {
-      var rgb = this.values.rgb;
-      return rgb.concat([this.values.alpha]);
-    }
-  }, {
-    key: 'hslaArray',
-    value: function hslaArray() {
-      var hsl = this.values.hsl;
-      return hsl.concat([this.values.alpha]);
-    }
-  }, {
-    key: 'alpha',
-    value: function alpha(val) {
-      if (val === undefined) {
-        return this.values.alpha;
-      }
-      this.setValues("alpha", val);
-      return this;
-    }
-  }, {
-    key: 'red',
-    value: function red(val) {
-      return this.setChannel("rgb", 0, val);
-    }
-  }, {
-    key: 'green',
-    value: function green(val) {
-      return this.setChannel("rgb", 1, val);
-    }
-  }, {
-    key: 'blue',
-    value: function blue(val) {
-      return this.setChannel("rgb", 2, val);
-    }
-  }, {
-    key: 'hue',
-    value: function hue(val) {
-      return this.setChannel("hsl", 0, val);
-    }
-  }, {
-    key: 'saturation',
-    value: function saturation(val) {
-      return this.setChannel("hsl", 1, val);
-    }
-  }, {
-    key: 'lightness',
-    value: function lightness(val) {
-      return this.setChannel("hsl", 2, val);
-    }
-  }, {
-    key: 'saturationv',
-    value: function saturationv(val) {
-      return this.setChannel("hsv", 1, val);
-    }
-  }, {
-    key: 'whiteness',
-    value: function whiteness(val) {
-      return this.setChannel("hwb", 1, val);
-    }
-  }, {
-    key: 'blackness',
-    value: function blackness(val) {
-      return this.setChannel("hwb", 2, val);
-    }
-  }, {
-    key: 'value',
-    value: function value(val) {
-      return this.setChannel("hsv", 2, val);
-    }
-  }, {
-    key: 'cyan',
-    value: function cyan(val) {
-      return this.setChannel("cmyk", 0, val);
-    }
-  }, {
-    key: 'magenta',
-    value: function magenta(val) {
-      return this.setChannel("cmyk", 1, val);
-    }
-  }, {
-    key: 'yellow',
-    value: function yellow(val) {
-      return this.setChannel("cmyk", 2, val);
-    }
-  }, {
-    key: 'black',
-    value: function black(val) {
-      return this.setChannel("cmyk", 3, val);
-    }
-  }, {
-    key: 'luminosity',
-    value: function luminosity() {
-      // http://www.w3.org/TR/WCAG20/#relativeluminancedef
-      var rgb = this.values.rgb;
-      var lum = [];
-      for (var i = 0; i < rgb.length; i++) {
-        var chan = rgb[i] / 255;
-        lum[i] = chan <= 0.03928 ? chan / 12.92 : Math.pow((chan + 0.055) / 1.055, 2.4);
-      }
-      return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
-    }
-  }, {
-    key: 'contrast',
-    value: function contrast(color2) {
-      // http://www.w3.org/TR/WCAG20/#contrast-ratiodef
-      var lum1 = this.luminosity();
-      var lum2 = color2.luminosity();
-      if (lum1 > lum2) {
-        return (lum1 + 0.05) / (lum2 + 0.05);
-      };
-      return (lum2 + 0.05) / (lum1 + 0.05);
-    }
-  }, {
-    key: 'level',
-    value: function level(color2) {
-      var contrastRatio = this.contrast(color2);
-      return contrastRatio >= 7.1 ? 'AAA' : contrastRatio >= 4.5 ? 'AA' : '';
-    }
-  }, {
-    key: 'dark',
-    value: function dark() {
-      // YIQ equation from http://24ways.org/2010/calculating-color-contrast
-      var rgb = this.values.rgb,
-          yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
-      return yiq < 128;
-    }
-  }, {
-    key: 'light',
-    value: function light() {
-      return !this.dark();
-    }
-  }, {
-    key: 'negate',
-    value: function negate() {
-      var rgb = [];
-      for (var i = 0; i < 3; i++) {
-        rgb[i] = 255 - this.values.rgb[i];
-      }
-      this.setValues("rgb", rgb);
-      return this;
-    }
-  }, {
-    key: 'lighten',
-    value: function lighten(ratio) {
-      this.values.hsl[2] += this.values.hsl[2] * ratio;
-      this.setValues("hsl", this.values.hsl);
-      return this;
-    }
-  }, {
-    key: 'darken',
-    value: function darken(ratio) {
-      this.values.hsl[2] -= this.values.hsl[2] * ratio;
-      this.setValues("hsl", this.values.hsl);
-      return this;
-    }
-  }, {
-    key: 'saturate',
-    value: function saturate(ratio) {
-      this.values.hsl[1] += this.values.hsl[1] * ratio;
-      this.setValues("hsl", this.values.hsl);
-      return this;
-    }
-  }, {
-    key: 'desaturate',
-    value: function desaturate(ratio) {
-      this.values.hsl[1] -= this.values.hsl[1] * ratio;
-      this.setValues("hsl", this.values.hsl);
-      return this;
-    }
-  }, {
-    key: 'whiten',
-    value: function whiten(ratio) {
-      this.values.hwb[1] += this.values.hwb[1] * ratio;
-      this.setValues("hwb", this.values.hwb);
-      return this;
-    }
-  }, {
-    key: 'blacken',
-    value: function blacken(ratio) {
-      this.values.hwb[2] += this.values.hwb[2] * ratio;
-      this.setValues("hwb", this.values.hwb);
-      return this;
-    }
-  }, {
-    key: 'greyscale',
-    value: function greyscale() {
-      var rgb = this.values.rgb;
-      // http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
-      var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
-      this.setValues("rgb", [val, val, val]);
-      return this;
-    }
-  }, {
-    key: 'clearer',
-    value: function clearer(ratio) {
-      this.setValues("alpha", this.values.alpha - this.values.alpha * ratio);
-      return this;
-    }
-  }, {
-    key: 'opaquer',
-    value: function opaquer(ratio) {
-      this.setValues("alpha", this.values.alpha + this.values.alpha * ratio);
-      return this;
-    }
-  }, {
-    key: 'rotate',
-    value: function rotate(degrees) {
-      var hue = this.values.hsl[0];
-      hue = (hue + degrees) % 360;
-      hue = hue < 0 ? 360 + hue : hue;
-      this.values.hsl[0] = hue;
-      this.setValues("hsl", this.values.hsl);
-      return this;
-    }
+  // COLOR
+  if(a instanceof Color) {
+    return a;
+  }
 
-    /**
-     * Ported from sass implementation in C
-     * https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
-     */
+  // HSB
+  else if(a == 'hsv') {
+    this.setValues('hsv', {h:b % 360, s:c, v:d});
+    if(e) this.setValues('alpha', e);
+  }
 
-  }, {
-    key: 'mix',
-    value: function mix(mixinColor, weight) {
-      var color1 = this;
-      var color2 = mixinColor;
-      var p = weight !== undefined ? weight : 0.5;
+  // HEX
+  else if(typeof a === 'string') {
 
-      var w = 2 * p - 1;
-      var a = color1.alpha() - color2.alpha();
-
-      var w1 = ((w * a == -1 ? w : (w + a) / (1 + w * a)) + 1) / 2.0;
-      var w2 = 1 - w1;
-
-      return this.rgb(w1 * color1.red() + w2 * color2.red(), w1 * color1.green() + w2 * color2.green(), w1 * color1.blue() + w2 * color2.blue()).alpha(color1.alpha() * p + color2.alpha() * (1 - p));
+    // convert HEX to RGB
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(a);
+    if(result) {
+      this.setValues('rgb', [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)])
+    } else {
+      throw new Error("Unable to parse color from string \"" + a + "\"");
     }
-  }, {
-    key: 'toJSON',
-    value: function toJSON() {
-      return this.rgb();
+    if(b) this.setValues('alpha', b);
+  }
+
+  // GRAYSCALE
+  else if(typeof c === 'undefined') {
+    this.setValues('rgb', {r:a, g:a, b:a});
+    if(b) this.setValues('alpha', b);
+  }
+
+  // RGB
+  else if(typeof a !== 'undefined') {
+    this.setValues('rgb', {r:a, g:b, b:c});
+    if(d) this.setValues('alpha', d);
+  }
+
+};
+
+Color.prototype = {
+
+  type: "color",
+
+  rgb: function(vals) {
+    return this.setSpace("rgb", arguments);
+  },
+
+  hsl: function(vals) {
+    return this.setSpace("hsl", arguments);
+  },
+
+  hsv: function(vals) {
+    return this.setSpace("hsv", arguments);
+  },
+
+  hwb: function(vals) {
+    return this.setSpace("hwb", arguments);
+  },
+
+  cmyk: function(vals) {
+    return this.setSpace("cmyk", arguments);
+  },
+
+  rgbArray: function() {
+    return this.values.rgb;
+  },
+
+  hslArray: function() {
+    return this.values.hsl;
+  },
+
+  hsvArray: function() {
+    return this.values.hsv;
+  },
+
+  hwbArray: function() {
+    if (this.values.alpha !== 1) {
+      return this.values.hwb.concat([this.values.alpha])
     }
-  }, {
-    key: 'copy',
-    value: function copy() {
-      return new Color().rgb(this.rgb());
+    return this.values.hwb;
+  },
+
+  cmykArray: function() {
+    return this.values.cmyk;
+  },
+
+  rgbaArray: function() {
+    var rgb = this.values.rgb;
+    return rgb.concat([this.values.alpha]);
+  },
+
+  hslaArray: function() {
+    var hsl = this.values.hsl;
+    return hsl.concat([this.values.alpha]);
+  },
+
+  alpha: function(val) {
+    if (val === undefined) {
+       return this.values.alpha;
     }
-  }, {
-    key: 'getValues',
-    value: function getValues(space) {
-      var vals = {};
+    this.setValues("alpha", val);
+    return this;
+  },
+
+  red: function(val) {
+    return this.setChannel("rgb", 0, val);
+  },
+
+  green: function(val) {
+    return this.setChannel("rgb", 1, val);
+  },
+
+  blue: function(val) {
+    return this.setChannel("rgb", 2, val);
+  },
+
+  hue: function(val) {
+    return this.setChannel("hsl", 0, val);
+  },
+
+  saturation: function(val) {
+    return this.setChannel("hsl", 1, val);
+  },
+
+  lightness: function(val) {
+    return this.setChannel("hsl", 2, val);
+  },
+
+  saturationv: function(val) {
+    return this.setChannel("hsv", 1, val);
+  },
+
+  whiteness: function(val) {
+    return this.setChannel("hwb", 1, val);
+  },
+
+  blackness: function(val) {
+    return this.setChannel("hwb", 2, val);
+  },
+
+  value: function(val) {
+    return this.setChannel("hsv", 2, val);
+  },
+
+  cyan: function(val) {
+    return this.setChannel("cmyk", 0, val);
+  },
+
+  magenta: function(val) {
+    return this.setChannel("cmyk", 1, val);
+  },
+
+  yellow: function(val) {
+    return this.setChannel("cmyk", 2, val);
+  },
+
+  black: function(val) {
+    return this.setChannel("cmyk", 3, val);
+  },
+
+  luminosity: function() {
+    // http://www.w3.org/TR/WCAG20/#relativeluminancedef
+    var rgb = this.values.rgb;
+    var lum = [];
+    for (var i = 0; i < rgb.length; i++) {
+      var chan = rgb[i] / 255;
+      lum[i] = (chan <= 0.03928) ? chan / 12.92
+                : Math.pow(((chan + 0.055) / 1.055), 2.4)
+    }
+    return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
+  },
+
+  contrast: function(color2) {
+    // http://www.w3.org/TR/WCAG20/#contrast-ratiodef
+    var lum1 = this.luminosity();
+    var lum2 = color2.luminosity();
+    if (lum1 > lum2) {
+       return (lum1 + 0.05) / (lum2 + 0.05)
+    };
+    return (lum2 + 0.05) / (lum1 + 0.05);
+  },
+
+  level: function(color2) {
+    var contrastRatio = this.contrast(color2);
+    return (contrastRatio >= 7.1)
+      ? 'AAA'
+      : (contrastRatio >= 4.5)
+       ? 'AA'
+       : '';
+  },
+
+  dark: function() {
+    // YIQ equation from http://24ways.org/2010/calculating-color-contrast
+    var rgb = this.values.rgb,
+        yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+    return yiq < 128;
+  },
+
+  light: function() {
+    return !this.dark();
+  },
+
+  negate: function() {
+    var rgb = []
+    for (var i = 0; i < 3; i++) {
+       rgb[i] = 255 - this.values.rgb[i];
+    }
+    this.setValues("rgb", rgb);
+    return this;
+  },
+
+  lighten: function(ratio) {
+    this.values.hsl[2] += this.values.hsl[2] * ratio;
+    this.setValues("hsl", this.values.hsl);
+    return this;
+  },
+
+  darken: function(ratio) {
+    this.values.hsl[2] -= this.values.hsl[2] * ratio;
+    this.setValues("hsl", this.values.hsl);
+    return this;
+  },
+
+  saturate: function(ratio) {
+    this.values.hsl[1] += this.values.hsl[1] * ratio;
+    this.setValues("hsl", this.values.hsl);
+    return this;
+  },
+
+  desaturate: function(ratio) {
+    this.values.hsl[1] -= this.values.hsl[1] * ratio;
+    this.setValues("hsl", this.values.hsl);
+    return this;
+  },
+
+  whiten: function(ratio) {
+    this.values.hwb[1] += this.values.hwb[1] * ratio;
+    this.setValues("hwb", this.values.hwb);
+    return this;
+  },
+
+  blacken: function(ratio) {
+    this.values.hwb[2] += this.values.hwb[2] * ratio;
+    this.setValues("hwb", this.values.hwb);
+    return this;
+  },
+
+  greyscale: function() {
+    var rgb = this.values.rgb;
+    // http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
+    var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
+    this.setValues("rgb", [val, val, val]);
+    return this;
+  },
+
+  clearer: function(ratio) {
+    this.setValues("alpha", this.values.alpha - (this.values.alpha * ratio));
+    return this;
+  },
+
+  opaquer: function(ratio) {
+    this.setValues("alpha", this.values.alpha + (this.values.alpha * ratio));
+    return this;
+  },
+
+  rotate: function(degrees) {
+    var hue = this.values.hsl[0];
+    hue = (hue + degrees) % 360;
+    hue = hue < 0 ? 360 + hue : hue;
+    this.values.hsl[0] = hue;
+    this.setValues("hsl", this.values.hsl);
+    return this;
+  },
+
+  /**
+   * Ported from sass implementation in C
+   * https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
+   */
+  mix: function(mixinColor, weight) {
+    var color1 = this;
+    var color2 = mixinColor;
+    var p = weight !== undefined ? weight : 0.5;
+
+    var w = 2 * p - 1;
+    var a = color1.alpha() - color2.alpha();
+
+    var w1 = (((w * a == -1) ? w : (w + a)/(1 + w*a)) + 1) / 2.0;
+    var w2 = 1 - w1;
+
+    return this
+      .rgb(
+        w1 * color1.red() + w2 * color2.red(),
+        w1 * color1.green() + w2 * color2.green(),
+        w1 * color1.blue() + w2 * color2.blue()
+      )
+      .alpha(color1.alpha() * p + color2.alpha() * (1 - p));
+  },
+
+  toJSON: function() {
+    return this.rgb();
+  },
+
+  copy: function() {
+    return new Color().rgb(this.rgb());
+  },
+
+  getValues: function(space) {
+    var vals = {};
+    for (var i = 0; i < space.length; i++) {
+      vals[space.charAt(i)] = this.values[space][i];
+    }
+    if (this.values.alpha != 1) {
+      vals["a"] = this.values.alpha;
+    }
+    // {r: 255, g: 255, b: 255, a: 0.4}
+    return vals;
+  },
+
+  setValues: function(space, vals) {
+
+    var spaces = {
+      "rgb": ["red", "green", "blue"],
+      "hsl": ["hue", "saturation", "lightness"],
+      "hsv": ["hue", "saturation", "value"],
+      "hwb": ["hue", "whiteness", "blackness"],
+      "cmyk": ["cyan", "magenta", "yellow", "black"]
+    };
+
+    var maxes = {
+      "rgb": [255, 255, 255],
+      "hsl": [360, 100, 100],
+      "hsv": [360, 100, 100],
+      "hwb": [360, 100, 100],
+      "cmyk": [100, 100, 100, 100]
+    };
+
+    var alpha = 1;
+    if (space == "alpha") {
+       alpha = vals;
+    }
+    else if (vals.length) {
+      // [10, 10, 10]
+      this.values[space] = vals.slice(0, space.length);
+      alpha = vals[space.length];
+    }
+    else if (vals[space.charAt(0)] !== undefined) {
+      // {r: 10, g: 10, b: 10}
       for (var i = 0; i < space.length; i++) {
-        vals[space.charAt(i)] = this.values[space][i];
+        this.values[space][i] = vals[space.charAt(i)];
       }
-      if (this.values.alpha != 1) {
-        vals["a"] = this.values.alpha;
-      }
-      // {r: 255, g: 255, b: 255, a: 0.4}
-      return vals;
+      alpha = vals.a;
     }
-  }, {
-    key: 'setValues',
-    value: function setValues(space, vals) {
-
-      var spaces = {
-        "rgb": ["red", "green", "blue"],
-        "hsl": ["hue", "saturation", "lightness"],
-        "hsv": ["hue", "saturation", "value"],
-        "hwb": ["hue", "whiteness", "blackness"],
-        "cmyk": ["cyan", "magenta", "yellow", "black"]
-      };
-
-      var maxes = {
-        "rgb": [255, 255, 255],
-        "hsl": [360, 100, 100],
-        "hsv": [360, 100, 100],
-        "hwb": [360, 100, 100],
-        "cmyk": [100, 100, 100, 100]
-      };
-
-      var alpha = 1;
-      if (space == "alpha") {
-        alpha = vals;
-      } else if (vals.length) {
-        // [10, 10, 10]
-        this.values[space] = vals.slice(0, space.length);
-        alpha = vals[space.length];
-      } else if (vals[space.charAt(0)] !== undefined) {
-        // {r: 10, g: 10, b: 10}
-        for (var i = 0; i < space.length; i++) {
-          this.values[space][i] = vals[space.charAt(i)];
-        }
-        alpha = vals.a;
-      } else if (vals[spaces[space][0]] !== undefined) {
-        // {red: 10, green: 10, blue: 10}
-        var chans = spaces[space];
-        for (var i = 0; i < space.length; i++) {
-          this.values[space][i] = vals[chans[i]];
-        }
-        alpha = vals.alpha;
-      }
-      this.values.alpha = Math.max(0, Math.min(1, alpha !== undefined ? alpha : this.values.alpha));
-      if (space == "alpha") {
-        return;
-      }
-
-      // cap values of the space prior converting all values
+    else if (vals[spaces[space][0]] !== undefined) {
+      // {red: 10, green: 10, blue: 10}
+      var chans = spaces[space];
       for (var i = 0; i < space.length; i++) {
-        var capped = Math.max(0, Math.min(maxes[space][i], this.values[space][i]));
-        this.values[space][i] = Math.round(capped);
+        this.values[space][i] = vals[chans[i]];
+      }
+      alpha = vals.alpha;
+    }
+    this.values.alpha = Math.max(0, Math.min(1, (alpha !== undefined ? alpha : this.values.alpha) ));
+    if (space == "alpha") {
+      return;
+    }
+
+    // cap values of the space prior converting all values
+    for (var i = 0; i < space.length; i++) {
+      var capped = Math.max(0, Math.min(maxes[space][i], this.values[space][i]));
+      this.values[space][i] = Math.round(capped);
+    }
+
+    // convert to all the other color spaces
+    for (var sname in spaces) {
+      if (sname != space) {
+        this.values[sname] = colorConvert[space][sname](this.values[space])
       }
 
-      // convert to all the other color spaces
-      for (var sname in spaces) {
-        if (sname != space) {
-          this.values[sname] = _colorConvert2.default[space][sname](this.values[space]);
-        }
+      // cap values
+      for (var i = 0; i < sname.length; i++) {
+        var capped = Math.max(0, Math.min(maxes[sname][i], this.values[sname][i]));
+        this.values[sname][i] = Math.round(capped);
+      }
+    }
+    return true;
+  },
 
-        // cap values
-        for (var i = 0; i < sname.length; i++) {
-          var capped = Math.max(0, Math.min(maxes[sname][i], this.values[sname][i]));
-          this.values[sname][i] = Math.round(capped);
-        }
-      }
-      return true;
+  setSpace: function(space, args) {
+    var vals = args[0];
+    if (vals === undefined) {
+      // color.rgb()
+      return this.getValues(space);
     }
-  }, {
-    key: 'setSpace',
-    value: function setSpace(space, args) {
-      var vals = args[0];
-      if (vals === undefined) {
-        // color.rgb()
-        return this.getValues(space);
-      }
-      // color.rgb(10, 10, 10)
-      if (typeof vals == "number") {
-        vals = Array.prototype.slice.call(args);
-      }
-      this.setValues(space, vals);
-      return this;
+    // color.rgb(10, 10, 10)
+    if (typeof vals == "number") {
+      vals = Array.prototype.slice.call(args);
     }
-  }, {
-    key: 'setChannel',
-    value: function setChannel(space, index, val) {
-      if (val === undefined) {
-        // color.red()
-        return this.values[space][index];
-      }
-      // color.red(100)
-      this.values[space][index] = val;
-      this.setValues(space, this.values[space]);
-      return this;
-    }
-  }]);
+    this.setValues(space, vals);
+    return this;
+  },
 
-  return Color;
-})();
+  setChannel: function(space, index, val) {
+    if (val === undefined) {
+      // color.red()
+      return this.values[space][index];
+    }
+    // color.red(100)
+    this.values[space][index] = val;
+    this.setValues(space, this.values[space]);
+    return this;
+  }
+
+}
 
 // Modules should be accessible through Color
+Color.Convert = colorConvert;
 
-Color.Convert = _colorConvert2.default;
+module.exports = Color;
 
-exports.default = Color;
-
-},{"color-convert":3}],116:[function(_dereq_,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+},{"color-convert":3}],116:[function(require,module,exports){
 var Events = {
 
-  on: function on(name, callback) {
+  on: function(name, callback) {
     if (!this._events) this._events = {};
     this._events[name] = this._events[name] || [];
     this._events[name].push(callback);
     return this;
   },
 
-  off: function off(name, callback) {
+  off: function(name, callback) {
     if (this._events[name] && !callback) {
       delete this._events[name];
     } else if (this._events[name]) {
@@ -6190,10 +6137,10 @@ var Events = {
     return this;
   },
 
-  trigger: function trigger(name) {
+  trigger: function(name) {
     if (this._events && this._events[name]) {
       var theseEvents = this._events[name];
-      var args = arguments.length > 1 ? [arguments[1]] : [];
+      var args = (arguments.length > 1) ? [arguments[1]] : [];
       var i = theseEvents.length;
       while (i--) {
         theseEvents[i].apply(this, args);
@@ -6202,2260 +6149,1998 @@ var Events = {
     return this;
   }
 
-};
+}
 
-exports.default = Events;
+module.exports = Events;
 
-},{}],117:[function(_dereq_,module,exports){
-"use strict";
+},{}],117:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var map = require("lodash/collection/map");
+var flatten = require("lodash/array/flatten");
+var defaults = require("lodash/object/defaults");
+var Shape = require("./mixins/shape");
+var Group = require('./group');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var Grid = function(options) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+  this.shape();
+  this.modules = [];
 
-var _assign = _dereq_("lodash/object/assign");
+  var req = defaults(options || {}, {
+    x:0,
+    y:0,
+    columns:10,
+    rows:1,
+    gutterWidth: 0,
+    gutterHeight: 0,
+    moduleWidth:50,
+    moduleHeight:500
+  });
 
-var _assign2 = _interopRequireDefault(_assign);
+  // if gutter is set, override gutterWidth and gutterHeight
+  if(typeof req.gutter !== 'undefined') {
+    req.gutterWidth = req.gutter;
+    req.gutterHeight = req.gutter;
+  }
 
-var _defaults = _dereq_("lodash/object/defaults");
+  // if width is set, override moduleWidth
+  if(typeof req.width !== 'undefined') {
+    req.moduleWidth = (req.width - ((req.columns-1) * req.gutterWidth)) / req.columns;
+  } else {
+    req.width = (req.moduleWidth * req.columns) + (req.gutterWidth * (req.columns-1))
+  }
 
-var _defaults2 = _interopRequireDefault(_defaults);
+  // if height is set, override moduleWidth
+  if(typeof req.height !== 'undefined') {
+    req.moduleHeight = (req.height - ((req.rows-1) * req.gutterHeight)) / req.rows;
+  } else {
+    req.height = (req.moduleHeight * req.rows) + (req.gutterHeight * (req.rows-1))
+  }
 
-var _mixins = _dereq_("./mixins");
+  assign(this.state, req);
 
-var _group = _dereq_("./group");
+  this.computeGrid();
+}
 
-var _group2 = _interopRequireDefault(_group);
+Grid.prototype = {
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  add: function(child, column, row) {
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+    if(!column) column = 1;
+    if(!row) row = 1;
 
-var Grid = (function () {
-  function Grid(options) {
-    _classCallCheck(this, Grid);
+    // index is x + (y * width)
+    var index = (column-1) + ((row-1) * this.state.columns)
 
-    this.moveable();
+    if(this.modules[index]) {
+      this.modules[index].add(child)
+    } else {
+      throw new Error("Column or row does not exist");
+    }
+  },
+
+  getModule: function(column, row) {
+
+    // index is x + (y * width)
+    var index = (column-1) + ((row-1) * this.state.columns)
+
+    if(this.modules[index])
+      return this.modules[index]
+    else
+      return undefined
+  },
+
+  computeGrid: function() {
+
     this.modules = [];
 
-    var req = (0, _defaults2.default)(options || {}, {
-      x: 0,
-      y: 0,
-      columns: 10,
-      rows: 1,
-      gutterWidth: 0,
-      gutterHeight: 0,
-      moduleWidth: 50,
-      moduleHeight: 500
+    for(var y = 0; y < this.state.rows; y++) {
+      for(var x = 0; x < this.state.columns; x++) {
+
+        var groupX = (x * this.state.moduleWidth) + (x * this.state.gutterWidth);
+        var groupY = (y * this.state.moduleHeight) + (y * this.state.gutterHeight);
+
+        this.modules.push(new Group(groupX, groupY));
+      }
+    }
+  },
+
+  render: function(opts) {
+    var attr = this.shapeAttributes({});
+    var groups = map(this.modules, function(module) {
+      return module.render(opts);
     });
-
-    // if gutter is set, override gutterWidth and gutterHeight
-    if (typeof req.gutter !== 'undefined') {
-      req.gutterWidth = req.gutter;
-      req.gutterHeight = req.gutter;
-    }
-
-    // if width is set, override moduleWidth
-    if (typeof req.width !== 'undefined') {
-      req.moduleWidth = (req.width - (req.columns - 1) * req.gutterWidth) / req.columns;
-    } else {
-      req.width = req.moduleWidth * req.columns + req.gutterWidth * (req.columns - 1);
-    }
-
-    // if height is set, override moduleWidth
-    if (typeof req.height !== 'undefined') {
-      req.moduleHeight = (req.height - (req.rows - 1) * req.gutterHeight) / req.rows;
-    } else {
-      req.height = req.moduleHeight * req.rows + req.gutterHeight * (req.rows - 1);
-    }
-
-    (0, _assign2.default)(this.vars, req);
-
-    this.computeGrid();
-  }
-
-  _createClass(Grid, [{
-    key: "add",
-    value: function add(child, column, row) {
-
-      if (!column) column = 1;
-      if (!row) row = 1;
-
-      // index is x + (y * width)
-      var index = column - 1 + (row - 1) * this.vars.columns;
-
-      if (this.modules[index]) this.modules[index].add(child);else throw new Error("Column or row does not exist");
-    }
-  }, {
-    key: "getModule",
-    value: function getModule(column, row) {
-
-      // index is x + (y * width)
-      var index = column - 1 + (row - 1) * this.vars.columns;
-
-      if (this.modules[index]) return this.modules[index];else return undefined;
-    }
-  }, {
-    key: "computeGrid",
-    value: function computeGrid() {
-
-      this.modules = [];
-
-      for (var y = 0; y < this.vars.rows; y++) {
-        for (var x = 0; x < this.vars.columns; x++) {
-
-          var groupX = x * this.vars.moduleWidth + x * this.vars.gutterWidth;
-          var groupY = y * this.vars.moduleHeight + y * this.vars.gutterHeight;
-
-          this.modules.push(new _group2.default(groupX, groupY));
-        }
-      }
-    }
-  }]);
-
-  return Grid;
-})();
-
-(0, _assign2.default)(Grid.prototype, _mixins.Shapeable, _mixins.Moveable, { type: "grid" });
-
-exports.default = Grid;
-
-},{"./group":118,"./mixins":119,"lodash/object/assign":70,"lodash/object/defaults":71}],118:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _without = _dereq_("lodash/array/without");
-
-var _without2 = _interopRequireDefault(_without);
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _each = _dereq_("lodash/collection/each");
-
-var _each2 = _interopRequireDefault(_each);
-
-var _mixins = _dereq_("./mixins");
-
-var _utils = _dereq_("./utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _vector = _dereq_("./vector");
-
-var _vector2 = _interopRequireDefault(_vector);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Group = (function () {
-  function Group(x, y) {
-    _classCallCheck(this, Group);
-
-    this.moveable();
-    this.children = [];
-
-    if (typeof x !== 'undefined') this.vars.x = x;
-    if (typeof y !== 'undefined') this.vars.y = y;
-  }
-
-  _createClass(Group, [{
-    key: "add",
-    value: function add(child) {
-      if (child.parent) child.parent.remove(child);
-      this.children.push(child);
-      child.parent = this;
-    }
-  }, {
-    key: "remove",
-    value: function remove(child) {
-      this.children = (0, _without2.default)(this.children, child);
-      child.parent = false;
-    }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Group();
-      for (var i = 0; i < this.children.length; i++) {
-        this.children[i].copy(copy);
-      }
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      (0, _each2.default)(this.children, function (child) {
-        child.vars.x *= scalar;
-        child.vars.y *= scalar;
-        child.scale(scalar);
-      });
-      return this;
-    }
-  }]);
-
-  return Group;
-})();
-
-// Should we figure out a better way to do mixins for ES6?
-
-(0, _assign2.default)(Group.prototype, _mixins.Moveable, { type: "group" });
-
-exports.default = Group;
-
-},{"./mixins":119,"./utils":130,"./vector":131,"lodash/array/without":6,"lodash/collection/each":7,"lodash/object/assign":70}],119:[function(_dereq_,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Styleable = exports.Sizeable = exports.Moveable = undefined;
-
-var _utils = _dereq_('./utils');
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _color = _dereq_('./color');
-
-var _color2 = _interopRequireDefault(_color);
-
-var _vector = _dereq_('./vector');
-
-var _vector2 = _interopRequireDefault(_vector);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Moveable = {
-
-  moveable: function moveable(copy) {
-    this.vars = this.vars || {};
-    this.vars.x = copy ? copy.vars.x : 0;
-    this.vars.y = copy ? copy.vars.y : 0;
-    this.vars.rotation = copy ? copy.vars.rotation : 0;
-    this.vars.rotationX = copy ? copy.vars.rotationX : 0;
-    this.vars.rotationY = copy ? copy.vars.rotationY : 0;
+    if(opts.debug) groups = groups.concat(this.renderDebug());
+    return svg('g', attr, flatten(groups, true));
   },
 
-  move: function move(x, y, relative) {
-    this.vars.x = relative ? this.vars.x + x : x;
-    this.vars.y = relative ? this.vars.y + y : y;
+  renderDebug: function() {
+    var els = [];
+
+    // draw container rect
+    els.push(this.debugRect(0, 0, this.state.width, this.state.height));
+
+    // draw lines for columns
+    var x = 0;
+    for(var i = 0; i < this.state.columns-1; i++) {
+      x += this.state.moduleWidth;
+      els.push(this.debugLine(x, 0, x, this.state.height));
+      x += this.state.gutterWidth;
+      els.push(this.debugLine(x, 0, x, this.state.height));
+    }
+
+    // draw lines for rows
+    var y = 0;
+    for(var i = 0; i < this.state.rows-1; i++) {
+      y += this.state.moduleHeight;
+      els.push(this.debugLine(0, y, this.state.width, y));
+      y += this.state.gutterHeight;
+      els.push(this.debugLine(0, y, this.state.width, y));
+    }
+
+    return els;
+  }
+
+}
+
+assign(Grid.prototype, Shape, { type: "grid" });
+
+module.exports = Grid;
+
+},{"./group":118,"./mixins/shape":120,"lodash/array/flatten":4,"lodash/collection/map":9,"lodash/object/assign":70,"lodash/object/defaults":71,"virtual-dom/virtual-hyperscript/svg":100}],118:[function(require,module,exports){
+var without = require("lodash/array/without");
+var assign = require("lodash/object/assign");
+var flatten = require("lodash/array/flatten");
+var each = require("lodash/collection/each");
+var map = require("lodash/collection/map");
+var Shape = require("./mixins/shape");
+var Utils = require('./utils');
+var Vector = require('./vector');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Group = function(x, y) {
+  this.shape();
+  this.children = [];
+  this.changedChildren = [];
+  this.renderedChildren = [];
+  if(typeof x !== 'undefined') this.state.x = x;
+  if(typeof y !== 'undefined') this.state.y = y;
+}
+
+Group.prototype = {
+
+  add: function(child) {
+    if(child.parent) child.parent.remove(child);
+    this.children.push(child);
+    child.parent = this;
+    child.childId = this.children.length-1;
+    child.changed();
+  },
+
+  remove: function(child) {
+    this.children = without(this.children, child);
+    this.changedChildren = without(this.changedChildren, child.childId);
+
+    // Lower id's of all children above by one
+    for(var i = child.childId; i < this.children.length; i++) {
+      this.children[i].childId--;
+    }
+
+    // lower id's of all changedChildren by one
+    for(var i = 0; i < this.changedChildren; i++) {
+      if(this.changedChildren[i] > child.childId) this.changedChildren[i]--;
+    }
+
+    child.childId = null;
+    child.parentNotified = false;
+    child.parent = false;
+  },
+
+  copy: function(parent) {
+    var copy = new Group();
+    for(var i = 0; i < this.children.length; i++) {
+      this.children[i].copy(copy)
+    }
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  scale: function(scalar) {
+    each(this.children, function(child) {
+      child.state.x *= scalar;
+      child.state.y *= scalar;
+      child.scale(scalar);
+    });
     return this;
   },
 
-  rotate: function rotate(deg, x, y, relative) {
-    this.vars.rotation = deg;
-    if (x || y) {
-      this.vars.rotationX = x || 0;
-      this.vars.rotationY = y || 0;
+  render: function(opts) {
+    if(!this.children || this.children.length == 0) return;
+    var attr = this.shapeAttributes({});
+    return svg('g', attr, this.renderChildren(opts));
+  },
+
+  renderChildren: function(opts) {
+
+    // loop through the changed children
+    while(this.changedChildren.length > 0) {
+      var childId = this.changedChildren.shift();
+      this.renderedChildren[childId] = this.children[childId].render(opts);
+      this.children[childId].parentNotified = false;
     }
-    if (relative) {
-      this.vars.rotationX += this.vars.x;
-      this.vars.rotationY += this.vars.y;
-    }
+
+    // FIGURE OUT HOW NOT TO FLATTEN EVERY TIME!
+    return flatten(this.renderedChildren, true);
+  }
+
+}
+
+assign(Group.prototype, Shape, {type: "group"});
+
+module.exports = Group;
+
+},{"./mixins/shape":120,"./utils":132,"./vector":133,"lodash/array/flatten":4,"lodash/array/without":6,"lodash/collection/each":7,"lodash/collection/map":9,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],119:[function(require,module,exports){
+var Box = {
+
+  box: function(copy) {
+    this.state = this.state || {};
+    this.state.width = copy ? copy.state.width : 0;
+    this.state.height = copy ? copy.state.height : 0;
+  },
+
+  width: function(width, relative) {
+    this.state.width = relative ? this.state.width + width : width;
+    this.changed();
     return this;
   },
 
-  addParent: function addParent(group) {
+  height: function(height, relative) {
+    this.state.height = relative ? this.state.height + height : height;
+    this.changed();
+    return this;
+  },
+
+  scaleBox: function(scalar) {
+    this.state.width *= scalar;
+    this.state.height *= scalar;
+  },
+
+  boxAttributes: function(attr) {
+    attr.width = Utils.s(this.state.width);
+    attr.height = Utils.s(this.state.height);
+    return attr;
+  }
+
+}
+
+module.exports = Box;
+
+},{}],120:[function(require,module,exports){
+var Vector = require('../vector');
+var Utils = require("../utils");
+var each = require("lodash/collection/each");
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Shape = {
+
+  changed: function() {
+    if(this.parent && !this.parentNotified) {
+      // let the parent know that this child changed
+      this.parent.changedChildren.push(this.childId);
+      // let's not do it again
+      this.parentNotified = true;
+      // let the parent do this for its parent
+      this.parent.changed();
+    }
+  },
+
+  shape: function(copy) {
+    this.state = this.state || {};
+    this.state.x = copy ? copy.state.x : 0;
+    this.state.y = copy ? copy.state.y : 0;
+    this.state.rotation = copy ? copy.state.rotation : 0;
+    this.state.rotationX = copy ? copy.state.rotationX : 0;
+    this.state.rotationY = copy ? copy.state.rotationY : 0;
+  },
+
+  move: function(x, y, relative) {
+    this.state.x = relative ? this.state.x + x : x;
+    this.state.y = relative ? this.state.y + y : y;
+    this.changed();
+    return this;
+  },
+
+  rotate: function(deg, x, y, relative) {
+    this.state.rotation = deg;
+    if(x || y) {
+      this.state.rotationX = x || 0;
+      this.state.rotationY = y || 0;
+    }
+    if(relative) {
+      this.state.rotationX += this.state.x;
+      this.state.rotationY += this.state.y;
+    }
+    this.changed();
+    return this;
+  },
+
+  addTo: function(group) {
     group.add(this);
     return this;
   },
 
-  removeParent: function removeParent() {
-    if (this.parent) this.parent.remove(this);
+  removeParent: function() {
+    if(this.parent) this.parent.remove(this);
     return this;
   },
 
-  stagepos: function stagepos() {
-    var vec = new _vector2.default(this.vars.x, this.vars.y);
-    if (this.parent) {
+  stagepos: function() {
+    var vec = new Vector(this.state.x, this.state.y);
+    if(this.parent) {
       vec = vec.add(this.parent.stagepos());
     }
     return vec;
-  }
+  },
 
-};
+  // Render
+  // ---------------------------------------------------
 
-var Sizeable = {
+  shapeAttributes: function(attr) {
 
-  sizeable: function sizeable(copy) {
-    this.vars = this.vars || {};
-    this.vars.width = copy ? copy.vars.width : 0;
-    this.vars.height = copy ? copy.vars.height : 0;
-  }
+    var strings = [];
 
-};
-
-var Styleable = {
-
-  styleable: function styleable(copy) {
-
-    this.vars = this.vars || {};
-    this.vars.fill = new _color2.default(128);
-    this.vars.stroke = new _color2.default(0);
-
-    if (copy) {
-      if (copy.vars.fill === false) this.vars.fill = false;else if (copy.vars.fill) this.vars.fill = copy.vars.fill.copy();
-
-      if (copy.vars.stroke === false) this.vars.stroke = false;else if (copy.vars.stroke) this.vars.stroke = copy.vars.stroke.copy();
-
-      if (copy.vars.strokeWidth) this.vars.strokeWidth = copy.vars.strokeWidth;
-      if (copy.vars.strokeCap) this.vars.strokeCap = copy.vars.strokeCap;
-      if (copy.vars.strokeJoin) this.vars.strokeJoin = copy.vars.strokeJoin;
-      if (copy.vars.strokeMiterlimit) this.vars.strokeMiterlimit = copy.vars.strokeMiterlimit;
-      if (copy.vars.strokeDash) this.vars.strokeDash = copy.vars.strokeDash;
-      if (copy.vars.strokeDashOffset) this.vars.strokeDashOffset = copy.vars.strokeDashOffset;
+    if(this.state.rotation) {
+      var rot = "rotate(" + this.state.rotation;
+      if(this.state.rotationX || this.state.rotationY)
+        rot += " " + this.state.rotationX + " " + this.state.rotationY;
+      strings.push(rot + ")");
     }
+
+    if((this.type == "group" || this.type == "path" || this.type == "polygon" || this.type == "grid" || this.type == "triangle") && (this.state.x || this.state.y)) {
+      strings.push("translate(" + this.state.x + " " + this.state.y + ")");
+    }
+
+    if(strings.length > 0)
+      attr.transform = strings.join(" ").trim();
+
+    return attr;
   },
 
-  fill: function fill(a, b, c, d, e) {
-    if (a === false) this.vars.fill = false;else this.vars.fill = new _color2.default(a, b, c, d, e);
-    return this;
+  optionalAttributes: function(attr, keys) {
+    each(keys, function(attribute, variable) {
+      if(this.state[variable]) {
+        attr[attribute] = Utils.s(this.state[variable]);
+      }
+    }, this);
   },
 
-  stroke: function stroke(a, b, c, d, e) {
-    if (a === false) this.vars.stroke = false;else this.vars.stroke = new _color2.default(a, b, c, d, e);
-    return this;
-  },
+  // Render Debug
+  // ---------------------------------------------------
 
-  strokeWidth: function strokeWidth(val) {
-    this.vars.strokeWidth = val;return this;
-  },
-  strokeCap: function strokeCap(val) {
-    this.vars.strokeCap = val;return this;
-  },
-  strokeJoin: function strokeJoin(val) {
-    this.vars.strokeJoin = val;return this;
-  },
-  strokeMiterlimit: function strokeMiterlimit(val) {
-    this.vars.strokeMiterlimit = val;return this;
-  },
-  strokeDash: function strokeDash(val) {
-    this.vars.strokeDash = val;return this;
-  },
-  strokeDashOffset: function strokeDashOffset(val) {
-    this.vars.strokeDashOffset = val;return this;
-  }
-};
-
-exports.Moveable = Moveable;
-exports.Sizeable = Sizeable;
-exports.Styleable = Styleable;
-
-},{"./color":115,"./utils":130,"./vector":131}],120:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _flatten = _dereq_("lodash/array/flatten");
-
-var _flatten2 = _interopRequireDefault(_flatten);
-
-var _each = _dereq_("lodash/collection/each");
-
-var _each2 = _interopRequireDefault(_each);
-
-var _map = _dereq_("lodash/collection/map");
-
-var _map2 = _interopRequireDefault(_map);
-
-var _circle = _dereq_("./shapes/circle");
-
-var _circle2 = _interopRequireDefault(_circle);
-
-var _rectangle = _dereq_("./shapes/rectangle");
-
-var _rectangle2 = _interopRequireDefault(_rectangle);
-
-var _line = _dereq_("./shapes/line");
-
-var _line2 = _interopRequireDefault(_line);
-
-var _h = _dereq_("virtual-dom/h");
-
-var _h2 = _interopRequireDefault(_h);
-
-var _diff = _dereq_("virtual-dom/diff");
-
-var _diff2 = _interopRequireDefault(_diff);
-
-var _patch = _dereq_("virtual-dom/patch");
-
-var _patch2 = _interopRequireDefault(_patch);
-
-var _createElement = _dereq_("virtual-dom/create-element");
-
-var _createElement2 = _interopRequireDefault(_createElement);
-
-var _svg = _dereq_("virtual-dom/virtual-hyperscript/svg");
-
-var _svg2 = _interopRequireDefault(_svg);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Render = (function () {
-  function Render(params) {
-    _classCallCheck(this, Render);
-
-    this.params = params;
-    this.tree = (0, _svg2.default)('svg', {
-      width: this.s(params.width),
-      height: this.s(params.height)
+  debugCircle: function(x, y) {
+    return svg('circle', {
+      cx: Utils.s(x),
+      cy: Utils.s(y),
+      r: Utils.s(4),
+      fill: "rgb(212, 18, 229)"
     });
-    this.el = (0, _createElement2.default)(this.tree);
+  },
+
+  debugRect: function(x, y, width, height) {
+    return svg('rect', {
+      x: Utils.s(x),
+      y: Utils.s(y),
+      width: Utils.s(width),
+      height: Utils.s(height),
+      stroke: "rgb(212, 18, 229)",
+      fill: "none"
+    });
+  },
+
+  debugLine: function(x1, y1, x2, y2) {
+    return svg('line', {
+      x1: Utils.s(x1),
+      y1: Utils.s(y1),
+      x2: Utils.s(x2),
+      y2: Utils.s(y2),
+      stroke: "rgb(212, 18, 229)",
+      fill: "none"
+    });
   }
 
-  _createClass(Render, [{
-    key: "render",
-    value: function render(stage, opts) {
+};
 
-      var newTree = (0, _svg2.default)('svg', {
-        width: this.s(this.params.width),
-        height: this.s(this.params.height)
-      }, [this.objectsToSVG(stage.children, opts)]);
+module.exports = Shape;
 
-      var diffTree = (0, _diff2.default)(this.tree, newTree);
-      this.el = (0, _patch2.default)(this.el, diffTree);
-      this.tree = newTree;
+},{"../utils":132,"../vector":133,"lodash/collection/each":7,"virtual-dom/virtual-hyperscript/svg":100}],121:[function(require,module,exports){
+var Color = require('../color');
+var Utils = require('../utils');
+
+var Styles = {
+
+  styles: function(copy) {
+
+    this.state = this.state || {};
+    this.state.fill = new Color(128);
+    this.state.stroke = new Color(0);
+
+    if(copy) {
+      if(copy.state.fill === false)  this.state.fill = false;
+      else if(copy.state.fill)       this.state.fill = copy.state.fill.copy();
+
+      if(copy.state.stroke === false)  this.state.stroke = false;
+      else if(copy.state.stroke)       this.state.stroke = copy.state.stroke.copy();
+
+      if(copy.state.strokeWidth)       this.state.strokeWidth = copy.state.strokeWidth;
+      if(copy.state.strokeCap)         this.state.strokeCap = copy.state.strokeCap;
+      if(copy.state.strokeJoin)        this.state.strokeJoin = copy.state.strokeJoin;
+      if(copy.state.strokeMiterlimit)  this.state.strokeMiterlimit = copy.state.strokeMiterlimit;
+      if(copy.state.strokeDash)        this.state.strokeDash = copy.state.strokeDash;
+      if(copy.state.strokeDashOffset)  this.state.strokeDashOffset = copy.state.strokeDashOffset;
+    }
+  },
+
+  fill: function(a, b, c, d, e) {
+    if(a === false) this.state.fill = false;
+    else            this.state.fill = new Color(a, b, c, d, e);
+    this.changed();
+    return this;
+  },
+
+  stroke: function(a, b, c, d, e) {
+    if(a === false) this.state.stroke = false;
+    else            this.state.stroke = new Color(a, b, c, d, e);
+    this.changed();
+    return this;
+  },
+
+  strokeWidth: function(val) {
+    this.state.strokeWidth = val;
+    this.changed();
+    return this;
+  },
+
+  strokeCap: function(val) {
+    this.state.strokeCap = val;
+    this.changed();
+    return this;
+  },
+
+  strokeJoin: function(val) {
+    this.state.strokeJoin = val;
+    this.changed();
+    return this;
+  },
+
+  strokeMiterlimit: function(val) {
+    this.state.strokeMiterlimit = val;
+    this.changed();
+    return this;
+  },
+
+  strokeDash: function(val) {
+    this.state.strokeDash = val;
+    this.changed();
+    return this;
+  },
+
+  strokeDashOffset: function(val) {
+    this.state.strokeDashOffset= val;
+    this.changed();
+    return this;
+  },
+
+  scaleStyles: function(scalar) {
+    if(this.state.strokeWidth) {
+      this.state.strokeWidth *= scalar;
+    }
+    else {
+      this.state.strokeWidth = scalar;
+    }
+  },
+
+  stylesAttributes: function(attr) {
+
+    if(this.state.fill === false)    attr.fill = "none";
+    else if(this.state.fill) {
+      attr.fill = "rgb(" + this.state.fill.values.rgb[0] + ", " + this.state.fill.values.rgb[1] + ", " + this.state.fill.values.rgb[2] + ")";
+      var alpha = this.state.fill.values.alpha;
+      if(alpha < 1) attr["fill-opacity"] = Utils.s(alpha);
     }
 
-    // Shape converters
-    // --------------------------------------------------
-
-  }, {
-    key: "objectToSVG",
-    value: function objectToSVG(object, opts) {
-      if (this[object.type + "ToSVG"]) return this[object.type + "ToSVG"](object, opts);else console.error("Rune.Render: Object not recognized", object);
-    }
-  }, {
-    key: "objectsToSVG",
-    value: function objectsToSVG(objects, opts) {
-      var newObjects = [];
-      for (var i = 0; i < objects.length; i++) {
-        newObjects.push(this.objectToSVG(objects[i], opts));
-      }
-      return (0, _flatten2.default)(newObjects, true);
-    }
-  }, {
-    key: "rectangleToSVG",
-    value: function rectangleToSVG(rect) {
-      var attr = {
-        x: this.s(rect.vars.x),
-        y: this.s(rect.vars.y),
-        width: this.s(rect.vars.width),
-        height: this.s(rect.vars.height)
-      };
-      this.transformAttribute(attr, rect);
-      this.styleableAttributes(rect, attr);
-      return (0, _svg2.default)('rect', attr);
-    }
-  }, {
-    key: "ellipseToSVG",
-    value: function ellipseToSVG(ellipse) {
-      var attr = {
-        cx: this.s(ellipse.vars.x),
-        cy: this.s(ellipse.vars.y),
-        rx: this.s(ellipse.vars.width / 2),
-        ry: this.s(ellipse.vars.height / 2)
-      };
-      this.transformAttribute(attr, ellipse);
-      this.styleableAttributes(ellipse, attr);
-      return (0, _svg2.default)('ellipse', attr);
-    }
-  }, {
-    key: "circleToSVG",
-    value: function circleToSVG(circle) {
-      var attr = {
-        cx: this.s(circle.vars.x),
-        cy: this.s(circle.vars.y),
-        r: this.s(circle.vars.radius)
-      };
-      this.transformAttribute(attr, circle);
-      this.styleableAttributes(circle, attr);
-      return (0, _svg2.default)('circle', attr);
-    }
-  }, {
-    key: "lineToSVG",
-    value: function lineToSVG(line) {
-      var attr = {
-        x1: this.s(line.vars.x),
-        y1: this.s(line.vars.y),
-        x2: this.s(line.vars.x2),
-        y2: this.s(line.vars.y2)
-      };
-      this.transformAttribute(attr, line);
-      this.styleableAttributes(line, attr);
-      return (0, _svg2.default)('line', attr);
-    }
-  }, {
-    key: "triangleToSVG",
-    value: function triangleToSVG(tri) {
-      var attr = {
-        points: '0 0 ' + tri.vars.x2 + ' ' + tri.vars.y2 + ' ' + tri.vars.x3 + ' ' + tri.vars.y3
-      };
-      this.transformAttribute(attr, tri);
-      this.styleableAttributes(tri, attr);
-      return (0, _svg2.default)('polygon', attr);
-    }
-  }, {
-    key: "polygonToSVG",
-    value: function polygonToSVG(polygon) {
-      var attr = {
-        points: (0, _map2.default)(polygon.vars.vectors, function (vec) {
-          return vec.x + " " + vec.y;
-        }).join(" ")
-      };
-      this.transformAttribute(attr, polygon);
-      this.styleableAttributes(polygon, attr);
-      return (0, _svg2.default)('polygon', attr);
-    }
-  }, {
-    key: "pathToSVG",
-    value: function pathToSVG(path, opts) {
-      var attr = {};
-      this.dAttribute(path, attr);
-      this.transformAttribute(attr, path);
-      this.styleableAttributes(path, attr);
-      this.optionalAttributes(path, attr, {
-        "fillRule": "fill-rule"
-      });
-
-      var els = [(0, _svg2.default)('path', attr)];
-
-      if (opts && opts.debug) els = els.concat(this.debugPathToSVG(path));
-      return els;
-    }
-  }, {
-    key: "textToSVG",
-    value: function textToSVG(text, opts) {
-      var attr = {
-        x: this.s(text.vars.x),
-        y: this.s(text.vars.y)
-      };
-      this.transformAttribute(attr, text);
-      this.styleableAttributes(text, attr);
-
-      // attributes that need specific handling
-      if (text.vars.textAlign) {
-        var translate = { "left": "start", "center": "middle", "right": "end" };
-        attr["text-anchor"] = translate[text.vars.textAlign];
-      }
-
-      this.optionalAttributes(text, attr, {
-        "fontFamily": "font-family",
-        "textAlign": "text-align",
-        "fontStyle": "font-style",
-        "fontWeight": "font-weight",
-        "fontSize": "font-size",
-        "letterSpacing": "letter-spacing",
-        "textDecoration": "text-decoration"
-      });
-
-      if (text.vars.textAlign) {
-        var translate = { "left": "start", "center": "middle", "right": "end" };
-        attr["text-anchor"] = translate[text.vars.textAlign];
-      }
-
-      return (0, _svg2.default)('text', attr, text.vars.text);
-    }
-  }, {
-    key: "groupToSVG",
-    value: function groupToSVG(group) {
-      if (!group.children || group.children.length == 0) return;
-      var attr = {};
-      this.transformAttribute(attr, group);
-      return (0, _svg2.default)('g', attr, this.objectsToSVG(group.children));
-    }
-  }, {
-    key: "gridToSVG",
-    value: function gridToSVG(grid, opts) {
-      var attr = {};
-      this.transformAttribute(attr, grid);
-      var groups = this.objectsToSVG(grid.modules);
-      if (opts && opts.debug) groups = groups.concat(this.debugGridToSVG(grid));
-
-      return (0, _svg2.default)('g', attr, (0, _flatten2.default)(groups, true));
+    if(this.state.stroke === false)  attr.stroke = "none";
+    else if(this.state.stroke) {
+      attr.stroke = "rgb(" + this.state.stroke.values.rgb[0] + ", " + this.state.stroke.values.rgb[1] + ", " + this.state.stroke.values.rgb[2] + ")";
+      var alpha = this.state.stroke.values.alpha;
+      if(alpha < 1) attr["stroke-opacity"] = Utils.s(alpha);
     }
 
-    // Multiple attributes
-    // --------------------------------------------------
-
-  }, {
-    key: "optionalAttributes",
-    value: function optionalAttributes(object, attr, keys) {
-      (0, _each2.default)(keys, function (attribute, variable) {
-        if (object.vars[variable]) {
-          attr[attribute] = this.s(object.vars[variable]);
-        }
-      }, this);
-    }
-  }, {
-    key: "sizeableAttributes",
-    value: function sizeableAttributes(object, attr) {
-      attr.width = this.s(object.vars.width);
-      attr.height = this.s(object.vars.height);
-    }
-  }, {
-    key: "styleableAttributes",
-    value: function styleableAttributes(object, attr) {
-
-      function rgbString(col) {
-        var obj = col.rgb();
-        return "rgb(" + obj.r + ", " + obj.g + ", " + obj.b + ")";
-      }
-
-      if (object.vars.fill === false) attr.fill = "none";else if (object.vars.fill) {
-        attr.fill = rgbString(object.vars.fill);
-        var alpha = object.vars.fill.alpha();
-        if (alpha < 1) attr["fill-opacity"] = this.s(alpha);
-      }
-
-      if (object.vars.stroke === false) attr.stroke = "none";else if (object.vars.stroke) {
-        attr.stroke = rgbString(object.vars.stroke);
-        var alpha = object.vars.stroke.alpha();
-        if (alpha < 1) attr["stroke-opacity"] = this.s(alpha);
-      }
-
-      if (object.vars.strokeWidth) attr["stroke-width"] = this.s(object.vars.strokeWidth);
-      if (object.vars.strokeCap) attr["stroke-linecap"] = object.vars.strokeCap;
-      if (object.vars.strokeJoin) attr["stroke-linejoin"] = object.vars.strokeJoin;
-      if (object.vars.strokeMiterlimit) attr["stroke-miterlimit"] = this.s(object.vars.strokeMiterlimit);
-      if (object.vars.strokeDash) attr["stroke-dasharray"] = object.vars.strokeDash;
-      if (object.vars.strokeDashOffset) attr["stroke-dashoffset"] = this.s(object.vars.strokeDashOffset);
-    }
-
-    // Single attributes
-    // --------------------------------------------------
-
-  }, {
-    key: "transformAttribute",
-    value: function transformAttribute(attr, shape) {
-
-      var vars = shape.vars;
-      var strings = [];
-
-      if (vars.rotation) {
-        var rot = "rotate(" + vars.rotation;
-        if (vars.rotationX || vars.rotationY) rot += " " + vars.rotationX + " " + vars.rotationY;
-        strings.push(rot + ")");
-      }
-
-      if ((shape.type == "group" || shape.type == "path" || shape.type == "polygon" || shape.type == "grid" || shape.type == "triangle") && (vars.x || vars.y)) {
-        strings.push("translate(" + vars.x + " " + vars.y + ")");
-      }
-
-      if (strings.length > 0) attr.transform = strings.join(" ").trim();
-    }
-  }, {
-    key: "dAttribute",
-    value: function dAttribute(object, attr) {
-      attr.d = (0, _map2.default)(object.vars.anchors, function (a) {
-
-        if (a.command == 'move') {
-          return (a.relative ? "m" : "M") + " " + [a.vec1.x, a.vec1.y].join(' ');
-        } else if (a.command == 'line') {
-          return (a.relative ? "l" : "L") + " " + [a.vec1.x, a.vec1.y].join(' ');
-        } else if (a.command == 'cubic') {
-          return (a.relative ? "c" : "C") + " " + [a.vec1.x, a.vec1.y, a.vec2.x, a.vec2.y, a.vec3.x, a.vec3.y].join(' ');
-        } else if (a.command == 'quad' && typeof a.vec2 !== 'undefined') {
-          return (a.relative ? "q" : "Q") + " " + [a.vec1.x, a.vec1.y, a.vec2.x, a.vec2.y].join(' ');
-        } else if (a.command == 'quad') {
-          return (a.relative ? "t" : "T") + " " + [a.vec1.x, a.vec1.y].join(' ');
-        } else if (a.command == 'close') {
-          return "Z";
-        }
-      }).join(" ").trim();
-    }
-
-    // Debug
-    // --------------------------------------------------
-
-  }, {
-    key: "debugPathToSVG",
-    value: function debugPathToSVG(path) {
-
-      var t = this;
-      var els = [];
-
-      (0, _each2.default)(path.vars.anchors, function (a, i) {
-        if (a.command == 'cubic') {
-          els.push(t.debugLine(path.vars.x + a.vec1.x, path.vars.y + a.vec1.y, path.vars.x + a.vec3.x, path.vars.y + a.vec3.y));
-          els.push(t.debugLine(path.vars.x + a.vec2.x, path.vars.y + a.vec2.y, path.vars.x + a.vec3.x, path.vars.y + a.vec3.y));
-          for (var i = 1; i < 4; i++) {
-            els.push(t.debugCircle(path.vars.x + a["vec" + i].x, path.vars.y + a["vec" + i].y));
-          }
-        } else if (a.command == 'quad' && typeof a.vec2 !== 'undefined') {
-          els.push(t.debugLine(path.vars.x + a.vec1.x, path.vars.y + a.vec1.y, path.vars.x + a.vec2.x, path.vars.y + a.vec2.y));
-          for (var i = 1; i < 3; i++) {
-            els.push(t.debugCircle(path.vars.x + a["vec" + i].x, path.vars.y + a["vec" + i].y));
-          }
-        }
-      });
-
-      return els;
-    }
-  }, {
-    key: "debugGridToSVG",
-    value: function debugGridToSVG(grid) {
-
-      var t = this;
-      var els = [];
-
-      // draw container rect
-      els.push(this.debugRect(0, 0, grid.vars.width, grid.vars.height));
-
-      // draw lines for columns
-      var x = 0;
-      for (var i = 0; i < grid.vars.columns - 1; i++) {
-        x += grid.vars.moduleWidth;
-        els.push(this.debugLine(x, 0, x, grid.vars.height));
-        x += grid.vars.gutterWidth;
-        els.push(this.debugLine(x, 0, x, grid.vars.height));
-      }
-
-      // draw lines for rows
-      var y = 0;
-      for (var i = 0; i < grid.vars.rows - 1; i++) {
-        y += grid.vars.moduleHeight;
-        els.push(this.debugLine(0, y, grid.vars.width, y));
-        y += grid.vars.gutterHeight;
-        els.push(this.debugLine(0, y, grid.vars.width, y));
-      }
-
-      return els;
-    }
-  }, {
-    key: "debugCircle",
-    value: function debugCircle(x, y) {
-      var c = new _circle2.default(x, y, 4).fill(212, 18, 229).stroke(false);
-      return this.circleToSVG(c);
-    }
-  }, {
-    key: "debugRect",
-    value: function debugRect(x, y, width, height) {
-      var r = new _rectangle2.default(x, y, width, height).stroke(212, 18, 229).fill(false);
-      return this.rectangleToSVG(r);
-    }
-  }, {
-    key: "debugLine",
-    value: function debugLine(x1, y1, x2, y2) {
-      var l = new _line2.default(x1, y1, x2, y2).stroke(212, 18, 229);
-      return this.lineToSVG(l);
-    }
-
-    // Helpers
-    // --------------------------------------------------
-
-    // function to turn any non-string into a string. We need
-    // this when running server-side node.
-
-  }, {
-    key: "s",
-    value: function s(val) {
-      if (typeof val !== 'string' && typeof val.toString !== 'undefined') return val.toString();
-      return val;
-    }
-  }]);
-
-  return Render;
-})();
-
-exports.default = Render;
-
-},{"./shapes/circle":122,"./shapes/line":124,"./shapes/rectangle":127,"lodash/array/flatten":4,"lodash/collection/each":7,"lodash/collection/map":9,"virtual-dom/create-element":77,"virtual-dom/diff":78,"virtual-dom/h":79,"virtual-dom/patch":87,"virtual-dom/virtual-hyperscript/svg":100}],121:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _defaults = _dereq_("lodash/object/defaults");
-
-var _defaults2 = _interopRequireDefault(_defaults);
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _each = _dereq_("lodash/collection/each");
-
-var _each2 = _interopRequireDefault(_each);
-
-var _vector = _dereq_("./vector");
-
-var _vector2 = _interopRequireDefault(_vector);
-
-var _anchor = _dereq_("./anchor");
-
-var _anchor2 = _interopRequireDefault(_anchor);
-
-var _color = _dereq_("./color");
-
-var _color2 = _interopRequireDefault(_color);
-
-var _group = _dereq_("./group");
-
-var _group2 = _interopRequireDefault(_group);
-
-var _grid = _dereq_("./grid");
-
-var _grid2 = _interopRequireDefault(_grid);
-
-var _utils = _dereq_("./utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _events = _dereq_("./events");
-
-var _events2 = _interopRequireDefault(_events);
-
-var _render = _dereq_("./render");
-
-var _render2 = _interopRequireDefault(_render);
-
-var _circle = _dereq_("./shapes/circle");
-
-var _circle2 = _interopRequireDefault(_circle);
-
-var _ellipse = _dereq_("./shapes/ellipse");
-
-var _ellipse2 = _interopRequireDefault(_ellipse);
-
-var _line = _dereq_("./shapes/line");
-
-var _line2 = _interopRequireDefault(_line);
-
-var _triangle = _dereq_("./shapes/triangle");
-
-var _triangle2 = _interopRequireDefault(_triangle);
-
-var _path = _dereq_("./shapes/path");
-
-var _path2 = _interopRequireDefault(_path);
-
-var _polygon = _dereq_("./shapes/polygon");
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _rectangle = _dereq_("./shapes/rectangle");
-
-var _rectangle2 = _interopRequireDefault(_rectangle);
-
-var _text = _dereq_("./shapes/text");
-
-var _text2 = _interopRequireDefault(_text);
-
-var _mixins = _dereq_("./mixins");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Rune = (function () {
-  function Rune(options) {
-    _classCallCheck(this, Rune);
-
-    var params = (0, _defaults2.default)(options || {}, {
-      width: 640,
-      height: 480,
+    if(this.state.strokeWidth)       attr["stroke-width"] = Utils.s(this.state.strokeWidth);
+    if(this.state.strokeCap)         attr["stroke-linecap"] = this.state.strokeCap;
+    if(this.state.strokeJoin)        attr["stroke-linejoin"] = this.state.strokeJoin;
+    if(this.state.strokeMiterlimit)  attr["stroke-miterlimit"] = Utils.s(this.state.strokeMiterlimit);
+    if(this.state.strokeDash)        attr["stroke-dasharray"] = this.state.strokeDash;
+    if(this.state.strokeDashOffset)  attr["stroke-dashoffset"] = Utils.s(this.state.strokeDashOffset);
+
+    return attr;
+  }
+
+};
+
+module.exports = Styles;
+
+},{"../color":115,"../utils":132}],122:[function(require,module,exports){
+var defaults = require('lodash/object/defaults');
+var assign = require("lodash/object/assign");
+var each = require("lodash/collection/each");
+var Vector = require("./vector");
+var Anchor = require("./anchor");
+var Color = require("./color");
+var Group = require("./group");
+var Grid = require("./grid");
+var Utils = require("./utils");
+var Events = require("./events");
+var Circle = require("./shapes/circle");
+var Ellipse = require("./shapes/ellipse");
+var Line = require("./shapes/line");
+var Triangle = require("./shapes/triangle");
+var Path = require("./shapes/path");
+var Polygon = require("./shapes/polygon");
+var Rectangle = require("./shapes/rectangle");
+var Text = require("./shapes/text");
+var Image = require("./shapes/image");
+var Box = require('./mixins/box');
+var Shape = require('./mixins/shape');
+var Styles = require('./mixins/styles');
+
+var h = require('virtual-dom/h');
+var diff = require('virtual-dom/diff');
+var patch = require('virtual-dom/patch');
+var createElement = require('virtual-dom/create-element');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+// Constructor
+// --------------------------------------------------
+
+var Rune = function(options) {
+
+  var params = defaults(options || {}, {
       debug: false,
       frameRate: 60
-    });
+    }
+  );
 
+  var attrs = {
+    xmlns: 'http://www.w3.org/2000/svg',
+    'xmlns:xlink': 'http://www.w3.org/1999/xlink'
+  }
+
+  if(params.width)  {
+    attrs.width = Utils.s(params.width);
     this.width = params.width;
+  }
+
+  if(params.height) {
+    attrs.height = Utils.s(params.height);
     this.height = params.height;
-    this.renderer = new _render2.default(params);
-    this.stage = new _group2.default();
-    this.debug = params.debug;
-    this.frameCount = 1;
-    this.frameRate = params.frameRate;
+  }
 
-    if (params.container && typeof window !== 'undefined') {
+  this.tree = svg('svg', attrs);
+  this.el = createElement(this.tree);
+  this.stage = new Group();
+  this.debug = params.debug;
+  this.frameCount = 1;
+  this.frameRate = params.frameRate;
 
-      if (typeof params.container === 'string') {
-        params.container = document.querySelector(params.container);
-      }
+  if(params.container && Utils.isBrowser()) {
 
-      if (params.container) {
-        this.appendTo(params.container);
-      } else {
-        console.error("Container element not found");
-      }
+    if(typeof params.container === 'string') {
+      params.container = document.querySelector(params.container);
     }
 
-    this.initEvents();
+    if(params.container) {
+      this.appendTo(params.container);
+      var bounds = this.el.getBoundingClientRect();
+      if(!this.width)   {
+        this.width = bounds.width;
+        this.ignoreWidth = true;
+      }
+      if(!this.height) {
+        this.height = bounds.height;
+        this.ignoreHeight = true;
+      }
+    } else {
+      console.error("Container element not found");
+    }
   }
+
+  // last resort to catch no dimensions
+  if(!this.width)   this.width = 640;
+  if(!this.height) this.height = 480;
+
+  this.initEvents();
+};
+
+Rune.prototype = {
+
+  // Helpers
+  // --------------------------------------------------
+
+  //
+  handleSize: function() {
+
+  },
+
+  relativePos: function(pageX, pageY) {
+    var bounds = this.el.getBoundingClientRect();
+    var relX = pageX - window.scrollX - bounds.left;
+    var relY = pageY - window.scrollY - bounds.top;
+    return { x: relX, y: relY };
+  },
 
   // Events
   // --------------------------------------------------
 
-  _createClass(Rune, [{
-    key: "initEvents",
-    value: function initEvents() {
+  initEvents: function() {
+    // Specific browser events
+    if(typeof window !== 'undefined') {
+      this.initMouseEvents();
+    }
+  },
 
-      // Specific browser events
-      if (typeof window !== 'undefined') {
-        this.initMouseEvents();
-      }
-    }
-  }, {
-    key: "relativePos",
-    value: function relativePos(pageX, pageY) {
-      var bounds = this.renderer.el.getBoundingClientRect();
-      var relX = pageX - bounds.left;
-      var relY = pageY - bounds.top;
-      return { x: relX, y: relY };
-    }
-  }, {
-    key: "initMouseEvents",
-    value: function initMouseEvents() {
-      var mouseEvents = ['mousemove', 'mousedown', 'mouseup', 'click'];
-      (0, _each2.default)(mouseEvents, function (mouseEvent) {
-        var that = this;
-        this.renderer.el.addEventListener(mouseEvent, function (e) {
-          var rel = that.relativePos(e.pageX, e.pageY);
-          that.trigger(mouseEvent, { x: rel.x, y: rel.y });
-        });
-      }, this);
-    }
-
-    // Shape functions
-    // --------------------------------------------------
-
-  }, {
-    key: "group",
-    value: function group(x, y, parent) {
-      var g = new _group2.default(x, y);
-      _utils2.default.groupLogic(g, this.stage, parent);
-      return g;
-    }
-  }, {
-    key: "triangle",
-    value: function triangle(x, y, x2, y2, x3, y3, parent) {
-      var t = new _triangle2.default(x, y, x2, y2, x3, y3);
-      _utils2.default.groupLogic(t, this.stage, parent);
-      return t;
-    }
-  }, {
-    key: "rect",
-    value: function rect(x, y, width, height, parent) {
-      var r = new _rectangle2.default(x, y, width, height);
-      _utils2.default.groupLogic(r, this.stage, parent);
-      return r;
-    }
-  }, {
-    key: "ellipse",
-    value: function ellipse(x, y, width, height, parent) {
-      var e = new _ellipse2.default(x, y, width, height);
-      _utils2.default.groupLogic(e, this.stage, parent);
-      return e;
-    }
-  }, {
-    key: "circle",
-    value: function circle(x, y, radius, parent) {
-      var c = new _circle2.default(x, y, radius);
-      _utils2.default.groupLogic(c, this.stage, parent);
-      return c;
-    }
-  }, {
-    key: "line",
-    value: function line(x1, y1, x2, y2, parent) {
-      var l = new _line2.default(x1, y1, x2, y2);
-      _utils2.default.groupLogic(l, this.stage, parent);
-      return l;
-    }
-  }, {
-    key: "polygon",
-    value: function polygon(x, y, parent) {
-      var p = new _polygon2.default(x, y);
-      _utils2.default.groupLogic(p, this.stage, parent);
-      return p;
-    }
-  }, {
-    key: "path",
-    value: function path(x, y, parent) {
-      var p = new _path2.default(x, y);
-      _utils2.default.groupLogic(p, this.stage, parent);
-      return p;
-    }
-  }, {
-    key: "text",
-    value: function text(textString, x, y, parent) {
-      var t = new _text2.default(textString, x, y);
-      _utils2.default.groupLogic(t, this.stage, parent);
-      return t;
-    }
-  }, {
-    key: "grid",
-    value: function grid(options, parent) {
-      var g = new _grid2.default(options);
-      _utils2.default.groupLogic(g, this.stage, parent);
-      return g;
-    }
-
-    // Playhead
-    // --------------------------------------------------
-
-    // This function is a proxy function that is run on every frame
-    // It has a check that delays the frame with a setTimeout if
-    // the framerate is lower than 60 fps.
-
-  }, {
-    key: "play",
-    value: function play() {
-
-      if (this.pauseNext) {
-        this.pauseNext = false;
-        return;
-      }
-
-      if (this.frameRate >= 60) {
-        this.playNow();
-      } else {
-        var that = this;
-        setTimeout(function () {
-          that.playNow();
-        }, 1000 / this.frameRate);
-      }
-    }
-  }, {
-    key: "playNow",
-    value: function playNow() {
+  initMouseEvents: function() {
+    var mouseEvents = ['mousemove', 'mousedown', 'mouseup', 'click'];
+    each(mouseEvents, function(mouseEvent) {
       var that = this;
-      this.trigger('draw', { frameCount: this.frameCount });
-      this.animationFrame = requestAnimationFrame(function () {
-        that.play();
+      this.el.addEventListener(mouseEvent, function(e) {
+        var rel = that.relativePos(e.pageX, e.pageY);
+        that.trigger(mouseEvent, { x: rel.x, y: rel.y });
       });
-      this.draw();
-    }
-  }, {
-    key: "pause",
-    value: function pause() {
-      this.pauseNext = true;
+    }, this);
+  },
+
+  // Shape functions
+  // --------------------------------------------------
+
+  group: function(x, y, parent) {
+    var g = new Group(x, y);
+    Utils.groupLogic(g, this.stage, parent);
+    return g;
+  },
+
+  triangle: function(x, y, x2, y2, x3, y3, parent) {
+    var t = new Triangle(x, y, x2, y2, x3, y3);
+    Utils.groupLogic(t, this.stage, parent);
+    return t;
+  },
+
+  rect: function(x, y, width, height, parent) {
+    var r = new Rectangle(x, y, width, height);
+    Utils.groupLogic(r, this.stage, parent);
+    return r;
+  },
+
+  ellipse: function(x, y, width, height, parent) {
+    var e = new Ellipse(x, y, width, height);
+    Utils.groupLogic(e, this.stage, parent);
+    return e;
+  },
+
+  circle: function(x, y, radius, parent) {
+    var c = new Circle(x, y, radius, parent);
+    Utils.groupLogic(c, this.stage, parent);
+    return c;
+  },
+
+  line: function(x1, y1, x2, y2, parent) {
+    var l = new Line(x1, y1, x2, y2);
+    Utils.groupLogic(l, this.stage, parent);
+    return l;
+  },
+
+  polygon: function(x, y, parent) {
+    var p = new Polygon(x, y);
+    Utils.groupLogic(p, this.stage, parent);
+    return p;
+  },
+
+  path: function(x, y, parent) {
+    var p = new Path(x, y);
+    Utils.groupLogic(p, this.stage, parent);
+    return p;
+  },
+
+  text: function(textString, x, y, parent) {
+    var t = new Text(textString, x, y);
+    Utils.groupLogic(t, this.stage, parent);
+    return t;
+  },
+
+  image: function(url, x, y, width, height, parent) {
+    var i = new Image(url, x, y, width, height);
+    Utils.groupLogic(i, this.stage, parent);
+    return i;
+  },
+
+  grid: function(options, parent) {
+    var g = new Grid(options);
+    Utils.groupLogic(g, this.stage, parent);
+    return g;
+  },
+
+  // Playhead
+  // --------------------------------------------------
+
+  // This function is a proxy function that is run on every frame
+  // It has a check that delays the frame with a setTimeout if
+  // the framerate is lower than 60 fps.
+  play: function() {
+
+    if(this.pauseNext) {
+      this.pauseNext = false;
+      return;
     }
 
-    // Render functions
-    // --------------------------------------------------
-
-  }, {
-    key: "getEl",
-    value: function getEl() {
-      return this.renderer.el;
+    if(this.frameRate >= 60) {
+      this.playNow();
     }
-  }, {
-    key: "appendTo",
-    value: function appendTo(container) {
-      container.appendChild(this.renderer.el);
-      return this;
+    else {
+      var that = this;
+      setTimeout(function() { that.playNow() }, 1000 / this.frameRate);
     }
-  }, {
-    key: "draw",
-    value: function draw() {
-      this.renderer.render(this.stage, { debug: this.debug });
-      this.frameCount += 1;
+  },
+
+  playNow: function() {
+    var that = this;
+    this.trigger('update', { frameCount: this.frameCount });
+    this.animationFrame = requestAnimationFrame(function() {
+      that.play();
+    });
+    this.draw();
+  },
+
+  pause: function() {
+    this.pauseNext = true;
+  },
+
+  // Render functions
+  // --------------------------------------------------
+
+  appendTo: function(container) {
+    container.appendChild(this.el);
+    return this;
+  },
+
+  draw: function() {
+
+    var attrs = {
+      xmlns: 'http://www.w3.org/2000/svg',
+      'xmlns:xlink': 'http://www.w3.org/1999/xlink'
     }
-  }]);
 
-  return Rune;
-})();
+    if(!this.ignoreWidth)  attrs.width = Utils.s(this.width);
+    if(!this.ignoreHeight) attrs.height = Utils.s(this.height);
 
-(0, _assign2.default)(Rune, _utils2.default);
-(0, _assign2.default)(Rune.prototype, _events2.default);
+    var newTree = svg('svg', attrs, [this.stage.renderChildren({ debug: this.debug })]);
+    var diffTree = diff(this.tree, newTree);
+    this.el = patch(this.el, diffTree);
+    this.tree = newTree;
+
+    this.frameCount += 1;
+  }
+
+}
+
+assign(Rune, Utils);
+assign(Rune.prototype, Utils);
+assign(Rune.prototype, Events)
 
 // Modules should be accessible through Rune
-Rune.Vector = _vector2.default;
-Rune.Anchor = _anchor2.default;
-Rune.Color = _color2.default;
-Rune.Group = _group2.default;
-Rune.Grid = _grid2.default;
-Rune.Circle = _circle2.default;
-Rune.Ellipse = _ellipse2.default;
-Rune.Line = _line2.default;
-Rune.Triangle = _triangle2.default;
-Rune.Path = _path2.default;
-Rune.Polygon = _polygon2.default;
-Rune.Rectangle = _rectangle2.default;
-Rune.Text = _text2.default;
+Rune.Vector = Vector;
+Rune.Anchor = Anchor;
+Rune.Color = Color;
+Rune.Group = Group;
+Rune.Grid = Grid;
+Rune.Circle = Circle;
+Rune.Ellipse = Ellipse;
+Rune.Line = Line;
+Rune.Triangle = Triangle;
+Rune.Path = Path;
+Rune.Polygon = Polygon;
+Rune.Rectangle = Rectangle;
+Rune.Text = Text;
+Rune.Image = Image;
 
 // Right now I need these for mixin tests.
 // Rewrite so we don't need them.
-Rune.Moveable = _mixins.Moveable;
-Rune.Styleable = _mixins.Styleable;
-Rune.Sizeable = _mixins.Sizeable;
+Rune.Shape = Shape;
+Rune.Styles = Styles;
+Rune.Box = Box;
 
 module.exports = Rune;
 
-},{"./anchor":113,"./color":115,"./events":116,"./grid":117,"./group":118,"./mixins":119,"./render":120,"./shapes/circle":122,"./shapes/ellipse":123,"./shapes/line":124,"./shapes/path":125,"./shapes/polygon":126,"./shapes/rectangle":127,"./shapes/text":128,"./shapes/triangle":129,"./utils":130,"./vector":131,"lodash/collection/each":7,"lodash/object/assign":70,"lodash/object/defaults":71}],122:[function(_dereq_,module,exports){
-"use strict";
+},{"./anchor":113,"./color":115,"./events":116,"./grid":117,"./group":118,"./mixins/box":119,"./mixins/shape":120,"./mixins/styles":121,"./shapes/circle":123,"./shapes/ellipse":124,"./shapes/image":125,"./shapes/line":126,"./shapes/path":127,"./shapes/polygon":128,"./shapes/rectangle":129,"./shapes/text":130,"./shapes/triangle":131,"./utils":132,"./vector":133,"lodash/collection/each":7,"lodash/object/assign":70,"lodash/object/defaults":71,"virtual-dom/create-element":77,"virtual-dom/diff":78,"virtual-dom/h":79,"virtual-dom/patch":87,"virtual-dom/virtual-hyperscript/svg":100}],123:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Ellipse = require("./ellipse");
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var Circle = function(x, y, radius) {
+  this.shape();
+  this.styles();
+  this.state.x = x;
+  this.state.y = y;
+  this.state.radius = radius;
+}
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Circle.prototype = {
 
-var _assign = _dereq_("lodash/object/assign");
+  toPolygon: function(opts, parent) {
+    var ellipse = new Ellipse(this.state.x, this.state.y, this.state.radius*2, this.state.radius*2);
+    var poly = ellipse.toPolygon(opts, false);
+    Utils.copyMixinVars(this, poly);
+    Utils.groupLogic(poly, this.parent, parent);
+    return poly;
+  },
 
-var _assign2 = _interopRequireDefault(_assign);
+  radius: function(radius, relative) {
+    this.state.radius = relative ? this.state.radius + radius : radius;
+    this.changed();
+    return this;
+  },
 
-var _mixins = _dereq_("../mixins");
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    this.state.radius *= scalar;
+    this.changed();
+    return this;
+  },
 
-var _ellipse = _dereq_("./ellipse");
+  copy: function(parent) {
+    var copy = new Circle();
+    copy.state.radius = this.state.radius;
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
 
-var _ellipse2 = _interopRequireDefault(_ellipse);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Circle = (function () {
-  function Circle(x, y, radius) {
-    _classCallCheck(this, Circle);
-
-    this.moveable();
-    this.styleable();
-
-    this.vars.x = x;
-    this.vars.y = y;
-    this.vars.radius = radius;
+  render: function(opts) {
+    var attr = {
+      cx: Utils.s(this.state.x),
+      cy: Utils.s(this.state.y),
+      r: Utils.s(this.state.radius)
+    }
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('circle', attr);
   }
 
-  _createClass(Circle, [{
-    key: "toPolygon",
-    value: function toPolygon(opts, parent) {
-      var ellipse = new _ellipse2.default(this.vars.x, this.vars.y, this.vars.radius * 2, this.vars.radius * 2);
-      var poly = ellipse.toPolygon(opts, false);
-      _utils2.default.copyMixinVars(this, poly);
-      _utils2.default.groupLogic(poly, this.parent, parent);
-      return poly;
+}
+
+assign(Circle.prototype, Shape, Styles, { type: "circle" });
+
+module.exports = Circle;
+
+},{"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"./ellipse":124,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],124:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Box = require("../mixins/box");
+var Styles = require("../mixins/styles");
+var Polygon = require('./polygon');
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Ellipse = function(x, y, width, height) {
+  this.shape();
+  this.box();
+  this.styles();
+  this.state.x = x;
+  this.state.y = y;
+  this.state.width = width;
+  this.state.height = height;
+}
+
+Ellipse.prototype = {
+
+  toPolygon: function(opts, parent) {
+
+    var numVectors = 16;
+
+    // if we're calculating the number of vectors based on spacing
+    // find circumference and divide by spacing.
+    if(opts && opts.spacing) {
+      var circumference = Math.PI * (this.state.width+this.state.height);
+      numVectors = circumference / opts.spacing;
     }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.radius *= scalar;
-      return this;
+
+    var vectorAngle = 360/numVectors;
+
+    var poly =  new Polygon(this.state.x, this.state.y);
+    for(var i = 0; i < numVectors; i++) {
+      var x = Math.cos(Utils.radians(i * vectorAngle)) * this.state.width;
+      var y = Math.sin(Utils.radians(i * vectorAngle)) * this.state.height;
+      poly.lineTo(x, y);
     }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Circle();
-      copy.vars.radius = this.vars.radius;
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
+
+    Utils.copyMixinVars(this, poly);
+    Utils.groupLogic(poly, this.parent, parent);
+
+    return poly;
+  },
+
+  scale: function(scalar) {
+    this.scaleBox(scalar);
+    this.scaleStyles(scalar);
+    this.changed();
+    return this;
+  },
+
+  copy: function(parent) {
+    var copy = new Ellipse();
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  render: function(opts) {
+    var attr = {
+      cx: Utils.s(this.state.x),
+      cy: Utils.s(this.state.y),
+      rx: Utils.s(this.state.width / 2),
+      ry: Utils.s(this.state.height / 2)
     }
-  }]);
-
-  return Circle;
-})();
-
-// Should we figure out a better way to do mixins for ES6?
-
-(0, _assign2.default)(Circle.prototype, _mixins.Moveable, _mixins.Styleable, { type: "circle" });
-
-exports.default = Circle;
-
-},{"../mixins":119,"../utils":130,"./ellipse":123,"lodash/object/assign":70}],123:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _mixins = _dereq_("../mixins");
-
-var _polygon = _dereq_("./polygon");
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Ellipse = (function () {
-  function Ellipse(x, y, width, height) {
-    _classCallCheck(this, Ellipse);
-
-    this.moveable();
-    this.sizeable();
-    this.styleable();
-    this.vars.x = x;
-    this.vars.y = y;
-    this.vars.width = width;
-    this.vars.height = height;
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('ellipse', attr);
   }
 
-  _createClass(Ellipse, [{
-    key: "toPolygon",
-    value: function toPolygon(opts, parent) {
+}
 
-      var numVectors = 16;
+assign(Ellipse.prototype, Shape, Box, Styles, {type: "ellipse"});
 
-      // if we're calculating the number of vectors based on spacing
-      // find circumference and divide by spacing.
-      if (opts && opts.spacing) {
-        var circumference = Math.PI * (this.vars.width + this.vars.height);
-        numVectors = circumference / opts.spacing;
+module.exports = Ellipse;
+
+},{"../mixins/box":119,"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"./polygon":128,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],125:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Box = require("../mixins/box");
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Image = function(url, x, y, width, height) {
+  this.shape();
+  this.box();
+  this.state.url = url;
+  this.state.x = x;
+  this.state.y = y;
+  this.state.width = width;
+  this.state.height = height;
+}
+
+Image.prototype = {
+
+  scale: function(scalar) {
+    this.scaleBox(scalar);
+    this.changed();
+    return this;
+  },
+
+  copy: function(parent) {
+    var copy = new Image();
+    copy.state.url = this.state.url;
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  render: function(opts) {
+    var attr = {
+      "xlink:href" : Utils.s(this.state.url),
+      x: Utils.s(this.state.x),
+      y: Utils.s(this.state.y)
+    }
+    this.optionalAttributes(attr, {
+      "width" : "width",
+      "height" : "height"
+    });
+    this.shapeAttributes(attr);
+    return svg('image', attr);
+  }
+
+}
+
+assign(Image.prototype, Shape, Box, { type: "image" });
+
+module.exports = Image;
+
+},{"../mixins/box":119,"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],126:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Vector = require('../vector');
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Line = function(x, y, x2, y2) {
+  this.shape();
+  this.styles();
+  this.state.x = x;
+  this.state.y = y;
+  this.state.x2 = x2;
+  this.state.y2 = y2;
+}
+
+assign(Line.prototype, Shape, Styles, {
+
+  type: "line",
+
+  start: function(x, y, rel) {
+    this.state.x = rel ? this.state.x + x : x;
+    this.state.y = rel ? this.state.y + y : y;
+    this.changed();
+    return this;
+  },
+
+  end: function(x, y, rel) {
+    this.state.x2 = rel ? this.state.x2 + x : x;
+    this.state.y2 = rel ? this.state.y2 + y : y;
+    this.changed();
+    return this;
+  },
+
+  copy: function(parent) {
+    var copy = new Line();
+    copy.state.x2 = this.state.x2;
+    copy.state.y2 = this.state.y2;
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    var start = new Vector(this.state.x, this.state.y)
+    var end = new Vector(this.state.x2, this.state.y2)
+    var vec = end.sub(start).multiply(scalar).add(start);
+    this.state.x2 = vec.x;
+    this.state.y2 = vec.y;
+    this.changed();
+    return this;
+  },
+
+  move: function(x, y, relative) {
+    var change = new Vector(this.state.x2, this.state.y2).sub(new Vector(this.state.x, this.state.y));
+    this.state.x = relative ? this.state.x + x : x;
+    this.state.y = relative ? this.state.y + y : y;
+    this.state.x2 = this.state.x + change.x;
+    this.state.y2 = this.state.y + change.y;
+    this.changed();
+    return this;
+  },
+
+  render: function(opts) {
+    var attr = {
+      x1: Utils.s(this.state.x),
+      y1: Utils.s(this.state.y),
+      x2: Utils.s(this.state.x2),
+      y2: Utils.s(this.state.y2)
+    }
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('line', attr);
+  }
+
+});
+
+module.exports = Line;
+
+},{"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"../vector":133,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],127:[function(require,module,exports){
+var each = require("lodash/collection/each");
+var map = require("lodash/collection/map");
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Anchor = require('../anchor');
+var Vector = require('../vector');
+var Polygon = require('./polygon');
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Path = function(x, y) {
+  this.shape();
+  this.styles();
+  this.state.anchors = [];
+  if(typeof x !== 'undefined') this.state.x = x;
+  if(typeof y !== 'undefined') this.state.y = y;
+}
+
+Path.prototype = {
+
+  moveTo: function(x, y) {
+    this.state.anchors.push(new Anchor().setMove(x, y));
+    this.changed();
+    return this;
+  },
+
+  lineTo: function(x, y) {
+    this.checkStartMove();
+    this.state.anchors.push(new Anchor().setLine(x, y));
+    this.changed();
+    return this;
+  },
+
+  curveTo: function(a, b, c, d, e, f) {
+    this.checkStartMove();
+    this.state.anchors.push(new Anchor().setCurve(a, b, c, d, e, f));
+    this.changed();
+    return this;
+  },
+
+  closePath: function() {
+    this.checkStartMove();
+    this.state.anchors.push(new Anchor().setClose());
+    this.changed();
+    return this;
+  },
+
+  startVector: function() {
+    return this.state.anchors[0] && this.state.anchors[0].command == 'move' ? this.state.anchors[0].vec1.copy() : new Vector(0, 0);
+  },
+
+  subpaths: function(parent) {
+    var subs = [];
+    var lastSplit = 0;
+
+    each(this.state.anchors, function(anchor, i) {
+
+      var isMove = anchor.command == 'move';
+      var isAfterClose = this.state.anchors[i-1] && this.state.anchors[i-1].command == 'close'
+      var isLast = i == this.state.anchors.length-1;
+
+      if(i > lastSplit && (isMove || isAfterClose || isLast)) {
+        if(isLast) i++;
+        var sub = this.copy(parent);
+        sub.state.anchors = sub.state.anchors.slice(lastSplit, i);
+        subs.push(sub);
+        lastSplit = i;
       }
+    }, this);
+    return subs;
+  },
 
-      var vectorAngle = 360 / numVectors;
+  length: function() {
 
-      var poly = new _polygon2.default(this.vars.x, this.vars.y);
-      for (var i = 0; i < numVectors; i++) {
-        var x = Math.cos(_utils2.default.radians(i * vectorAngle)) * this.vars.width;
-        var y = Math.sin(_utils2.default.radians(i * vectorAngle)) * this.vars.height;
-        poly.lineTo(x, y);
-      }
+    var len = 0;
+    var paths = this.subpaths(false);
 
-      _utils2.default.copyMixinVars(this, poly);
-      _utils2.default.groupLogic(poly, this.parent, parent);
+    for(var p = 0; p < paths.length; p++) {
 
-      return poly;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.width *= scalar;
-      this.vars.height *= scalar;
-      return this;
-    }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Ellipse();
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }]);
+      var anchors = paths[p].state.anchors;
 
-  return Ellipse;
-})();
+      // find length of all anchors in subpath.
+      // if last stop is close, use beginning
+      for(var i = 0; i < anchors.length-1; i++) {
+        var start = anchors[i];
+        var startVec = start.vec3 || start.vec2 || start.vec1;
+        var stop = anchors[i+1];
 
-// Should we figure out a better way to do mixins for ES6?
-
-(0, _assign2.default)(Ellipse.prototype, _mixins.Moveable, _mixins.Sizeable, _mixins.Styleable, { type: "ellipse" });
-
-exports.default = Ellipse;
-
-},{"../mixins":119,"../utils":130,"./polygon":126,"lodash/object/assign":70}],124:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _mixins = _dereq_("../mixins");
-
-var _vector = _dereq_("../vector");
-
-var _vector2 = _interopRequireDefault(_vector);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Line = (function () {
-  function Line(x, y, x2, y2) {
-    _classCallCheck(this, Line);
-
-    this.moveable();
-    this.styleable();
-    this.vars.x = x;
-    this.vars.y = y;
-    this.vars.x2 = x2;
-    this.vars.y2 = y2;
-  }
-
-  _createClass(Line, [{
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Line();
-      copy.vars.x2 = this.vars.x2;
-      copy.vars.y2 = this.vars.y2;
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      var start = new _vector2.default(this.vars.x, this.vars.y);
-      var end = new _vector2.default(this.vars.x2, this.vars.y2);
-      var vec = end.sub(start).multiply(scalar).add(start);
-      this.vars.x2 = vec.x;
-      this.vars.y2 = vec.y;
-      return this;
-    }
-  }]);
-
-  return Line;
-})();
-
-(0, _assign2.default)(Line.prototype, _mixins.Moveable, _mixins.Styleable, { type: "line" });
-
-exports.default = Line;
-
-},{"../mixins":119,"../utils":130,"../vector":131,"lodash/object/assign":70}],125:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _each = _dereq_("lodash/collection/each");
-
-var _each2 = _interopRequireDefault(_each);
-
-var _map = _dereq_("lodash/collection/map");
-
-var _map2 = _interopRequireDefault(_map);
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _mixins = _dereq_("../mixins");
-
-var _anchor = _dereq_("../anchor");
-
-var _anchor2 = _interopRequireDefault(_anchor);
-
-var _vector = _dereq_("../vector");
-
-var _vector2 = _interopRequireDefault(_vector);
-
-var _polygon = _dereq_("./polygon");
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Path = (function () {
-  function Path(x, y) {
-    _classCallCheck(this, Path);
-
-    this.moveable();
-    this.styleable();
-    this.vars.anchors = [];
-    if (typeof x !== 'undefined') this.vars.x = x;
-    if (typeof y !== 'undefined') this.vars.y = y;
-  }
-
-  _createClass(Path, [{
-    key: "moveTo",
-    value: function moveTo(x, y) {
-      this.vars.anchors.push(new _anchor2.default().setMove(x, y));
-      return this;
-    }
-  }, {
-    key: "lineTo",
-    value: function lineTo(x, y) {
-      this.checkStartMove();
-      this.vars.anchors.push(new _anchor2.default().setLine(x, y));
-      return this;
-    }
-  }, {
-    key: "curveTo",
-    value: function curveTo(a, b, c, d, e, f) {
-      this.checkStartMove();
-      this.vars.anchors.push(new _anchor2.default().setCurve(a, b, c, d, e, f));
-      return this;
-    }
-  }, {
-    key: "closePath",
-    value: function closePath() {
-      this.checkStartMove();
-      this.vars.anchors.push(new _anchor2.default().setClose());
-      return this;
-    }
-  }, {
-    key: "startVector",
-    value: function startVector() {
-      return this.vars.anchors[0] && this.vars.anchors[0].command == 'move' ? this.vars.anchors[0].vec1.copy() : new _vector2.default(0, 0);
-    }
-  }, {
-    key: "subpaths",
-    value: function subpaths(parent) {
-      var subs = [];
-      var lastSplit = 0;
-
-      (0, _each2.default)(this.vars.anchors, function (anchor, i) {
-
-        var isMove = anchor.command == 'move';
-        var isAfterClose = this.vars.anchors[i - 1] && this.vars.anchors[i - 1].command == 'close';
-        var isLast = i == this.vars.anchors.length - 1;
-
-        if (i > lastSplit && (isMove || isAfterClose || isLast)) {
-          if (isLast) i++;
-          var sub = this.copy(parent);
-          sub.vars.anchors = sub.vars.anchors.slice(lastSplit, i);
-          subs.push(sub);
-          lastSplit = i;
+        // if stop is a close command, replace close anchor
+        // with vector of first point in path.
+        if(stop.command == 'close') {
+          stop = paths[p].startVector();
         }
-      }, this);
-      return subs;
+
+        var rel = stop.sub(startVec);
+        len += rel.length()
+      }
     }
-  }, {
-    key: "length",
-    value: function length() {
 
-      var len = 0;
-      var paths = this.subpaths(false);
+    return len;
+  },
 
-      for (var p = 0; p < paths.length; p++) {
+  vectorAtLength: function(len) {
+    var tmpLen = 0;
+    var paths = this.subpaths(false);
 
-        var anchors = paths[p].vars.anchors;
+    for(var p = 0; p < paths.length; p++) {
 
-        // find length of all anchors in subpath.
-        // if last stop is close, use beginning
-        for (var i = 0; i < anchors.length - 1; i++) {
-          var start = anchors[i];
-          var startVec = start.vec3 || start.vec2 || start.vec1;
-          var stop = anchors[i + 1];
+      var anchors = paths[p].state.anchors;
 
-          // if stop is a close command, replace close anchor
-          // with vector of first point in path.
-          if (stop.command == 'close') {
-            stop = paths[p].startVector();
-          }
+      // find length of all anchors in subpath.
+      // if last stop is close, use beginning
+      for(var i = 0; i < anchors.length-1; i++) {
+        var start = anchors[i];
+        var startVec = start.vec3 || start.vec2 || start.vec1;
+        var stop = anchors[i+1];
 
-          var rel = stop.sub(startVec);
-          len += rel.length();
+        // if stop is a close command, replace close anchor
+        // with vector of first point in path.
+        if(stop.command == 'close') {
+          var beginning = paths[p].startVector();
+          stop = new Anchor().setLine(beginning.x, beginning.y)
         }
-      }
 
-      return len;
-    }
-  }, {
-    key: "vectorAtLength",
-    value: function vectorAtLength(len) {
-      var tmpLen = 0;
-      var paths = this.subpaths(false);
-
-      for (var p = 0; p < paths.length; p++) {
-
-        var anchors = paths[p].vars.anchors;
-
-        // find length of all anchors in subpath.
-        // if last stop is close, use beginning
-        for (var i = 0; i < anchors.length - 1; i++) {
-          var start = anchors[i];
-          var startVec = start.vec3 || start.vec2 || start.vec1;
-          var stop = anchors[i + 1];
-
-          // if stop is a close command, replace close anchor
-          // with vector of first point in path.
-          if (stop.command == 'close') {
-            var beginning = paths[p].startVector();
-            stop = new _anchor2.default().setLine(beginning.x, beginning.y);
-          }
-
-          var vec = stop.sub(startVec);
-          var veclen = vec.length();
-
-          if (tmpLen + veclen > len) {
-            var remaining = len - tmpLen;
-            return startVec.add(vec.vectorAt(remaining / veclen));
-          }
-
-          tmpLen += veclen;
-        }
-      }
-
-      return this.startVector();
-    }
-  }, {
-    key: "vectorAt",
-    value: function vectorAt(scalar) {
-      return this.vectorAtLength(this.length() * scalar);
-    }
-  }, {
-    key: "toPolygons",
-    value: function toPolygons(opts, parent) {
-
-      var paths = this.subpaths(false);
-      var polys = [];
-
-      // if splitting the path into vectors with equal spacing
-      if (opts && opts.spacing) {
-
-        (0, _each2.default)(paths, function (path) {
-          var poly = new _polygon2.default(path.vars.x, path.vars.y);
-          var len = path.length();
-          var num = len / opts.spacing;
-          for (var i = 0; i < num; i++) {
-            var vec = path.vectorAtLength(i * opts.spacing);
-            poly.lineTo(vec.x, vec.y);
-          }
-
-          _utils2.default.copyMixinVars(this, poly);
-          _utils2.default.groupLogic(poly, this.parent, parent);
-
-          polys.push(poly);
-        }, this);
-      }
-
-      return polys;
-    }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Path();
-      copy.vars.anchors = (0, _map2.default)(this.vars.anchors, function (a) {
-        return a.copy();
-      });
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.anchors = (0, _map2.default)(this.vars.anchors, function (anchor) {
-        return anchor.multiply(scalar);
-      });
-      return this;
-    }
-  }, {
-    key: "fillRule",
-    value: function fillRule(val) {
-      this.vars.fillRule = val;return this;
-    }
-
-    // Paths must start with a moveTo. This function is checks if
-    // there is a moveTo at the beginning, and adds one if not.
-
-  }, {
-    key: "checkStartMove",
-    value: function checkStartMove() {
-      if (this.vars.anchors.length == 0) {
-        this.moveTo(0, 0);
-      }
-    }
-  }]);
-
-  return Path;
-})();
-
-(0, _assign2.default)(Path.prototype, _mixins.Moveable, _mixins.Styleable, { type: "path" });
-
-exports.default = Path;
-
-},{"../anchor":113,"../mixins":119,"../utils":130,"../vector":131,"./polygon":126,"lodash/collection/each":7,"lodash/collection/map":9,"lodash/object/assign":70}],126:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _each = _dereq_("lodash/collection/each");
-
-var _each2 = _interopRequireDefault(_each);
-
-var _map = _dereq_("lodash/collection/map");
-
-var _map2 = _interopRequireDefault(_map);
-
-var _flatten = _dereq_("lodash/array/flatten");
-
-var _flatten2 = _interopRequireDefault(_flatten);
-
-var _mixins = _dereq_("../mixins");
-
-var _vector = _dereq_("../vector");
-
-var _vector2 = _interopRequireDefault(_vector);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Polygon = (function () {
-  function Polygon(x, y) {
-    _classCallCheck(this, Polygon);
-
-    this.moveable();
-    this.styleable();
-    this.vars.vectors = [];
-    if (typeof x !== 'undefined') this.vars.x = x;
-    if (typeof y !== 'undefined') this.vars.y = y;
-  }
-
-  _createClass(Polygon, [{
-    key: "lineTo",
-    value: function lineTo(x, y) {
-      this.vars.vectors.push(new _vector2.default(x, y));
-      return this;
-    }
-  }, {
-    key: "length",
-    value: function length() {
-      var len = 0;
-      for (var i = 0; i < this.vars.vectors.length; i++) {
-        var start = this.vars.vectors[i];
-        var stop = this.vars.vectors[(i + 1) % this.vars.vectors.length];
-        len += stop.sub(start).length();
-      }
-      return len;
-    }
-  }, {
-    key: "vectorAtLength",
-    value: function vectorAtLength(len) {
-
-      var tmpLen = 0;
-
-      for (var i = 0; i < this.vars.vectors.length; i++) {
-        var start = this.vars.vectors[i];
-        var stop = this.vars.vectors[(i + 1) % this.vars.vectors.length];
-        var vec = stop.sub(start);
+        var vec = stop.sub(startVec)
         var veclen = vec.length();
 
-        if (tmpLen + veclen > len) {
+        if(tmpLen + veclen > len) {
           var remaining = len - tmpLen;
-          return start.add(vec.normalize().multiply(remaining));
+          return startVec.add(vec.vectorAt(remaining / veclen));
         }
 
         tmpLen += veclen;
       }
-
-      return this.vars.vectors[0].copy();
     }
-  }, {
-    key: "vectorAt",
-    value: function vectorAt(scalar) {
-      return this.vectorAtLength(this.length() * scalar);
-    }
-  }, {
-    key: "bounds",
-    value: function bounds() {
-      var xmax = undefined;
-      var ymax = undefined;
-      var xmin = undefined;
-      var ymin = undefined;
 
-      (0, _each2.default)(this.vars.vectors, function (vec) {
-        if (typeof xmin === 'undefined' || vec.x < xmin) xmin = vec.x;
-        if (typeof xmax === 'undefined' || vec.x > xmax) xmax = vec.x;
-        if (typeof ymin === 'undefined' || vec.y < ymin) ymin = vec.y;
-        if (typeof ymax === 'undefined' || vec.y > ymax) ymax = vec.y;
-      });
+    return this.startVector();
+  },
 
-      return {
-        x: xmin,
-        y: ymin,
-        width: xmax - xmin,
-        height: ymax - ymin
-      };
-    }
-  }, {
-    key: "centroid",
-    value: function centroid() {
-      var ps = this.vars.vectors;
-      var areaAcc = 0.0;
-      var xAcc = 0.0;
-      var yAcc = 0.0;
+  vectorAt: function(scalar) {
+    return this.vectorAtLength(this.length() * scalar);
+  },
 
-      for (var i = 0; i < ps.length - 1; i++) {
-        areaAcc += ps[i].x * ps[i + 1].y - ps[i + 1].x * ps[i].y;
-        xAcc += (ps[i].x + ps[i + 1].x) * (ps[i].x * ps[i + 1].y - ps[i + 1].x * ps[i].y);
-        yAcc += (ps[i].y + ps[i + 1].y) * (ps[i].x * ps[i + 1].y - ps[i + 1].x * ps[i].y);
-      }
+  toPolygons: function(opts, parent) {
 
-      areaAcc /= 2.0;
-      var x = xAcc / (6.0 * areaAcc);
-      var y = yAcc / (6.0 * areaAcc);
+    var paths = this.subpaths(false);
+    var polys = [];
 
-      return new _vector2.default(x, y);
-    }
-  }, {
-    key: "toPolygon",
-    value: function toPolygon(opts, parent) {
+    // if splitting the path into vectors with equal spacing
+    if(opts && opts.spacing) {
 
-      if (opts && opts.spacing) {
-
-        var poly = new Polygon(this.vars.x, this.vars.y);
-        var len = this.length();
+      each(paths, function(path) {
+        var poly = new Polygon(path.state.x, path.state.y);
+        var len = path.length();
         var num = len / opts.spacing;
-        for (var i = 0; i < num; i++) {
-          var vec = this.vectorAtLength(i * opts.spacing);
-          poly.lineTo(vec.x, vec.y);
+        for(var i = 0; i < num; i++) {
+          var vec = path.vectorAtLength(i * opts.spacing);
+          poly.lineTo(vec.x, vec.y)
         }
 
-        _utils2.default.copyMixinVars(this, poly);
-        _utils2.default.groupLogic(poly, this.parent, parent);
+        Utils.copyMixinVars(this, poly);
+        Utils.groupLogic(poly, this.parent, parent);
 
-        return poly;
+        polys.push(poly);
+      }, this);
+    }
+
+    return polys;
+  },
+
+  copy: function(parent) {
+    var copy = new Path();
+    copy.state.anchors = map(this.state.anchors, function(a) { return a.copy(); });
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    this.state.anchors = map(this.state.anchors, function(anchor) {
+      return anchor.multiply(scalar);
+    });
+    this.changed();
+    return this;
+  },
+
+  fillRule: function(val) {
+    this.state.fillRule = val;
+    this.changed();
+    return this;
+  },
+
+  // Paths must start with a moveTo. This function is checks if
+  // there is a moveTo at the beginning, and adds one if not.
+  checkStartMove: function() {
+    if(this.state.anchors.length == 0) {
+      this.moveTo(0, 0);
+    }
+  },
+
+  render: function(opts) {
+
+    var attr = this.shapeAttributes({});
+    this.stylesAttributes(attr);
+
+    attr.d = map(this.state.anchors, function(a) {
+      if(a.command == 'move') {
+        return "M " + a.vec1.x + " " + a.vec1.y;
       }
-
-      return this;
-    }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Polygon();
-      copy.vars.vectors = (0, _map2.default)(this.vars.vectors, function (v) {
-        return v.copy();
-      });
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-
-    // Code from ContainsPoint function here:
-    // http://polyk.ivank.net
-
-  }, {
-    key: "contains",
-    value: function contains(x, y) {
-
-      // get stage position
-      var addPos = this.stagepos();
-
-      // map array of vectors to flat array of xy numbers
-      // This might be slow, so let's rewrite this at some point.
-
-      var p = (0, _flatten2.default)((0, _map2.default)(this.vars.vectors, function (vector) {
-        return [addPos.x + vector.x, addPos.y + vector.y];
-      }, this));
-
-      var n = p.length >> 1;
-      var ax,
-          ay = p[2 * n - 3] - y,
-          bx = p[2 * n - 2] - x,
-          by = p[2 * n - 1] - y;
-
-      var lup;
-      for (var i = 0; i < n; i++) {
-        ax = bx;ay = by;
-        bx = p[2 * i] - x;
-        by = p[2 * i + 1] - y;
-        if (ay == by) continue;
-        lup = by > ay;
+      else if(a.command == 'line') {
+        return "L " + a.vec1.x + " " + a.vec1.y;
       }
-
-      var depth = 0;
-      for (var i = 0; i < n; i++) {
-        ax = bx;ay = by;
-        bx = p[2 * i] - x;
-        by = p[2 * i + 1] - y;
-        if (ay < 0 && by < 0) continue; // both "up" or both "down"
-        if (ay > 0 && by > 0) continue; // both "up" or both "down"
-        if (ax < 0 && bx < 0) continue; // both points on the left
-
-        if (ay == by && Math.min(ax, bx) <= 0) return true;
-        if (ay == by) continue;
-
-        var lx = ax + (bx - ax) * -ay / (by - ay);
-        if (lx == 0) return true; // point on edge
-        if (lx > 0) depth++;
-        if (ay == 0 && lup && by > ay) depth--; // hit vertex, both up
-        if (ay == 0 && !lup && by < ay) depth--; // hit vertex, both down
-        lup = by > ay;
+      else if(a.command == 'cubic'){
+        return "C " + a.vec1.x + " " + a.vec1.y + " " + a.vec2.x + " " + a.vec2.y + " " + a.vec3.x + " " + a.vec3.y;
       }
+      else if(a.command == 'quad' && typeof a.vec2 !== 'undefined') {
+        return "Q " + a.vec1.x + " " + a.vec1.y + " " + a.vec2.x + " " + a.vec2.y;
+      }
+      else if(a.command == 'quad'){
+        return "T " + a.vec1.x + " " + a.vec1.y;
+      }
+      else if(a.command == 'close'){
+        return "Z";
+      }
+    }).join(" ").trim();
 
-      return (depth & 1) == 1;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.vectors = (0, _map2.default)(this.vars.vectors, function (vec) {
-        return vec.multiply(scalar);
-      });
-      return this;
-    }
-  }]);
+    this.optionalAttributes(attr, {
+      "fillRule" : "fill-rule"
+    });
 
-  return Polygon;
-})();
+    var els = [
+      svg('path', attr)
+    ];
 
-(0, _assign2.default)(Polygon.prototype, _mixins.Moveable, _mixins.Styleable, { type: "polygon" });
+    if(opts.debug) els = els.concat(this.renderDebug());
+    return els;
+  },
 
-exports.default = Polygon;
+  renderDebug: function() {
 
-},{"../mixins":119,"../utils":130,"../vector":131,"lodash/array/flatten":4,"lodash/collection/each":7,"lodash/collection/map":9,"lodash/object/assign":70}],127:[function(_dereq_,module,exports){
-"use strict";
+    var t = this;
+    var els = [];
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+    each(this.state.anchors, function(a, i) {
+      if(a.command == 'cubic'){
+        els.push(t.debugLine(t.state.x + a.vec1.x, t.state.y + a.vec1.y, t.state.x + a.vec3.x, t.state.y + a.vec3.y));
+        els.push(t.debugLine(t.state.x + a.vec2.x, t.state.y + a.vec2.y, t.state.x + a.vec3.x, t.state.y + a.vec3.y));
+        for(var i = 1; i < 4; i++) {
+          els.push(t.debugCircle(t.state.x + a["vec"+i].x, t.state.y + a["vec"+i].y))
+        }
+      }
+      else if(a.command == 'quad' && typeof a.vec2 !== 'undefined') {
+        els.push(t.debugLine(t.state.x + a.vec1.x, t.state.y + a.vec1.y, t.state.x + a.vec2.x, t.state.y + a.vec2.y));
+        for(var i = 1; i < 3; i++) {
+          els.push(t.debugCircle(t.state.x + a["vec"+i].x, t.state.y + a["vec"+i].y))
+        }
+      }
+    });
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+    return els;
 
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _mixins = _dereq_("../mixins");
-
-var _polygon = _dereq_("./polygon");
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Rectangle = (function () {
-  function Rectangle(x, y, width, height) {
-    _classCallCheck(this, Rectangle);
-
-    this.moveable();
-    this.sizeable();
-    this.styleable();
-    this.vars.x = x;
-    this.vars.y = y;
-    this.vars.width = width;
-    this.vars.height = height;
   }
 
-  _createClass(Rectangle, [{
-    key: "toPolygon",
-    value: function toPolygon(opts, parent) {
-      var poly = new _polygon2.default(this.vars.x, this.vars.y).lineTo(0, 0).lineTo(this.vars.width, 0).lineTo(this.vars.width, this.vars.height).lineTo(0, this.vars.height);
+}
 
-      if (opts) poly = poly.toPolygon(opts, false);
+assign(Path.prototype, Shape, Styles, { type: "path"});
 
-      _utils2.default.copyMixinVars(this, poly);
-      _utils2.default.groupLogic(poly, this.parent, parent);
+module.exports = Path;
+
+},{"../anchor":113,"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"../vector":133,"./polygon":128,"lodash/collection/each":7,"lodash/collection/map":9,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],128:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var each = require("lodash/collection/each");
+var map = require("lodash/collection/map");
+var flatten = require("lodash/array/flatten");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Vector = require('../vector');
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Polygon = function(x, y) {
+  this.shape();
+  this.styles();
+  this.state.vectors = [];
+  if(typeof x !== 'undefined') this.state.x = x;
+  if(typeof y !== 'undefined') this.state.y = y;
+}
+
+Polygon.prototype = {
+
+  lineTo: function(x, y) {
+    if (x instanceof Vector) {
+      this.state.vectors.push(x);
+    } else {
+      this.state.vectors.push(new Vector(x, y));
+    }
+    this.changed();
+    return this;
+  },
+
+  length: function() {
+    var len = 0;
+    for(var i = 0; i < this.state.vectors.length; i++) {
+      var start = this.state.vectors[i];
+      var stop = this.state.vectors[(i+1)%this.state.vectors.length];
+      len += stop.sub(start).length();
+    }
+    return len;
+  },
+
+  vectorAtLength: function(len) {
+
+    var tmpLen = 0;
+
+    for(var i = 0; i < this.state.vectors.length; i++) {
+      var start = this.state.vectors[i];
+      var stop = this.state.vectors[(i+1)%this.state.vectors.length];
+      var vec = stop.sub(start);
+      var veclen = vec.length();
+
+      if(tmpLen + veclen > len) {
+        var remaining = len - tmpLen;
+        return start.add(vec.normalize().multiply(remaining));
+      }
+
+      tmpLen += veclen;
+    }
+
+    return this.state.vectors[0].copy();
+  },
+
+  vectorAt: function(scalar) {
+    return this.vectorAtLength(this.length() * scalar);
+  },
+
+  area: function() {
+    var area = 0;
+    for(var i = 0; i < this.state.vectors.length-1; i++)
+    {
+      area += this.state.vectors[i].x * this.state.vectors[i+1].y - this.state.vectors[i+1].x * this.state.vectors[i].y;
+    }
+    area /= 2;
+    return Math.abs(area);
+  },
+
+  bounds: function() {
+    var xmax = undefined;
+    var ymax = undefined;
+    var xmin = undefined;
+    var ymin = undefined;
+
+    each(this.state.vectors, function(vec) {
+      if(typeof xmin === 'undefined' || vec.x < xmin)  xmin = vec.x;
+      if(typeof xmax === 'undefined' || vec.x > xmax)  xmax = vec.x;
+      if(typeof ymin === 'undefined' || vec.y < ymin)  ymin = vec.y;
+      if(typeof ymax === 'undefined' || vec.y > ymax)  ymax = vec.y;
+    });
+
+    return {
+      x: xmin,
+      y: ymin,
+      width: xmax - xmin,
+      height: ymax - ymin
+    };
+  },
+
+  centroid: function() {
+    var areaAcc = 0.0;
+    var xAcc = 0.0;
+    var yAcc = 0.0;
+    for(var i = 0; i < this.state.vectors.length; i++) {
+      var start = this.state.vectors[i];
+      var stop = this.state.vectors[(i+1)%this.state.vectors.length];
+      areaAcc += start.x * stop.y - stop.x * start.y;
+      xAcc += (start.x + stop.x) * (start.x * stop.y - stop.x * start.y);
+      yAcc += (start.y + stop.y) * (start.x * stop.y - stop.x * start.y);
+    }
+    areaAcc /= 2.0;
+    var x = xAcc/(6.0*areaAcc);
+    var y = yAcc/(6.0*areaAcc);
+    return new Vector(x, y);
+  },
+
+  toPolygon: function(opts, parent) {
+
+    if(opts && opts.spacing) {
+
+      var poly = new Polygon(this.state.x, this.state.y);
+      var len = this.length();
+      var num = len / opts.spacing;
+      for(var i = 0; i < num; i++) {
+        var vec = this.vectorAtLength(i * opts.spacing);
+        poly.lineTo(vec.x, vec.y)
+      }
+
+      Utils.copyMixinVars(this, poly);
+      Utils.groupLogic(poly, this.parent, parent);
 
       return poly;
     }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Rectangle();
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
+
+    return this;
+  },
+
+  copy: function(parent) {
+    var copy = new Polygon();
+    copy.state.vectors = map(this.state.vectors, function(v) { return v.copy(); });
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  // Code from ContainsPoint function here:
+  // http://polyk.ivank.net
+  contains: function(x, y) {
+
+    // get stage position
+    var addPos = this.stagepos();
+
+    // map array of vectors to flat array of xy numbers
+    // This might be slow, so let's rewrite this at some point.
+
+
+    var p = flatten(map(this.state.vectors, function(vector) {
+      return [addPos.x + vector.x, addPos.y + vector.y]
+    }, this));
+
+    var n = p.length>>1;
+		var ax, ay = p[2*n-3]-y, bx = p[2*n-2]-x, by = p[2*n-1]-y;
+
+		var lup;
+		for(var i=0; i<n; i++)
+		{
+			ax = bx;  ay = by;
+			bx = p[2*i  ] - x;
+			by = p[2*i+1] - y;
+			if(ay==by) continue;
+			lup = by>ay;
+		}
+
+		var depth = 0;
+		for(var i=0; i<n; i++)
+		{
+			ax = bx;  ay = by;
+			bx = p[2*i  ] - x;
+			by = p[2*i+1] - y;
+			if(ay< 0 && by< 0) continue;	// both "up" or both "down"
+			if(ay> 0 && by> 0) continue;	// both "up" or both "down"
+			if(ax< 0 && bx< 0) continue; 	// both points on the left
+
+			if(ay==by && Math.min(ax,bx)<=0) return true;
+			if(ay==by) continue;
+
+			var lx = ax + (bx-ax)*(-ay)/(by-ay);
+			if(lx==0) return true;			// point on edge
+			if(lx> 0) depth++;
+			if(ay==0 &&  lup && by>ay) depth--;	// hit vertex, both up
+			if(ay==0 && !lup && by<ay) depth--; // hit vertex, both down
+			lup = by>ay;
+		}
+
+		return (depth & 1) == 1;
+  },
+
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    this.state.vectors = map(this.state.vectors, function(vec) {
+      return vec.multiply(scalar);
+    });
+    this.changed();
+    return this;
+  },
+
+  render: function(opts) {
+    var attr = {
+      points: map(this.state.vectors, function(vec) {
+        return vec.x + " " + vec.y;
+      }).join(" ")
+    };
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('polygon', attr);
+  }
+}
+
+assign(Polygon.prototype, Shape, Styles, { type: "polygon" });
+
+module.exports = Polygon;
+
+},{"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"../vector":133,"lodash/array/flatten":4,"lodash/collection/each":7,"lodash/collection/map":9,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],129:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Box = require("../mixins/box");
+var Polygon = require('./polygon');
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Rectangle = function(x, y, width, height) {
+  this.shape();
+  this.box();
+  this.styles();
+  this.state.x = x;
+  this.state.y = y;
+  this.state.width = width;
+  this.state.height = height;
+}
+
+Rectangle.prototype = {
+
+  round: function(rx, ry) {
+    if(!ry) ry = rx;
+    this.state.rx = rx;
+    this.state.ry = ry;
+    this.changed();
+    return this;
+  },
+
+  toPolygon: function(opts, parent) {
+    var poly =  new Polygon(this.state.x, this.state.y)
+      .lineTo(0, 0)
+      .lineTo(this.state.width, 0)
+      .lineTo(this.state.width, this.state.height)
+      .lineTo(0, this.state.height);
+
+    if(opts) poly = poly.toPolygon(opts, false);
+
+    Utils.copyMixinVars(this, poly);
+    Utils.groupLogic(poly, this.parent, parent);
+
+    return poly;
+  },
+
+  copy: function(parent) {
+    var copy = new Rectangle();
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  scale: function(scalar) {
+    this.scaleBox(scalar);
+    this.scaleStyles(scalar);
+    this.changed();
+    return this;
+  },
+
+  render: function(opts) {
+    var attr = {
+      x: Utils.s(this.state.x),
+      y: Utils.s(this.state.y),
+      width: Utils.s(this.state.width),
+      height: Utils.s(this.state.height)
     }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.width *= scalar;
-      this.vars.height *= scalar;
-      return this;
+    if(this.state.rx)  attr.rx = Utils.s(this.state.rx);
+    if(this.state.ry)  attr.ry = Utils.s(this.state.ry);
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('rect', attr);
+  }
+}
+
+assign(Rectangle.prototype, Shape, Box, Styles, { type: "rectangle" });
+
+module.exports = Rectangle;
+
+},{"../mixins/box":119,"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"./polygon":128,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],130:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
+
+var Text = function(text, x, y) {
+  this.shape();
+  this.styles();
+  this.state.text = text;
+  this.state.x = x;
+  this.state.y = y;
+  this.state.fontSize = 16;
+}
+
+Text.prototype = {
+
+  toPolygon: function() {
+    throw new Error("You need the Rune.Font plugin to convert text to polygon");
+  },
+
+  textAlign: function(textAlign) {
+    this.state.textAlign = textAlign; ;
+    this.changed();
+    return this
+  },
+
+  fontFamily: function(fontFamily) {
+    this.state.fontFamily = fontFamily;
+    this.changed();
+    return this;
+  },
+
+  fontStyle: function(fontStyle) {
+    this.state.fontStyle = fontStyle;
+    this.changed();
+    return this;
+  },
+
+  fontWeight: function(fontWeight) {
+    this.state.fontWeight = fontWeight;
+    this.changed();
+    return this;
+  },
+
+  fontSize: function(fontSize) {
+    this.state.fontSize = fontSize;
+    this.changed();
+    return this;
+  },
+
+  letterSpacing: function(letterSpacing) {
+    this.state.letterSpacing = letterSpacing;
+    this.changed();
+    return this;
+  },
+
+  textDecoration: function(textDecoration) {
+    this.state.textDecoration = textDecoration;
+    this.changed();
+    return this;
+  },
+
+  copy: function(parent) {
+    var copy = new Text();
+    copy.state.text = this.state.text;
+    copy.state.textAlign = this.state.textAlign;
+    copy.state.fontFamily = this.state.fontFamily;
+    copy.state.fontStyle = this.state.fontStyle;
+    copy.state.fontWeight = this.state.fontWeight;
+    copy.state.fontSize = this.state.fontSize;
+    copy.state.letterSpacing = this.state.letterSpacing;
+    copy.state.textDecoration = this.state.textDecoration;
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
+
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    this.state.fontSize *= scalar;
+    this.changed();
+    return this;
+  },
+
+  render: function(opts) {
+    var attr = {
+      x: Utils.s(this.state.x),
+      y: Utils.s(this.state.y),
     }
-  }]);
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
 
-  return Rectangle;
-})();
+    // attributes that need specific handling
+    if(this.state.textAlign) {
+      var translate = { "left":"start", "center":"middle", "right":"end" };
+      attr["text-anchor"] = translate[this.state.textAlign];
+    }
 
-(0, _assign2.default)(Rectangle.prototype, _mixins.Moveable, _mixins.Sizeable, _mixins.Styleable, { type: "rectangle" });
+    this.optionalAttributes(attr, {
+      "fontFamily" : "font-family",
+      "textAlign" : "text-align",
+      "fontStyle" : "font-style",
+      "fontWeight" : "font-weight",
+      "fontSize" : "font-size",
+      "letterSpacing" : "letter-spacing",
+      "textDecoration" : "text-decoration"
+    });
 
-exports.default = Rectangle;
+    if(this.state.textAlign) {
+      var translate = { "left":"start", "center":"middle", "right":"end" };
+      attr["text-anchor"] = translate[this.state.textAlign];
+    }
 
-},{"../mixins":119,"../utils":130,"./polygon":126,"lodash/object/assign":70}],128:[function(_dereq_,module,exports){
-"use strict";
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _assign = _dereq_("lodash/object/assign");
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _mixins = _dereq_("../mixins");
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Text = (function () {
-  function Text(text, x, y) {
-    _classCallCheck(this, Text);
-
-    this.moveable();
-    this.styleable();
-    this.vars.text = text;
-    this.vars.x = x;
-    this.vars.y = y;
-    this.vars.fontSize = 16;
+    return svg('text', attr, this.state.text);
   }
 
-  _createClass(Text, [{
-    key: "toPolygon",
-    value: function toPolygon() {
-      throw new Error("You need the Rune.Font plugin to convert text to polygon");
-    }
-  }, {
-    key: "textAlign",
-    value: function textAlign(_textAlign) {
-      this.vars.textAlign = _textAlign;return this;
-    }
-  }, {
-    key: "fontFamily",
-    value: function fontFamily(_fontFamily) {
-      this.vars.fontFamily = _fontFamily;return this;
-    }
-  }, {
-    key: "fontStyle",
-    value: function fontStyle(_fontStyle) {
-      this.vars.fontStyle = _fontStyle;return this;
-    }
-  }, {
-    key: "fontWeight",
-    value: function fontWeight(_fontWeight) {
-      this.vars.fontWeight = _fontWeight;return this;
-    }
-  }, {
-    key: "fontSize",
-    value: function fontSize(_fontSize) {
-      this.vars.fontSize = _fontSize;return this;
-    }
-  }, {
-    key: "letterSpacing",
-    value: function letterSpacing(_letterSpacing) {
-      this.vars.letterSpacing = _letterSpacing;return this;
-    }
-  }, {
-    key: "textDecoration",
-    value: function textDecoration(_textDecoration) {
-      this.vars.textDecoration = _textDecoration;return this;
-    }
-  }, {
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Text();
-      copy.vars.text = this.vars.text;
-      copy.vars.textAlign = this.vars.textAlign;
-      copy.vars.fontFamily = this.vars.fontFamily;
-      copy.vars.fontStyle = this.vars.fontStyle;
-      copy.vars.fontWeight = this.vars.fontWeight;
-      copy.vars.fontSize = this.vars.fontSize;
-      copy.vars.letterSpacing = this.vars.letterSpacing;
-      copy.vars.textDecoration = this.vars.textDecoration;
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.fontSize *= scalar;
-      return this;
-    }
-  }]);
+}
 
-  return Text;
-})();
+assign(Text.prototype, Shape, Styles, { type: "text" });
 
-(0, _assign2.default)(Text.prototype, _mixins.Moveable, _mixins.Styleable, { type: "text" });
+module.exports = Text;
 
-exports.default = Text;
+},{"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],131:[function(require,module,exports){
+var assign = require("lodash/object/assign");
+var Shape = require("../mixins/shape");
+var Styles = require("../mixins/styles");
+var Utils = require('../utils');
+var svg = require('virtual-dom/virtual-hyperscript/svg');
 
-},{"../mixins":119,"../utils":130,"lodash/object/assign":70}],129:[function(_dereq_,module,exports){
-"use strict";
+var Triangle = function(x, y, x2, y2, x3, y3) {
+  this.shape();
+  this.styles();
+  this.state.x = x;
+  this.state.y = y;
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+  // Make variables relative to 0,0 as
+  // x,y will be used in transform
+  this.state.x2 = x2 - x;
+  this.state.y2 = y2 - y;
+  this.state.x3 = x3 - x;
+  this.state.y3 = y3 - y;
+}
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Triangle.prototype = {
 
-var _assign = _dereq_("lodash/object/assign");
+  copy: function(parent) {
+    var copy = new Triangle();
+    copy.state.x2 = this.state.x2;
+    copy.state.y2 = this.state.y2;
+    copy.state.x3 = this.state.x3;
+    copy.state.y3 = this.state.y3;
+    Utils.copyMixinVars(this, copy);
+    Utils.groupLogic(copy, this.parent, parent);
+    return copy;
+  },
 
-var _assign2 = _interopRequireDefault(_assign);
+  scale: function(scalar) {
+    this.scaleStyles(scalar);
+    this.state.x2 *= scalar;
+    this.state.y2 *= scalar;
+    this.state.x3 *= scalar;
+    this.state.y3 *= scalar;
+    this.changed();
+    return this;
+  },
 
-var _mixins = _dereq_("../mixins");
-
-var _utils = _dereq_("../utils");
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Triangle = (function () {
-  function Triangle(x, y, x2, y2, x3, y3) {
-    _classCallCheck(this, Triangle);
-
-    this.moveable();
-    this.styleable();
-
-    this.vars.x = x;
-    this.vars.y = y;
-
-    // Make variables relative to 0,0 as
-    // x,y will be used in transform
-    this.vars.x2 = x2 - x;
-    this.vars.y2 = y2 - y;
-    this.vars.x3 = x3 - x;
-    this.vars.y3 = y3 - y;
+  render: function(opts) {
+    var attr = {
+      points: '0 0 ' + this.state.x2 + ' ' + this.state.y2 + ' ' + this.state.x3 + ' ' + this.state.y3
+    };
+    this.shapeAttributes(attr);
+    this.stylesAttributes(attr);
+    return svg('polygon', attr);
   }
 
-  _createClass(Triangle, [{
-    key: "copy",
-    value: function copy(parent) {
-      var copy = new Triangle();
-      copy.vars.x2 = this.vars.x2;
-      copy.vars.y2 = this.vars.y2;
-      copy.vars.x3 = this.vars.x3;
-      copy.vars.y3 = this.vars.y3;
-      _utils2.default.copyMixinVars(this, copy);
-      _utils2.default.groupLogic(copy, this.parent, parent);
-      return copy;
-    }
-  }, {
-    key: "scale",
-    value: function scale(scalar) {
-      this.vars.x2 *= scalar;
-      this.vars.y2 *= scalar;
-      this.vars.x3 *= scalar;
-      this.vars.y3 *= scalar;
-      return this;
-    }
-  }]);
+}
 
-  return Triangle;
-})();
+assign(Triangle.prototype, Shape, Styles, {type: "triangle"});
 
-(0, _assign2.default)(Triangle.prototype, _mixins.Moveable, _mixins.Styleable, { type: "triangle" });
+module.exports = Triangle;
 
-exports.default = Triangle;
-
-},{"../mixins":119,"../utils":130,"lodash/object/assign":70}],130:[function(_dereq_,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+},{"../mixins/shape":120,"../mixins/styles":121,"../utils":132,"lodash/object/assign":70,"virtual-dom/virtual-hyperscript/svg":100}],132:[function(require,module,exports){
 var Utils = {
 
-  random: function random(a, b) {
-    if (typeof b === 'undefined') {
+  isBrowser: function() {
+    return typeof window !== 'undefined';
+  },
+
+  // function to turn any non-string into a string. We need
+  // this when running server-side node.
+  s: function(val) {
+    if(typeof val !== 'string' && typeof val.toString !== 'undefined')
+      return val.toString();
+    return val;
+  },
+
+  random: function(a, b) {
+    if(typeof b === 'undefined') {
       b = a;
       a = 0;
     }
-    return a + Math.random() * (b - a);
+    return a + (Math.random() * (b-a));
   },
 
-  degrees: function degrees(radians) {
-    return radians * (180 / Math.PI);
+  degrees: function(radians) {
+    return radians * (180/Math.PI);
   },
 
-  radians: function radians(degrees) {
-    return degrees * (Math.PI / 180);
+  radians: function(degrees) {
+    return degrees * (Math.PI/180);
   },
 
-  groupLogic: function groupLogic(child, fallback, group) {
+  groupLogic: function(child, fallback, group) {
 
-    if (group && group.type == "group") {
-      group.add(child);
-    } else if (group !== false && fallback && fallback.type == "group") {
-      fallback.add(child);
+    if(group && group.type == "group") {
+      group.add(child)
+    }
+
+    else if(group !== false && fallback && fallback.type == "group") {
+      fallback.add(child)
     }
   },
 
-  copyMixinVars: function copyMixinVars(a, b) {
-    if (a.moveable && b.moveable) b.moveable(a);
-    if (a.sizeable && b.sizeable) b.sizeable(a);
-    if (a.styleable && b.styleable) b.styleable(a);
+  copyMixinVars: function(a, b) {
+    if(a.shape && b.shape)    b.shape(a);
+    if(a.box && b.box)    b.box(a);
+    if(a.styles && b.styles)  b.styles(a);
+  },
+
+  round: function(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
   }
 
 };
 
-exports.default = Utils;
+module.exports = Utils;
 
-},{}],131:[function(_dereq_,module,exports){
-"use strict";
+},{}],133:[function(require,module,exports){
+var Utils = require('./utils');
+var ROUND_PRECISION = 9;
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var Vector = function(x, y) {
+  this.x = x || 0;
+  this.y = y || 0;
+}
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Vector.prototype = {
 
-var _utils = _dereq_("./utils");
+  type: "vector",
 
-var _utils2 = _interopRequireDefault(_utils);
+  set: function(x, y) {
+    this.x = x;
+    this.y = y;
+  },
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  add: function(vec) {
+    return new Vector(this.x + vec.x, this.y + vec.y);
+  },
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  sub: function(vec) {
+    return new Vector(this.x - vec.x, this.y - vec.y);
+  },
 
-var Vector = (function () {
-  function Vector(x, y) {
-    _classCallCheck(this, Vector);
+  multiply: function(scalar) {
+    return new Vector(this.x * scalar, this.y * scalar);
+  },
 
-    this.x = x || 0;
-    this.y = y || 0;
+  divide: function(scalar) {
+    var vec = new Vector(0, 0);
+    if(scalar) {
+      vec.x = this.x / scalar;
+      vec.y = this.y / scalar;
+    }
+    return vec;
+  },
+
+  distance: function(vec) {
+    return Math.sqrt(this.distanceSquared(vec));
+  },
+
+  distanceSquared: function(vec) {
+    var dx = this.x - vec.x;
+    var dy = this.y - vec.y;
+    return dx * dx + dy * dy;
+  },
+
+  lerp: function(vec, scalar) {
+    var x = (vec.x - this.x) * scalar + this.x;
+    var y = (vec.y - this.y) * scalar + this.y;
+    return new Vector(x, y);
+  },
+
+  dot: function(vec) {
+    return this.x * vec.x + this.y * vec.y;
+  },
+
+  length: function() {
+    return Math.sqrt(this.lengthSquared());
+  },
+
+  lengthSquared: function() {
+    return this.x * this.x + this.y * this.y;
+  },
+
+  normalize: function() {
+    return this.divide(this.length());
+  },
+
+  rotation: function() {
+    return Utils.degrees(Math.atan2(this.y, this.x));
+  },
+
+  rotate: function(degrees) {
+    var rad = Utils.radians(this.rotation() + degrees);
+    var len = this.length();
+    var x = Utils.round(Math.cos(rad) * len, ROUND_PRECISION);
+    var y = Utils.round(Math.sin(rad) * len, ROUND_PRECISION);
+    return new Vector(x, y);
+  },
+
+  copy: function() {
+    return new Vector(this.x, this.y);
+  },
+
+  toString: function() {
+    return "(x: " + this.x + ", y: " + this.y + ")";
   }
 
-  _createClass(Vector, [{
-    key: "set",
-    value: function set(x, y) {
-      this.x = x;
-      this.y = y;
-    }
-  }, {
-    key: "add",
-    value: function add(vec) {
-      return new Vector(this.x + vec.x, this.y + vec.y);
-    }
-  }, {
-    key: "sub",
-    value: function sub(vec) {
-      return new Vector(this.x - vec.x, this.y - vec.y);
-    }
-  }, {
-    key: "multiply",
-    value: function multiply(scalar) {
-      return new Vector(this.x * scalar, this.y * scalar);
-    }
-  }, {
-    key: "divide",
-    value: function divide(scalar) {
-      var vec = new Vector(0, 0);
-      if (scalar) {
-        vec.x = this.x / scalar;
-        vec.y = this.y / scalar;
-      }
-      return vec;
-    }
-  }, {
-    key: "distance",
-    value: function distance(vec) {
-      return Math.sqrt(this.distanceSquared(vec));
-    }
-  }, {
-    key: "distanceSquared",
-    value: function distanceSquared(vec) {
-      var dx = this.x - vec.x;
-      var dy = this.y - vec.y;
-      return dx * dx + dy * dy;
-    }
-  }, {
-    key: "lerp",
-    value: function lerp(vec, scalar) {
-      var x = (vec.x - this.x) * scalar + this.x;
-      var y = (vec.y - this.y) * scalar + this.y;
-      return new Vector(x, y);
-    }
-  }, {
-    key: "dot",
-    value: function dot(vec) {
-      return this.x * vec.x + this.y * vec.y;
-    }
-  }, {
-    key: "length",
-    value: function length() {
-      return Math.sqrt(this.lengthSquared());
-    }
-  }, {
-    key: "lengthSquared",
-    value: function lengthSquared() {
-      return this.x * this.x + this.y * this.y;
-    }
-  }, {
-    key: "normalize",
-    value: function normalize() {
-      return this.divide(this.length());
-    }
-  }, {
-    key: "rotation",
-    value: function rotation() {
-      return _utils2.default.degrees(Math.atan2(this.y, this.x));
-    }
-  }, {
-    key: "rotate",
-    value: function rotate(degrees) {
-      var rad = _utils2.default.radians(this.rotation() + degrees);
-      var len = this.length();
-      var x = Math.cos(rad) * len;
-      var y = Math.sin(rad) * len;
-      return new Vector(x, y);
-    }
-  }, {
-    key: "copy",
-    value: function copy() {
-      return new Vector(this.x, this.y);
-    }
-  }, {
-    key: "toString",
-    value: function toString() {
-      return "(x: " + this.x + ", y: " + this.y + ")";
-    }
-  }]);
+}
 
-  return Vector;
-})();
+module.exports = Vector;
 
-exports.default = Vector;
-
-},{"./utils":130}]},{},[121])(121)
+},{"./utils":132}]},{},[122])(122)
 });
-
-
-//# sourceMappingURL=rune.js.map
